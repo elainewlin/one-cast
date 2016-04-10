@@ -1,0 +1,211 @@
+/*!
+ * Start Bootstrap - SB Admin 2 Bootstrap Admin Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+html {
+    height: 100%;
+}
+
+body {
+    padding-top: 51px; /* for the navbar */
+    padding-bottom: 60px; /* for the footer */
+    width: 100%;
+    height: 100% !important;
+    background-color: #403075;
+    
+}
+
+#wrapper {
+    height: 100% !important;
+}
+
+#page-wrapper {
+    overflow-y: auto;
+    padding: 0 15px;
+    height: 100%;
+    width:100;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    #page-wrapper {
+        position: inherit;
+        margin: 0 0 0 250px;
+        padding: 0 30px;
+        border-left: 1px solid #e7e7e7;
+    }
+}
+
+.welcome {
+    text-align: center;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.welcome h1 {
+    color: #615292;
+}
+
+.welcome .btn {
+    background-color: #615292;
+    color: white;
+    font-size: 24px;
+}
+
+.welcome .btn:hover {
+    background-color: #403075;
+    color: white;
+    font-size: 24px;
+}
+
+/*******************************/
+
+.navbar {
+    background-color: #403075;
+}
+
+.navbar-top-links {
+    margin-right: 0;
+}
+
+.navbar-top-links li {
+    display: inline-block;
+}
+
+.navbar-top-links li:last-child {
+    margin-right: 15px;
+}
+
+.navbar-top-links li a {
+    padding: 15px;
+    min-height: 50px;
+}
+
+.navbar-top-links .dropdown-menu li {
+    display: block;
+}
+
+.navbar-top-links .dropdown-menu li:last-child {
+    margin-right: 0;
+}
+
+.navbar-top-links .dropdown-menu li a {
+    padding: 3px 20px;
+    min-height: 0;
+}
+
+.navbar-top-links .dropdown-menu li a div {
+    white-space: normal;
+}
+
+.navbar-top-links .dropdown-messages,
+.navbar-top-links .dropdown-tasks,
+.navbar-top-links .dropdown-alerts {
+    width: 310px;
+    min-width: 0;
+}
+
+.navbar-top-links .dropdown-messages {
+    margin-left: 5px;
+}
+
+.navbar-top-links .dropdown-tasks {
+    margin-left: -59px;
+}
+
+.navbar-top-links .dropdown-alerts {
+    margin-left: -123px;
+}
+
+.navbar-top-links .dropdown-user {
+    right: 0;
+    left: auto;
+}
+
+.sidebar {
+    background-color: #403075;
+    color: white;
+}
+
+.sidebar .sidebar-nav.navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.sidebar .sidebar-search {
+    padding: 15px;
+}
+
+.sidebar ul li {
+    border-bottom: 1px solid #615292;
+}
+
+.sidebar ul li a.active {
+    background-color: #615292;
+}
+
+.sidebar .arrow {
+    float: right;
+}
+
+.sidebar .fa.arrow:before {
+    content: "\f104";
+}
+
+.sidebar .active>a>.fa.arrow:before {
+    content: "\f107";
+}
+
+@media(min-width:768px) {
+    .sidebar {
+        z-index: 1;
+        position: absolute;
+        width: 250px;
+        margin-top: 51px;
+    }
+
+    .navbar-top-links .dropdown-messages,
+    .navbar-top-links .dropdown-tasks,
+    .navbar-top-links .dropdown-alerts {
+        margin-left: auto;
+    }
+}
+
+.login-panel {
+    margin-top: 25%;
+}
+
+/********************************/
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #615292;
+}
+
+.sidebarlink {
+    color: white;
+}
+.sidebarlink:hover {
+    color: white;
+    background-color: #615292 !important;
+}
+
+.dropdown-toggle {
+    color: white;
+    background-color: #403075;
+}
+
+.dropdown-toggle:hover{
+    color: white;
+    background-color: #615292 !important;
+}
+
+.nav > .active a {
+    background:none;
+}
