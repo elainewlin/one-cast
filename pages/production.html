@@ -1,0 +1,53 @@
+<!-- Production Summary -->
+    <div id="production-summary-container" >
+        <h1> Romeo and Juliet </h1>
+        <div class="description"><p>This play is about ...</p></div>
+        <div class="location-info">77 Massachusetts Ave. Cambridge, MA 02139</div>
+        <div class="casting-dates">
+            Casting Dates: 
+            4/8/2016 - 5/5/2016
+        </div>
+        <div class="production-date">
+            Production Date:
+            7/26/2016
+        </div>
+    </div>
+    
+    <!--  Role Tiles  -->
+    
+    <div class="gridListdemoBasicUsage">
+
+        <h2>Roles</h2>
+        <div class='md-padding' layout="row" layout-wrap>
+            <md-card class="card-container"  ng-repeat="role in roles">
+<!--                <img src="http://placehold.it/150x150" class="md-card-image" alt="user avatar">-->
+                <md-card-content>
+                    <h2>{{role.name}}</h2>
+                    <p>{{role.description}}</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </md-card-content>
+                <div class="md-actions" layout="row" layout-align="end center">
+                    <md-button>Save</md-button>
+                    <md-button>View</md-button>
+                </div>
+            </md-card>
+        </div>
+    </div>
+    
+    <!--  Apply  -->
+    <div class="submission-button" >
+        <input id="apply-button" type="submit" value="Apply">
+    
+    </div>
+    
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-aria.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-messages.min.js'></script>
+    <script src='https://gitcdn.xyz/repo/angular/bower-material/v0.10.1-rc4/angular-material.js'></script>
+    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/assets-cache.js'></script>
+
+    <script type="text/javascript" src="production-script.js"></script>
+
+

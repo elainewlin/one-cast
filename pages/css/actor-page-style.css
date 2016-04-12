@@ -1,0 +1,38 @@
+
+
+.gridListdemoBasicUsage {
+    margin: 20px;
+}
+
+.gridListdemoBasicUsage md-grid-list {
+    margin: 8px;
+}
+
+.gridListdemoBasicUsage .gray {
+    background: #f5f5f5;
+}
+
+.gridListdemoBasicUsage md-grid-tile {
+    transition: all 400ms ease-out 50ms;
+}
+
+#production-summary-container {
+    margin: 20px;
+}
+
+.card-container {
+    width: 20%;
+}
+
+.md-padding {
+    height: 30vh;
+    border: 2px solid #ccc;
+    overflow-y: scroll;
+}
+
+.submission-button {
+    margin: 20px;
+}
+#apply-button {
+    float: right;
+}

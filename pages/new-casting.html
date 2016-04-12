@@ -1,0 +1,51 @@
+
+<link rel="stylesheet" href='css/style.css' />
+<link rel="stylesheet" href='css/new-casting.css' />
+<link rel="stylesheet" href='css/bootstrap-datepicker.standalone.min.css'/>
+    <div class="container">
+      <div class="row-fluid header-div">
+        <h2 class="casting-header">New Casting</h2>
+      </div>
+      <div class="row">
+        <!-- Description, Calendar -->
+        <div class="col-md-5 col-sm-5">
+          <div class="row">
+            <div id="col-first">
+              <textarea id="description" class="form-control" placeholder="Description"></textarea>
+              <button type="submit" class="link-btn">Set Casting Calendar</button>
+              <div class="input-group input-append date" id="datePicker">
+                  <input type="text" class="form-control" placeholder="Production Date" name="date" />
+                  <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+              </div>
+              <div id="submit-btns">
+                <span class="btn" id="save-btn">Save</span>
+                <span class="btn" id="cancel-btn"></i>Cancel</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end Description, Calendar -->
+        
+        <!-- Add Roles -->
+        <div class="col-md-offset-2 col-md-5 col-sm-5">
+          <div class="row">
+            <div id="col-second">
+              <button type="submit" class="link-btn">Add Role</button>
+              <div id="roles-box">
+                <p id="empty-roles-text">You have no roles yet. Create one by clicking below</p>
+                <button type="submit" class="link-btn" id="empty-roles-btn">Add Role</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end Add Roles -->
+      </div>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="../js/new-casting.js"></script>
+     <!-- Datepicker: http://bootstrap-datepicker.readthedocs.org/en/latest/ -->
+    <script src='../js/bootstrap-datepicker.min.js'/></script>

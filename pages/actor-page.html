@@ -1,0 +1,90 @@
+ <!-- Production Summary -->
+    <div id="production-summary-container" >
+        <h1> Romeo and Juliet </h1>
+        <div class="description"><p>This play is about ...</p></div>
+        <div class="location-info">77 Massachusetts Ave. Cambridge, MA 02139</div>
+        <div class="casting-dates">
+            Casting Dates: 
+            4/8/2016 - 5/5/2016
+        </div>
+        <div class="production-date">
+            Production Date:
+            7/26/2016
+        </div>
+    </div>
+    
+    <!--  Role Tiles  -->
+    
+    <div class="gridListdemoBasicUsage">
+
+        <h2>Roles</h2> 
+        
+        <h4>Applied: </h4>
+        <div class='md-padding applied-roles' layout="row" layout-wrap>
+            <md-card class="card-container"  ng-repeat="role in roles">
+                <md-card-content>
+                    <h2>{{role.name}}</h2>
+                    <p>{{role.description}}</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </md-card-content>
+                <div class="md-actions" layout="row" layout-align="end center">
+                    <md-button>Save</md-button>
+                    <md-button>View</md-button>
+                </div>
+            </md-card>
+        </div>
+        
+        <h4>Accepted:</h4>
+        <div class='md-padding accepted-roles' layout="row" layout-wrap>
+            <md-card class="card-container"  ng-repeat="role in roles">
+                <md-card-content>
+                    <h2>{{role.name}}</h2>
+                    <p>{{role.description}}</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </md-card-content>
+                <div class="md-actions" layout="row" layout-align="end center">
+                    <md-button>Save</md-button>
+                    <md-button>View</md-button>
+                </div>
+            </md-card>
+        </div>
+        
+        <h4>Rejected:</h4>
+        <div class='md-padding rejected-roles' layout="row" layout-wrap>
+            <md-card class="card-container"  ng-repeat="role in roles">
+                <md-card-content>
+                    <h2>{{role.name}}</h2>
+                    <p>{{role.description}}</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </md-card-content>
+                <div class="md-actions" layout="row" layout-align="end center">
+                    <md-button>Save</md-button>
+                    <md-button>View</md-button>
+                </div>
+            </md-card>
+        </div>
+        
+        <h4>Backup:</h4>
+        <div class='md-padding backup-roles' layout="row" layout-wrap>
+            <md-card class="card-container"  ng-repeat="role in roles">
+                <md-card-content>
+                    <h2>{{role.name}}</h2>
+                    <p>{{role.description}}</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </md-card-content>
+                <div class="md-actions" layout="row" layout-align="end center">
+                    <md-button>Save</md-button>
+                    <md-button>View</md-button>
+                </div>
+            </md-card>
+        </div>
+    </div>
+    
+    <!--  Apply  -->
+    <div class="submission-button" >
+        <input id="apply-button" type="submit" value="Apply">
+    
+    </div>
+
+
+

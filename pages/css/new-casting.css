@@ -1,0 +1,135 @@
+#description {
+  width: 100%;
+  margin-bottom: 30px;
+  height: 100px;
+  font-size: 15px;
+}
+
+#roles-box {
+  border: 1px solid gray;
+  height: 300px;
+}
+
+.casting-header {
+  font-size: 1.5em;
+  margin-bottom: 18px;
+}
+
+.link-btn {
+  border-radius: 5px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  background: #3949AB;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
+#empty-roles-text {
+  text-align: center;
+  margin: 10px 0 20px 0;
+}
+
+#empty-roles-btn {
+  margin: 5px 0 5px 50px;
+}
+
+#save-btn {
+  color: #3949AB;
+  margin-right: 10px;
+  border: 1px solid #3949AB;
+  background-color: #ffffff;
+}
+
+#save-btn:hover, #save-btn:focus {
+  background-color: #3949AB;
+  color: #ffffff;
+}
+
+#cancel-btn {
+  color: #aaa;
+  background-color: #fff;
+  border: 1px solid #aaa;
+}
+
+#cancel-btn:hover, #cancel-btn:focus {
+  color: white;
+  background-color: #aaa;
+}
+
+#submit-btns {
+  margin-top: 80px;
+}
+
+
+/*~~~~~~~~~~New Role Styles ~~~~~~~~~~*/
+
+ #clickHere {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  font-size: 17px;
+  width: 150px;
+  border-radius: 4px;
+  background-color: #3949AB;
+  padding: 10px;
+}
+#clickHere:hover {
+    background-color: #1A237E;
+}
+#filename {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+#drop-zone input {
+  position: absolute;
+  cursor: pointer;
+  left: 0px;
+  top: 0px;
+  opacity:0;
+}
+
+.closeBtn:hover {
+    color:#3949AB;
+}
+
+#age-range-text {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+#slider-age {
+  width: 300px;
+  display: inline-block;
+}
+
+#age-range-values {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#role-title {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+#slider-label-left, #slider-label-right {
+  font-weight: bolder;
+}
+
+#gender-dropdown, #age-range-box {
+  margin: 15px 0;
+}
+
+.noUi-handle-lower:before, .noUi-handle-upper:before {
+  left: 8px;
+}
+
+.noUi-handle-lower:after, .noUi-handle-upper:after {
+  left: 11px;
+}

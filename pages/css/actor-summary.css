@@ -1,0 +1,9 @@
+html, body, .actor-summary {
+    height: 100%;
+}
+
+.actor-summary{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
