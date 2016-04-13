@@ -10,11 +10,11 @@
                     <input type="text" class="form-control" placeholder="Search for production" ng-model="search.title">
                 </div>    
                 <div class="input-group search-container date">
-                    <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                     <input type="text" class="form-control" placeholder="Search for date" ng-model="search.date">
                 </div>  
                 <div class="input-group search-container location">
-                    <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                    <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
                     <input type="text" class="form-control" placeholder="Search for location" ng-model="search.location">
                 </div>  
             </div>
@@ -23,7 +23,6 @@
         
         
         
-        <div id="scrollable-area">
             <table ng-table="tableParams" class="table table-bordered table-striped"  fixed-table-headers="scrollable-area">
                 <thead>
                     <tr>
@@ -67,13 +66,12 @@
                         <td colspan="3">
                             <h3>Description</h3>
                             <p>{{production.description}}</p>
-                            <button href="#exampleplay" class="btn btn-primary">See more!</button>
+                            <!--button href="#exampleplay" class="btn btn-primary">See more!</button-->
                             <a href="#exampleplay" >CLICK HERE</a>
                         </td>
                     </tr>
                 </tbody>
             </table>
-        </div>
 	</div>
 
 
