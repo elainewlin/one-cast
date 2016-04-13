@@ -66,6 +66,23 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
     $rootScope.userIcon = "fa-film";
     $rootScope.newUrl = "#directorcreate";
     
+    $rootScope.createCasting = function() {
+
+        $mdDialog.show({
+          controller: 'addCastingController',
+          templateUrl: 'new-casting.html',
+          parent: angular.element('#wrapper'),
+          clickOutsideToClose:true,
+          //fullscreen: 'useFullScreen'
+        })
+        .then(function(answer) {
+          $scope.status = 'You said the information was "' + answer + '".';
+        }, function() {
+          $scope.status = 'You cancelled the dialog.';
+        });
+        
+    };
+    
 });
 
 onecastApp.controller('actorController', function($scope, $rootScope, $window) {
@@ -171,6 +188,11 @@ onecastApp.controller('castingController', function($scope, $rootScope, $mdDialo
 });
 
 onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialog) {
+    
+    
+});
+
+onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDialog) {
     
     
 });

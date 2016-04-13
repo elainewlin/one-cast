@@ -68,7 +68,7 @@
 
 <body>
 
-    <div id="wrapper">
+    <div id="wrapper" ng-controller="mainDirectorController">
 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
@@ -85,7 +85,7 @@
 
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" href="{{newUrl}}">
+                    <a class="dropdown-toggle" onclick="$scope.createCasting()">
                         <i class="fa fa-plus fa-fw"></i> <span ng-bind="newOption"></span>
                     </a>
                 </li>
@@ -161,10 +161,7 @@
                 <div class="">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-header">
-                            <h3>Castings</h3>
-                        </li>
-                        <li>
-                            <a class="sidebarlink" href="#directorcreate"> Create Casting</a>
+                            Castings <i class="fa fa-plus fa-fw"></i>
                         </li>
                         <li>
                             <a class="sidebarlink" href="#romeojuliet"> Romeo &amp; Juliet</a>

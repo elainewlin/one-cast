@@ -41,18 +41,18 @@ body {
 
 .welcome {
     text-align: center;
-    height: 100%;
-    vertical-align: middle;
+    margin-top: 40px;
 }
 
 .welcome h1 {
     color: #615292;
+    font-size: 28px;
 }
 
 .welcome .btn {
     background-color: #615292;
     color: white;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .welcome .btn:hover {
@@ -201,6 +201,9 @@ body {
 
 .sidebar-header {
     text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 16px;
     
 }
 
