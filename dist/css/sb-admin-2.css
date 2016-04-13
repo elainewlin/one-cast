@@ -125,6 +125,13 @@ body {
     left: auto;
 }
 
+.sidebar ul li a.active {
+    background-color: #615292;
+}
+.navbar-right li a.active {
+    background-color: #615292;
+}
+
 .sidebar {
     background-color: #403075;
     color: white;
