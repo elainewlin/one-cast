@@ -8,6 +8,9 @@ html {
     height: 100%;
 }
 
+h3 {
+    padding-bottom:20px;
+}
 body {
     padding-top: 50px; /* for the navbar */
     padding-bottom: 60px; /* for the footer */
