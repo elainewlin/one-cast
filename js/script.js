@@ -39,6 +39,9 @@ onecastApp.config(function($routeProvider) {
             controller: 'castingController',
             css: 'css/partial1.css'
     	})
+        .when('/applycalendar', {
+            templateUrl: 'actor-apply-cal.html'
+        })
         .otherwise({
             redirectTo: "/"
         });

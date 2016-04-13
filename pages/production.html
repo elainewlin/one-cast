@@ -22,13 +22,28 @@
             <md-card class="card-container"  ng-repeat="role in roles">
 <!--                <img src="http://placehold.it/150x150" class="md-card-image" alt="user avatar">-->
                 <md-card-content>
-                    <h2>{{role.name}}</h2>
+                    
+<!--
+                    <label> {{role.name}}
+                        <md-checkbox class="apply-checkbox" />
+                    </label>
+-->
+                    
+                    <div class="apply-role-div">
+                        <h2 class="apply-role">{{role.name}}</h2>
+                    </div>
+                    <div class="checkbox-containter">
+                        <md-checkbox class="apply-checkbox" />
+                    </div>
+                    
                     <p>{{role.description}}</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
                 </md-card-content>
                 <div class="md-actions" layout="row" layout-align="end center">
+<!--
                     <md-button>Save</md-button>
                     <md-button>View</md-button>
+-->
                 </div>
             </md-card>
         </div>
@@ -36,8 +51,9 @@
     
     <!--  Apply  -->
     <div class="submission-button" >
-        <input id="apply-button" type="submit" value="Apply">
-    
+        <input href="#applycalendar" id="apply-button" type="submit" value="Apply">
+        <a href="#applycalendar">APPLY!</a>
+        <!--  TODO: pull up modal with calendar  -->
     </div>
     
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js'></script>
