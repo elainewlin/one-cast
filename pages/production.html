@@ -18,7 +18,7 @@
     <div class="gridListdemoBasicUsage">
 
         <h2>Roles</h2>
-        <div class='md-padding' layout="row" layout-wrap>
+        <div class='' layout="row" layout-wrap>
             <md-card class="card-container"  ng-repeat="role in roles">
 <!--                <img src="http://placehold.it/150x150" class="md-card-image" alt="user avatar">-->
                 <md-card-content>
@@ -29,11 +29,8 @@
                     </label>
 -->
                     
-                    <div class="apply-role-div">
-                        <h2 class="apply-role">{{role.name}}</h2>
-                    </div>
                     <div class="checkbox-containter">
-                        <md-checkbox class="apply-checkbox" />
+                        <md-checkbox class="apply-checkbox apply-role">{{role.name}}</md-checkbox>
                     </div>
                     
                     <p>{{role.description}}</p>
@@ -50,19 +47,11 @@
     </div>
     
     <!--  Apply  -->
-    <div class="submission-button" >
-        <input href="#applycalendar" id="apply-button" type="submit" value="Apply">
-        <a href="#applycalendar">APPLY!</a>
+    <div class="submission-button">
+        <!--input href="#applycalendar" id="apply-button" type="submit" value="Apply"-->
+        <a href="#applycalendar" id="apply-button">APPLY!</a>
         <!--  TODO: pull up modal with calendar  -->
     </div>
-    
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js'></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.min.js'></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.min.js'></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-aria.min.js'></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-messages.min.js'></script>
-    <script src='https://gitcdn.xyz/repo/angular/bower-material/v0.10.1-rc4/angular-material.js'></script>
-    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/assets-cache.js'></script>
 
     <script type="text/javascript" src="production-script.js"></script>
 
