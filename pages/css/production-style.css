@@ -38,3 +38,16 @@ body {
 #apply-button {
     float: right;
 }
+.apply-role-div {
+/*    float: left;*/
+    display: inline-block;
+}
+.checkbox-container {
+/*    float: left;*/
+    display: inline-block;
+}
+/*
+.apply-checkbox {
+    float: right;
+    display: inline-block;
+}*/
