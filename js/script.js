@@ -8,7 +8,11 @@ onecastApp.config(function($routeProvider) {
     	})
         .when('/actorhome', {
     		templateUrl: 'actorwelcome.html',
-            controller: 'mainController'
+            controller: 'mainActorController'
+    	})
+        .when('/directorhome', {
+    		templateUrl: 'directorwelcome.html',
+            controller: 'mainDirectorController'
     	})
         .when('/romeojuliet', {
             templateUrl: 'actor.html',
@@ -18,10 +22,6 @@ onecastApp.config(function($routeProvider) {
             templateUrl: 'actor.html',
             controller: 'searchController'
         })
-        .when('/directorhome', {
-    		templateUrl: 'directorwelcome.html',
-            controller: 'mainController'
-    	})
         .when('/summary', {
     		templateUrl: 'actor-summary.html',
             controller: 'mainController'
@@ -36,16 +36,36 @@ onecastApp.config(function($routeProvider) {
     	})
         .when('/directorcreate', {
     		templateUrl: 'new-casting.html',
-            controller: 'castingController'
+            controller: 'castingController',
+            css: 'css/partial1.css'
     	})
         .otherwise({
             redirectTo: "/"
         });
-    console.log("Config done");
 });
 
-onecastApp.controller('mainController', function($scope, $rootScope, $window) {
+onecastApp.controller('mainController', function($scope, $rootScope, $window, $mdDialog) {
     $rootScope.pageTitle = "OneCast";
+});
+
+onecastApp.controller('mainActorController', function($scope, $rootScope, $window, $mdDialog) {
+    $rootScope.pageTitle = "OneCast";
+    
+    $rootScope.newOption = "New What?";
+    $rootScope.homeUrl = "#actorhome";
+    $rootScope.userIcon = "fa-user";
+    $rootScope.newUrl = "#actorhome";
+    
+});
+
+onecastApp.controller('mainDirectorController', function($scope, $rootScope, $window, $mdDialog) {
+    $rootScope.pageTitle = "OneCast";
+    
+    $rootScope.newOption = "New Casting";
+    $rootScope.homeUrl = "#directorhome";
+    $rootScope.userIcon = "fa-film";
+    $rootScope.newUrl = "#directorcreate";
+    
 });
 
 onecastApp.controller('actorController', function($scope, $rootScope, $window) {
@@ -127,6 +147,32 @@ onecastApp.controller('actorPageController', function($scope) {
                 {name: "Abraham", description: "servant to Montague"},
                 {name: "Sampson", description: "servant to Capulet"},
                 {name: "Gregory", description: "servant to Capulet"}];
+});
+
+onecastApp.controller('castingController', function($scope, $rootScope, $mdDialog) {
+    
+    $rootScope.pageTitle = "Create Casting";
+    
+    //$scope.showAddRole = function() {
+        $mdDialog.show({
+          controller: 'addRoleController',
+          templateUrl: 'new-role.html',
+          parent: angular.element('#wrapper'),
+          clickOutsideToClose:true,
+          //fullscreen: 'useFullScreen'
+        })
+        .then(function(answer) {
+          $scope.status = 'You said the information was "' + answer + '".';
+        }, function() {
+          $scope.status = 'You cancelled the dialog.';
+        });
+    //}
+    
+});
+
+onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialog) {
+    
+    
 });
 
 onecastApp.directive('fixedTableHeaders', ['$timeout', function($timeout) {
