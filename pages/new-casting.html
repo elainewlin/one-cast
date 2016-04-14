@@ -2,6 +2,7 @@
 <!--link rel="stylesheet" href='css/style.css'-->
 <link rel="stylesheet" href='css/new-casting.css' />
 <link rel="stylesheet" href='css/bootstrap-datepicker.standalone.min.css'/>
+<link rel="stylesheet" href='css/bootstrap-timepicker.min.css'/>
     <div class="container" id="castingBox">
       <div class="row-fluid header-div">
         <h2 class="casting-header">New Casting</h2>
@@ -12,14 +13,14 @@
           <div class="row">
             <div id="col-first">
               <textarea id="description" class="form-control" placeholder="Description"></textarea>
-              <button type="submit" class="link-btn">Set Casting Calendar</button>
               <div class="input-group input-append date" id="datePicker">
                   <input type="text" class="form-control" placeholder="Production Date" name="date" />
                   <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
               </div>
+                <button type="submit" class="link-btn">Set Casting Calendar</button>
               <div id="submit-btns">
-                <span class="btn" id="save-btn">Save</span>
-                <span class="btn" id="cancel-btn"></i>Cancel</span>
+                <span class="btn" id="save-btn" ng-click="save()">Save</span>
+                <span class="btn" id="cancel-btn" ng-click="cancel()"></i>Cancel</span>
               </div>
             </div>
           </div>
@@ -41,3 +42,6 @@
         <!-- end Add Roles -->
       </div>
     </div>
+
+    <script src='../js/bootstrap-datepicker.min.js'/></script>
+    <script src="../js/new-casting.js"></script>
