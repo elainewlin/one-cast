@@ -8,6 +8,9 @@ html {
     height: 100%;
 }
 
+h3 {
+    padding-bottom:20px;
+}
 body {
     padding-top: 50px; /* for the navbar */
     padding-bottom: 60px; /* for the footer */
@@ -146,4 +149,23 @@ body {
 
 .navbar-brand {
     margin-top: -4px;
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
 }

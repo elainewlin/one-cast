@@ -172,6 +172,11 @@ md-toolbar {
     background-color: #615292;
 }
 
+.md-toolbar-tools {
+    color: white;
+    background-color: #403075;
+}
+
 .sidebar .arrow {
     float: right;
 }
