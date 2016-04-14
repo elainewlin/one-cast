@@ -16,3 +16,17 @@
 .end {
     margin-bottom: 32px;
 }
+#age-range-text {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+#slider-age {
+  width: 300px;
+  display: inline-block;
+}
+
+#age-range-values {
+  display: inline-block;
+  margin-left: 10px;
+}
