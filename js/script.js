@@ -59,6 +59,7 @@ onecastApp.controller('mainActorController', function($scope, $rootScope, $windo
     $rootScope.pageTitle = "OneCast";
     
     $("#create-casting").hide();
+    $("#create-button").hide();
     
     $rootScope.newOption = "New What?";
     $rootScope.homeUrl = "#actorhome";
@@ -80,6 +81,7 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
     $rootScope.actor = false;
     
     $("#create-casting").show();
+    $("#create-button").show();
     
     $(function(){
 
