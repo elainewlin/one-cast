@@ -109,7 +109,7 @@ onecastApp.controller('actorController', function($scope, $rootScope, $window) {
 });
 
 onecastApp.controller('searchController', function($scope, ngTableParams) {
-    var data = [{title: "Les Miserables", date: "2016-04-29", location: "Chesapeake, VA", description: "les miserables"},
+    var data = [{title: "Romeo & Juliet", date: "2016-04-29", location: "Chesapeake, VA", description: "les miserables"},{title: "Les Miserables", date: "2016-04-29", location: "Chesapeake, VA", description: "les miserables"},
                 {title: "Cabaret", date: "2016-05-09", location: "Newark, NJ", description: "cabaret"},
                 {title: "Mamma Mia", date: "2016-05-17", location: "Detroit, MI", description: "mamma mia"},
                 {title: "Grease", date: "2016-05-26", location: "Dallas, TX", description: "grease"},
