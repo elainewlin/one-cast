@@ -3,35 +3,35 @@
 
     <form>
         <div class="form-group">
-            <div class="input-group search-container">
+            <div class="input-group search-container name">
                 <div class="input-group-addon"><i class="fa fa-search"></i></div>
                 <input type="text" class="form-control" placeholder="Search for name" ng-model="search.name">
             </div>    
-            <div class="input-group search-container date">
+            <div class="input-group search-container left">
                 <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                 <input type="text" class="form-control" placeholder="Search for gender" ng-model="search.gender">
             </div>  
-            <div class="input-group search-container location">
+            <div class="input-group search-container right">
                 <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
                 <input type="text" class="form-control" placeholder="Search for location" ng-model="search.location">
             </div>  
-            <div class="input-group search-container location">
-                <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+            <div class="input-group search-container left">
+                <div class="input-group-addon"><i class="fa fa-calendar-o"></i></div>
                 <input type="text" class="form-control" placeholder="Search for age" ng-model="search.age">
             </div> 
             
-            <div class="input-group search-container location">
-                <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+            <div class="input-group search-container right">
+                <div class="input-group-addon"><i class="fa fa-user"></i></div>
                 <input type="text" class="form-control" placeholder="Search for hair color" ng-model="search.haircolor">
             </div> 
             
-            <div class="input-group search-container location">
-                <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+            <div class="input-group search-container left end">
+                <div class="input-group-addon"><i class="fa fa-eye"></i></div>
                 <input type="text" class="form-control" placeholder="Search for eye color" ng-model="search.eyecolor">
             </div> 
             
-            <div class="input-group search-container location">
-                <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+            <div class="input-group search-container right end">
+                <div class="input-group-addon"><i class="fa fa-male"></i></div>
                 <input type="text" class="form-control" placeholder="Search for build" ng-model="search.build">
             </div> 
         </div>
@@ -69,7 +69,7 @@
 <!--  Apply  -->
 <div class="submission-button">
     <!--input href="#applycalendar" id="apply-button" type="submit" value="Apply"-->
-    <a href="#directorhome" id="apply-button">INVITE!</a>
+    <a ng-click="invite()" id="apply-button">INVITE!</a>
     <!--  TODO: pull up modal with calendar  -->
 </div>
 

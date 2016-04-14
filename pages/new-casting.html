@@ -13,11 +13,11 @@
           <div class="row">
             <div id="col-first">
               <textarea id="description" class="form-control" placeholder="Description"></textarea>
-              <div class="input-group input-append date" id="datePicker">
-                  <input type="text" class="form-control" placeholder="Production Date" name="date" />
+              <div class="input-group input-append date datepickertext" id="datePicker">
+                  <input type="text" class="form-control datepickertext" placeholder="Production Date" name="date" />
                   <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
               </div>
-                <button type="submit" class="link-btn">Set Casting Calendar</button>
+                <button type="submit" class="link-btn" ng-click="addTimes()">Set Casting Calendar</button>
               <div id="submit-btns">
                 <span class="btn" id="save-btn" ng-click="save()">Save</span>
                 <span class="btn" id="cancel-btn" ng-click="cancel()"></i>Cancel</span>
