@@ -148,7 +148,19 @@ onecastApp.controller('searchController', function($scope, ngTableParams) {
 });
 
 
-onecastApp.controller('directorSearchController', function($scope, ngTableParams) {
+onecastApp.controller('directorSearchController', function($scope, ngTableParams, $mdDialog) {
+    
+    $scope.invite = function() {
+        $mdDialog.show(
+          $mdDialog.alert()
+            .parent(angular.element(document.querySelector('#pag-wrapper')))
+            .clickOutsideToClose(true)
+            .title('Actors Invited')
+            .textContent('You have invited the selected actors!')
+            .ok('Got it!')
+        );
+    }
+    
     $scope.actors = [{name: "Twila Harman", location: "Chesapeake, VA", age: "33", height: "6'", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",  description: "son to Montague"},
                 {name: "Ming Correll", location: "Newark, NJ", age: "58", height: "5'7\"", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "daughter to Capulet"},
                 {name: "Jerrold Mercier", location: "Detroit, MI", age: "40", height: "7'2\"", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "kinsman to the prince, and friend to Romeo"},

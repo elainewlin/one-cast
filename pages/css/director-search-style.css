@@ -1,3 +1,18 @@
 .talent-card-container {
     width: 20%;
 }
+
+.left {
+    width: 49%;
+    overflow: hidden;
+    float: left;
+}
+
+.right {
+    width: 49%;
+    float: right;
+}
+
+.end {
+    margin-bottom: 32px;
+}
