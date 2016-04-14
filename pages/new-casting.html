@@ -1,8 +1,8 @@
 
-<!--link rel="stylesheet" href='css/style.css' /-->
+<!--link rel="stylesheet" href='css/style.css'-->
 <link rel="stylesheet" href='css/new-casting.css' />
 <link rel="stylesheet" href='css/bootstrap-datepicker.standalone.min.css'/>
-    <div class="container">
+    <div class="container" id="castingBox">
       <div class="row-fluid header-div">
         <h2 class="casting-header">New Casting</h2>
       </div>
@@ -30,7 +30,7 @@
         <div class="col-md-offset-2 col-md-5 col-sm-5">
           <div class="row">
             <div id="col-second">
-              <button type="submit" class="link-btn" ng-click="addRole()">Add Role</button>
+              <button id="addRoleOne" type="submit" class="link-btn" ng-click="addRole()">Add Role</button>
               <div id="roles-box">
                 <p id="empty-roles-text">You have no roles yet. Create one by clicking below</p>
                 <button type="submit" class="link-btn" id="empty-roles-btn" ng-click="addRole()">Add Role</button>

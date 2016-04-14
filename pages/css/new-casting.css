@@ -133,3 +133,13 @@
 .noUi-handle-lower:after, .noUi-handle-upper:after {
   left: 11px;
 }
+
+#castingBox {
+    width: 900px;
+    margin: 32px;
+}
+
+.role-container {
+    width: 600px;
+    margin: 32px;
+}
