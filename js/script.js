@@ -59,6 +59,8 @@ onecastApp.controller('mainActorController', function($scope, $rootScope, $windo
     $rootScope.userIcon = "fa-user";
     $rootScope.newUrl = "#actorhome";
     
+    $rootScope.actor = true;
+    
 });
 
 onecastApp.controller('mainDirectorController', function($scope, $rootScope, $window, $mdDialog) {
@@ -68,6 +70,8 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
     $rootScope.homeUrl = "#directorhome";
     $rootScope.userIcon = "fa-film";
     $rootScope.newUrl = "#directorcreate";
+    
+    $rootScope.actor = false;
     
     $rootScope.createCasting = function() {
 

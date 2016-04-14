@@ -21,7 +21,7 @@
 }
 
 .card-container {
-    width: 20%;
+    width: 48%;
 }
 
 .md-padding {
@@ -35,4 +35,10 @@
 }
 #apply-button {
     float: right;
+    margin-bottom: 16px;
+}
+
+.apply-role {
+    font-size: 24px;
+    font-weight: 500;
 }
