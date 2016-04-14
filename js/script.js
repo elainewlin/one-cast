@@ -22,6 +22,10 @@ onecastApp.config(function($routeProvider) {
             templateUrl: 'actor.html',
             controller: 'searchController'
         })
+        .when('/talentsearch', {
+            templateUrl: 'director-search.html',
+            controller: 'directorSearchController'
+        })
         .when('/summary', {
     		templateUrl: 'actor-summary.html',
             controller: 'mainController'
@@ -58,7 +62,7 @@ onecastApp.controller('mainActorController', function($scope, $rootScope, $windo
     $rootScope.homeUrl = "#actorhome";
     $rootScope.userIcon = "fa-user";
     $rootScope.newUrl = "#actorhome";
-    
+    $rootScope.searchUrl = "#productionsearch";
     $rootScope.actor = true;
     
 });
@@ -70,7 +74,7 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
     $rootScope.homeUrl = "#directorhome";
     $rootScope.userIcon = "fa-film";
     $rootScope.newUrl = "#directorcreate";
-    
+    $rootScope.searchUrl = "#talentsearch";
     $rootScope.actor = false;
     
     $rootScope.createCasting = function() {
@@ -131,6 +135,42 @@ onecastApp.controller('searchController', function($scope, ngTableParams) {
             $defer.resolve(data);
         }
     });
+    
+    
+});
+
+onecastApp.controller('directorSearchController', function($scope, ngTableParams) {
+    $scope.actors = [{name: "Twila Harman", location: "Chesapeake, VA", age: "33", height: "6'", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",  description: "son to Montague"},
+                {name: "Ming Correll", location: "Newark, NJ", age: "58", height: "5'7\"", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "daughter to Capulet"},
+                {name: "Jerrold Mercier", location: "Detroit, MI", age: "40", height: "7'2\"", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "kinsman to the prince, and friend to Romeo"},
+                {name: "Naoma Wayland", location: "Dallas, TX", age: "57", height: "7'", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "nephew to Lady Capulet"},
+                {name: "Emiko Swanberg", location: "Honolulu, HI", age: "17", height: "5'4\"", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "Nurse to Juliet"},
+                {name: "Gena Whitehill", location: "Albuquerque, NM", age: "38", height: "5'2\"", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "Franciscan"},
+                {name: "Lourie Faires", location: "Sacramento, CA", age: "22", height: "4'11\"", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "head of Capulet household"},
+                {name: "Deirdre Vick", location: "Pittsburgh, PA", age: "60", height: "6'2\"", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "a young nobleman"},
+                {name: "Claretta Conley", location: "Fort Worth, TX", age: "57", height: "5'8\"", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "nephew to Montague, and friend to Romeo"},
+                {name: "Vada Blaine", location: "Aurora, CO", age: "48", height: "", weight: "5'6\"", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "wife to Capulet"},
+                {name: "David Horrocks", location: "Oklahoma City, OK", age: "40", height: "6'1\"", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "head of Montague household"},
+                {name: "Loise Delk", location: "Virginia Beach, VA", age: "48", height: "5'7\"", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "servant to Romeo"},
+                {name: "Olin Cotnoir", location: "Toledo, OH", age: "29", height: "5'6\"", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "servant to Juliet's nurse"},
+                {name: "Jonelle Griner", location: "Memphis, TN", age: "21", height: "5'3\"", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "servant to Montague"},
+                {name: "Christinia Guse", location: "Tampa, FL", age: "60", height: "5'10\"", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "servant to Capulet"}];
+    
+//    $scope.isCollapsed=true;
+    
+    $scope.sortType = 'title';
+    $scope.sortReverse = false;
+
+
+//    $scope.tableParams = new ngTableParams({
+//        page: 1,            // show first page
+//        count: 10000           // count per page
+//    }, {
+//        counts: [],
+//        getData: function($defer, params) {
+//            $defer.resolve(data);
+//        }
+//    });
     
     
 });

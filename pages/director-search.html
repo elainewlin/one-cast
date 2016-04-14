@@ -1,0 +1,78 @@
+<!-- Search Box -->
+<div id="search-div" >
+
+    <form>
+        <div class="form-group">
+            <div class="input-group search-container">
+                <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                <input type="text" class="form-control" placeholder="Search for name" ng-model="search.name">
+            </div>    
+            <div class="input-group search-container date">
+                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                <input type="text" class="form-control" placeholder="Search for gender" ng-model="search.gender">
+            </div>  
+            <div class="input-group search-container location">
+                <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                <input type="text" class="form-control" placeholder="Search for location" ng-model="search.location">
+            </div>  
+            <div class="input-group search-container location">
+                <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                <input type="text" class="form-control" placeholder="Search for age" ng-model="search.age">
+            </div> 
+            
+            <div class="input-group search-container location">
+                <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                <input type="text" class="form-control" placeholder="Search for hair color" ng-model="search.haircolor">
+            </div> 
+            
+            <div class="input-group search-container location">
+                <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                <input type="text" class="form-control" placeholder="Search for eye color" ng-model="search.eyecolor">
+            </div> 
+            
+            <div class="input-group search-container location">
+                <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                <input type="text" class="form-control" placeholder="Search for build" ng-model="search.build">
+            </div> 
+        </div>
+    </form>
+</div>
+    
+<!--  Role Tiles  -->
+
+<div class="gridListdemoBasicUsage">
+
+    <h2>Talent</h2>
+    <div class='' layout="row" layout-wrap>
+        <md-card class="talent-card-container"  ng-repeat="actor in actors | filter:search">
+            
+            <img src="http://placehold.it/150x150" class="md-card-image" alt="user avatar">
+            <md-card-content>
+                
+                
+                <div class="checkbox-containter">
+                    <md-checkbox class="apply-checkbox apply-role">{{actor.name}}</md-checkbox>
+                </div>
+
+                <p>Location: {{actor.location}}</p>
+                <p>Age: {{actor.age}}</p>
+                <p>Height: {{actor.height}}</p>
+<!--                <p>{{actor.weight}}</p>-->
+                
+            </md-card-content>
+            <div class="md-actions" layout="row" layout-align="end center">
+            </div>
+        </md-card>
+    </div>
+</div>
+    
+<!--  Apply  -->
+<div class="submission-button">
+    <!--input href="#applycalendar" id="apply-button" type="submit" value="Apply"-->
+    <a href="#directorhome" id="apply-button">INVITE!</a>
+    <!--  TODO: pull up modal with calendar  -->
+</div>
+
+<script type="text/javascript" src="production-script.js"></script>
+
+
