@@ -1,4 +1,5 @@
 <!-- Production Summary -->
+<div id="dialog-container">
     <div id="production-summary-container" >
         <h1> Romeo and Juliet </h1>
         <div class="description"><p>This play is about ...</p></div>
@@ -38,10 +39,12 @@
     </div>
     
     <!--  Apply  -->
-    <div class="submission-button">
+    <div class="submission-button" ng-controller="productionController">
         <!--input href="#applycalendar" id="apply-button" type="submit" value="Apply"-->
-        <a href="#applycalendar" id="apply-button">APPLY!</a>
+        <a ng-click="selectTime" id="apply-button">APPLY!</a>
         <!--  TODO: pull up modal with calendar  -->
+    </div>
+    
     </div>
 
     <script type="text/javascript" src="production-script.js"></script>
