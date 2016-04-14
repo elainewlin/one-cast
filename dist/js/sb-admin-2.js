@@ -26,6 +26,10 @@ $(function() {
         }
     });
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 142a7b6df150bf240f9e0edef55240dde92c505b
     $(".sidebarlink").click(function(event) {
         $(".sidebarlink").removeClass('active');
         $(event.target).addClass('active');
@@ -35,4 +39,8 @@ $(function() {
         $(".dropdown-toggle").removeClass('active');
         $(event.target).addClass('active');
     });
+<<<<<<< HEAD
+
+=======
+>>>>>>> 142a7b6df150bf240f9e0edef55240dde92c505b
 });
