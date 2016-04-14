@@ -29,6 +29,10 @@ md-dialog {
   margin-left: 250px;
 }
 
+md-toolbar {
+    background-color: #403075 !important;
+}
+
 #wrapper {
     height: 100% !important;
 }

@@ -282,6 +282,16 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
         });
     };
     
+    $scope.addTimes = function() {
+        $mdDialog.show({
+          controller: 'applyTimeController',
+          templateUrl: 'director-times-cal.html',
+          ariaLabel: "Choose Audition Times",
+          parent: angular.element('#pag-wrapper'),
+          clickOutsideToClose:true,
+        });
+    };
+    
     $scope.save = function() {
         $mdDialog.cancel();
     }
