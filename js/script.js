@@ -282,6 +282,14 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
         });
     };
     
+    $scope.save = function() {
+        $mdDialog.cancel();
+    }
+    
+    $scope.cancel = function() {
+        $mdDialog.cancel();
+    }
+    
 });
 
 onecastApp.directive('fixedTableHeaders', ['$timeout', function($timeout) {
