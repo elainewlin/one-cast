@@ -59,8 +59,33 @@ onecastApp.controller('mainController', function($scope, $rootScope, $window, $m
     $rootScope.pageTitle = "OneCast";
 });
 
-onecastApp.controller('directorPlayController', function($scope, $rootScope, $window, $mdDialog) {
+onecastApp.controller('directorPlayController', function($scope, $rootScope, $window, $mdDialog, $location) {
     $rootScope.pageTitle = "Romeo & Juliet";
+    
+    $scope.findTalent = function() {
+        
+        $location.path('/talentsearch');
+        
+    }
+    
+    $scope.addRole = function() {
+        
+        $mdDialog.show({
+          controller: 'addRoleController',
+          templateUrl: 'new-role.html',
+          ariaLabel: "Add Role",
+          parent: angular.element('#pag-wrapper'),
+          clickOutsideToClose:true,
+          //fullscreen: 'useFullScreen'
+        })
+        .then(function(answer) {
+          console.log(answer);
+        }, function() {
+          $scope.status = 'You cancelled the dialog.';
+        });
+        
+    }
+    
 });
 
 onecastApp.controller('mainActorController', function($scope, $rootScope, $window, $mdDialog) {
