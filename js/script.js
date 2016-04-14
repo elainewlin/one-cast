@@ -18,6 +18,10 @@ onecastApp.config(function($routeProvider) {
             templateUrl: 'actor.html',
             controller: 'actorController'
         })
+        .when('/romeojulietdirect', {
+            templateUrl: 'casting-populated.html',
+            controller: 'directorPlayController'
+        })
         .when('/productionsearch', {
             templateUrl: 'actor.html',
             controller: 'searchController'
@@ -55,6 +59,10 @@ onecastApp.controller('mainController', function($scope, $rootScope, $window, $m
     $rootScope.pageTitle = "OneCast";
 });
 
+onecastApp.controller('directorPlayController', function($scope, $rootScope, $window, $mdDialog) {
+    $rootScope.pageTitle = "Romeo & Juliet";
+});
+
 onecastApp.controller('mainActorController', function($scope, $rootScope, $window, $mdDialog) {
     $rootScope.pageTitle = "OneCast";
     
@@ -66,6 +74,7 @@ onecastApp.controller('mainActorController', function($scope, $rootScope, $windo
     $rootScope.userIcon = "fa-user";
     $rootScope.newUrl = "#actorhome";
     $rootScope.searchUrl = "#productionsearch";
+    $rootScope.romeoUrl = "#romeojuliet";
     $rootScope.actor = true;
     
 });
@@ -78,6 +87,7 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
     $rootScope.userIcon = "fa-film";
     $rootScope.newUrl = "#directorcreate";
     $rootScope.searchUrl = "#talentsearch";
+    $rootScope.romeoUrl = "#romeojulietdirect";
     $rootScope.actor = false;
     
     $("#create-casting").show();

@@ -1,0 +1,121 @@
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/t/bs/jqc-1.12.0,dt-1.10.11,fc-3.2.1,kt-2.1.1,r-2.0.2,rr-1.1.1/datatables.min.css"/>
+    <link rel="stylesheet" href='css/style.css' />
+    <link rel="stylesheet" href='css/casting-populated.css' />
+
+  </head>
+  <body >
+    <div class="container">
+      <div class="row">
+        <!-- New Role -->
+        <div class="col-md-10 col-sm-10">
+          <div class="row">
+            <!-- Casting Description -->
+            <div id="description-box">
+              <p id="casting-title">Romeo and Juliet</p>
+              <button id="find-talent-btn">
+                <span class="fa fa-search"></span><span> Find Talent </span>
+              </button>
+              <div id="casting-description">
+                <p>This play is about eternal love of the two - Romeo and Juliet. Then we will put some more text here just to see how it's going to look when we are going to get text overflow. </p>
+              </div>
+              <div id="casting-location-div">
+                <div class="location-icon">
+                  <i class="fa fa-map-marker"></i>  
+                </div>
+                <div class="location-text-box">
+                  <p class="location-text">77 Massachusetts Avenue, Cambridge, MA</p>
+                </div>
+              </div>
+              <div id="casting-date-box">
+                <p class="casting-date">Casting: April 8 - May 5, 2016</p>
+              </div>
+              <div id="production-date-box">
+                <p class="production-date">Production: July 26, 2016</p>
+              </div>
+            </div>
+            <!-- end Casting Description -->
+            <hr>
+            <!-- Casting Roles -->
+            <div id="roles-box">
+              <p class="header-text">Roles</p>
+              <div id="role-titles-box">
+                <div class="roles">
+                  <p>Romeo<p>
+                </div>
+                <div class="roles">
+                  <p>Juliet<p>
+                </div>
+                <div class="roles">
+                  <p>Capulet<p>
+                </div>
+                <div class="roles">
+                  <p>King<p>
+                </div>
+                <div class="roles">
+                  <p>Romeo<p>
+                </div>
+                <div class="roles">
+                  <p>Juliet<p>
+                </div>
+                <div class="roles">
+                  <p>Capulet<p>
+                </div>
+                <div class="roles">
+                  <p>King<p>
+                </div>
+              </div>
+              <div id="edit-role">
+                <i class="fa fa-pencil"></i>
+              </div>
+              <div id="add-role">
+                <i class="fa fa-plus" ></i>
+              </div>
+            </div>
+            <!-- end Casting Roles -->
+            <hr>
+            <!-- Casting Applicants -->
+            <div id="applicants-box" ng-controller="DemoCtrl">
+              <p class="header-text">Applicants</p>
+              <div class="casting-status" id="accepted">Accepted</div>
+              <div class="casting-status" id="rejected">Rejected</div>
+              <div  class="casting-status" id="backup">Backup</div>
+              <div class="casting-status" id="pending">Pending</div>
+              <h3 class="role-title">Romeo</h3>
+              <div class="role-details">
+                <p>John Smith <i class="fa fa-check accepted-check" aria-hidden="true"></i></p>
+                <p>John Smith <i class="fa fa-check rejected-check" aria-hidden="true"></i></p>
+                <p>John Smith <i class="fa fa-check backup-check" aria-hidden="true"></i></p>
+              </div>
+              <h3 class="role-title">Juliet</h3>
+              <div class="role-details">
+                <p>John Smith <i class="fa fa-check rejected-check" aria-hidden="true"></i></p>
+                <p>John Smith <i class="fa fa-check pending-check" aria-hidden="true"></i></p>
+                <p>John Smith <i class="fa fa-check pending-check" aria-hidden="true"></i></p>
+              </div class="role-details">
+              <h3 class="role-title">Capulet</h3>
+              <div class="role-details">
+                <p>John Smith <i class="fa fa-check accepted-check" aria-hidden="true"></i></p>
+                <p>John Smith <i class="fa fa-check rejected-check" aria-hidden="true"></i></p>
+              </div>
+              <h3 class="role-title">King</h3>
+              <div class="role-details">
+                <p>Bob Smith <i class="fa fa-check accepted-check" aria-hidden="true"></i></p>
+              </div>
+
+            </div>
+            <!-- end Casting Applicants -->
+            <hr>
+            <!-- Casting Schedule -->
+            <div id="schedule-box">
+              <p class="header-text">Casting Schedule</p>
+            </div>
+            <!-- end Casting Schedule -->
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.datatables.net/t/bs/jqc-1.12.0,dt-1.10.11,fc-3.2.1,kt-2.1.1,r-2.0.2,rr-1.1.1/datatables.min.js"></script>
+    <script src="../js/casting-populated.js"></script>
