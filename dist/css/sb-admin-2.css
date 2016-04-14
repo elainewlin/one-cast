@@ -10,12 +10,23 @@ html {
 
 body {
     padding-top: 50px; /* for the navbar */
-    padding-bottom: 60px; /* for the footer */
+    /*padding-bottom: 60px; /* for the footer */
     width: 100%;
     height: 100% !important;
     background-color: #403075;
     font-family: 'Roboto', sans-serif !important;
     
+}
+
+footer {
+    z-index: 100;
+    background-color: #403075 !important;
+}
+
+
+
+md-dialog {
+  margin-left: 250px;
 }
 
 #wrapper {
@@ -136,6 +147,7 @@ body {
     background-color: #403075;
     color: white;
     margin-top: 0px;
+    height: 10000px;
 }
 
 .sidebar .sidebar-nav.navbar-collapse {

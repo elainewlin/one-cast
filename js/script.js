@@ -54,6 +54,8 @@ onecastApp.controller('mainController', function($scope, $rootScope, $window, $m
 onecastApp.controller('mainActorController', function($scope, $rootScope, $window, $mdDialog) {
     $rootScope.pageTitle = "OneCast";
     
+    $("#create-casting").hide();
+    
     $rootScope.newOption = "New What?";
     $rootScope.homeUrl = "#actorhome";
     $rootScope.userIcon = "fa-user";
@@ -73,22 +75,28 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
     
     $rootScope.actor = false;
     
-    $rootScope.createCasting = function() {
+    $("#create-casting").show();
+    
+    $(function(){
 
-        $mdDialog.show({
-          controller: 'addCastingController',
-          templateUrl: 'new-casting.html',
-          parent: angular.element('#wrapper'),
-          clickOutsideToClose:true,
-          //fullscreen: 'useFullScreen'
-        })
-        .then(function(answer) {
-          $scope.status = 'You said the information was "' + answer + '".';
-        }, function() {
-          $scope.status = 'You cancelled the dialog.';
+        $(".create-button").on("click",function(){
+
+              $mdDialog.show({
+                  controller: 'addCastingController',
+                  templateUrl: 'new-casting.html',
+                  parent: angular.element('#wrapper'),
+                  clickOutsideToClose:true,
+                  //fullscreen: 'useFullScreen'
+                })
+                .then(function(answer) {
+                  $scope.status = 'You said the information was "' + answer + '".';
+                }, function() {
+                  $scope.status = 'You cancelled the dialog.';
+                });
+
         });
-        
-    };
+
+    });
     
 });
 
@@ -135,7 +143,24 @@ onecastApp.controller('searchController', function($scope, ngTableParams) {
     
 });
 
-onecastApp.controller('productionController', function($scope) {
+onecastApp.controller('productionController', function($scope, $mdDialog) {
+    
+    $(function(){
+
+        $("#apply-button").on("click",function(){
+
+              $mdDialog.show({
+                  controller: 'applyTimeController',
+                  templateUrl: 'actor-apply-cal.html',
+                  ariaLabel: "Choose Audition Times",
+                  parent: angular.element('#pag-wrapper'),
+                  clickOutsideToClose:true,
+                });
+
+        });
+
+    });
+    
     $scope.roles = [{name: "Romeo", description: "son to Montague"},
                 {name: "Juliet", description: "daughter to Capulet"},
                 {name: "Mercutio",description: "kinsman to the prince, and friend to Romeo"},
@@ -152,6 +177,7 @@ onecastApp.controller('productionController', function($scope) {
                 {name: "Abraham", description: "servant to Montague"},
                 {name: "Sampson", description: "servant to Capulet"},
                 {name: "Gregory", description: "servant to Capulet"}];
+    
 });
 
 onecastApp.controller('actorPageController', function($scope) {
@@ -173,34 +199,46 @@ onecastApp.controller('actorPageController', function($scope) {
                 {name: "Gregory", description: "servant to Capulet"}];
 });
 
-onecastApp.controller('castingController', function($scope, $rootScope, $mdDialog) {
+onecastApp.controller('applyTimeController', function($scope, $rootScope, $mdDialog, $location) {
     
-    $rootScope.pageTitle = "Create Casting";
+    $scope.cancel = function() {
+        $mdDialog.cancel();
+    };
     
-    //$scope.showAddRole = function() {
-        $mdDialog.show({
-          controller: 'addRoleController',
-          templateUrl: 'new-role.html',
-          parent: angular.element('#wrapper'),
-          clickOutsideToClose:true,
-          //fullscreen: 'useFullScreen'
-        })
-        .then(function(answer) {
-          $scope.status = 'You said the information was "' + answer + '".';
-        }, function() {
-          $scope.status = 'You cancelled the dialog.';
-        });
-    //}
+    $scope.ok = function() {
+        $location.path('/summary');
+        $mdDialog.cancel();
+    }
     
 });
 
 onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialog) {
     
+    $scope.add = function() {
+        $mdDialog.hide();
+    };
     
 });
 
 onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDialog) {
     
+    console.log("Binded");
+    
+    $scope.addRole = function() {
+        $mdDialog.show({
+          controller: 'addRoleController',
+          templateUrl: 'new-role.html',
+          ariaLabel: "Add Role",
+          parent: angular.element('#pag-wrapper'),
+          clickOutsideToClose:true,
+          //fullscreen: 'useFullScreen'
+        })
+        .then(function(answer) {
+          console.log(answer);
+        }, function() {
+          $scope.status = 'You cancelled the dialog.';
+        });
+    };
     
 });
 
@@ -217,3 +255,15 @@ onecastApp.directive('fixedTableHeaders', ['$timeout', function($timeout) {
     }
   }
 }]);
+
+function DialogController($scope, $mdDialog) {
+  $scope.hide = function() {
+    $mdDialog.hide();
+  };
+  $scope.cancel = function() {
+    $mdDialog.cancel();
+  };
+  $scope.answer = function(answer) {
+    $mdDialog.hide(answer);
+  };
+}
