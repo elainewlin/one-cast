@@ -30,7 +30,11 @@ body {
     width: 100;
 }
 
-
+.btn-default {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; 
+}
 
 /*******************************/
 
