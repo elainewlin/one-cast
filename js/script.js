@@ -59,7 +59,25 @@ onecastApp.controller('mainController', function($scope, $rootScope, $window, $m
     $rootScope.pageTitle = "OneCast";
 });
 
-onecastApp.controller('directorPlayController', function($scope, $rootScope, $window, $mdDialog, $location) {
+onecastApp.controller('directorPlayController', function($scope, $rootScope, $window, $mdDialog, $location, ngTableParams) {
+    
+    var data = [{role: "Romeo", accepted: "2016-04-29", rejected: "Chesapeake, VA", backup: "les miserables", pending:" "},
+                {role: "Juliet", accepted: "2016-04-29", rejected: "Chesapeake, VA", backup: "les miserables", pending:" "},
+                {role: "Capulet", accepted: "2016-04-29", rejected: "Chesapeake, VA", backup: "les miserables", pending:" "},
+                {role: "King", accepted: "2016-04-29", rejected: "Chesapeake, VA", backup: "les miserables", pending:" "}];
+    
+    $scope.isCollapsed=true;
+    
+    $scope.tableParams = new ngTableParams({
+        page: 1,            // show first page
+        count: 10000           // count per page
+    }, {
+        counts: [],
+        getData: function($defer, params) {
+            $defer.resolve(data);
+        }
+    });
+    
     $rootScope.pageTitle = "Romeo & Juliet";
     
     $scope.findTalent = function() {
