@@ -134,6 +134,7 @@
                         <tr class="c-row" ng-repeat-start="role in $data" href="#" ng-click="isCollapsed = !isCollapsed">
 
                             <td data-title="'Applicant'" class="panel-title">
+                                <i ng-class="isCollapsed ? 'fa fa-angle-right': 'fa fa-angle-down'"> </i>
                             {{role.role}}   
                             </td>
                             <td data-title="'Accepted'" ng-bind="role.date | date:'MM/dd/yy'"></td>

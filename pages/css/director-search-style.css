@@ -31,14 +31,3 @@
   margin-left: 10px;
 }
 
-.panel-heading .panel-title2:after{
-   /* symbol for "opening" panels */
-   font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
-   content: "\e082";
-   float: right;
-   opacity:0.6;
-}
-.panel-heading.collapsed .panel-title2:after  {
-   /* symbol for "collapsed" panels */
-   content: "\e081";
-}

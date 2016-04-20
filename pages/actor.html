@@ -56,21 +56,18 @@
             <tbody>
                 <tr class="c-row panel-heading" ng-repeat-start="production in $data |orderBy:sortType:sortReverse | filter:search" href="#" ng-click="isCollapsed = !isCollapsed" >
 
-                    <td data-title="'Title'" class="panel-title accordion-toggle" ng-class="{'glyphicon-chevron-down': !isCollapsed, 'glyphicon-chevron-right': isCollapsed}">
-                        <!-- ng-class="isCollapsed ? 'fa fa-angle-right': 'fa fa-angle-down'"-->
-                        <!-- ng-class="{'glyphicon-chevron-down': !isCollapsed, 'glyphicon-chevron-right': isCollapsed}" -->
+                    <td data-title="'Title'" class="panel-title accordion-toggle" >
+                        <i ng-class="isCollapsed ? 'fa fa-angle-right': 'fa fa-angle-down'"> </i>
+
                             {{production.title}}   
                     </td>
                     <td data-title="'Date'" ng-bind="production.date | date:'MM/dd/yy'"></td>
                     <td data-title="'Location'" >
                         {{production.location}}
                     </td>
-<!--                    ng-class="{'glyphicon glyphicon-plus pull-right pan_arrow1': !isCollapsed, 'glyphicon glyphicon-minus pull-right pan_arrow1': isCollapsed }-->
-                    
-                    <!-- TODO: include caret here -->
                     
                 </tr>
-                <tr collapse="isCollapsed" ng-repeat-end="">
+                <tr class="collapsed-info" collapse="isCollapsed" ng-repeat-end="">
                     <td colspan="3">
                         <h3>Description</h3>
                         <p>{{production.description}}</p>
