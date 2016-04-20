@@ -61,10 +61,10 @@ onecastApp.controller('mainController', function($scope, $rootScope, $window, $m
 
 onecastApp.controller('directorPlayController', function($scope, $rootScope, $window, $mdDialog, $location, ngTableParams) {
     
-    var data = [{role: "Romeo", accepted: "2016-04-29", rejected: "Chesapeake, VA", backup: "les miserables", pending:" "},
-                {role: "Juliet", accepted: "2016-04-29", rejected: "Chesapeake, VA", backup: "les miserables", pending:" "},
-                {role: "Capulet", accepted: "2016-04-29", rejected: "Chesapeake, VA", backup: "les miserables", pending:" "},
-                {role: "King", accepted: "2016-04-29", rejected: "Chesapeake, VA", backup: "les miserables", pending:" "}];
+    var data = [{role: "Romeo", accepted: true, rejected: false, backup: false, pending:false},
+                {role: "Juliet", accepted: false, rejected: false, backup: false, pending:true},
+                {role: "Capulet", accepted: false, rejected: false, backup: false, pending:false},
+                {role: "King", accepted: false, rejected: false, backup: false, pending:false}];
     
     $scope.isCollapsed=true;
     
