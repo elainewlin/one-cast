@@ -74,3 +74,5 @@ table th , table td  {
    overflow-y: scroll;
    height: 300px;
 }
+
+a { cursor: pointer; cursor: hand; }
