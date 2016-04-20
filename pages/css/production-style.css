@@ -35,8 +35,13 @@ body {
 .submission-button {
     margin: 20px;
 }
+
 #apply-button {
     float: right;
+    position: fixed;
+    right: 32px;
+    bottom: 16px;
+    
 }
 .apply-role-div {
 /*    float: left;*/
