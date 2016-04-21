@@ -59,7 +59,25 @@ onecastApp.controller('mainController', function($scope, $rootScope, $window, $m
     $rootScope.pageTitle = "OneCast";
 });
 
-onecastApp.controller('directorPlayController', function($scope, $rootScope, $window, $mdDialog, $location) {
+onecastApp.controller('directorPlayController', function($scope, $rootScope, $window, $mdDialog, $location, ngTableParams) {
+    
+    var data = [{role: "Romeo", accepted: true, rejected: false, backup: false, pending:false},
+                {role: "Juliet", accepted: false, rejected: false, backup: false, pending:true},
+                {role: "Capulet", accepted: false, rejected: false, backup: false, pending:false},
+                {role: "King", accepted: false, rejected: false, backup: false, pending:false}];
+    
+    $scope.isCollapsed=true;
+    
+    $scope.tableParams = new ngTableParams({
+        page: 1,            // show first page
+        count: 10000           // count per page
+    }, {
+        counts: [],
+        getData: function($defer, params) {
+            $defer.resolve(data);
+        }
+    });
+    
     $rootScope.pageTitle = "Romeo & Juliet";
     
     $scope.findTalent = function() {
@@ -198,7 +216,11 @@ onecastApp.controller('searchController', function($scope, ngTableParams) {
     });
     
     
-});
+}).config(function($mdIconProvider) {
+    $mdIconProvider
+       .iconSet('social', 'img/icons/sets/social-icons.svg', 24)
+       .defaultIconSet('img/icons/sets/core-icons.svg', 24);
+   });
 
 
 onecastApp.controller('directorSearchController', function($scope, ngTableParams, $mdDialog) {

@@ -23,55 +23,54 @@
         
         
         
-            <table ng-table="tableParams" class="table table-bordered table-striped"  fixed-table-headers="scrollable-area">
-                <thead>
-                    <tr>
-                        <td>
-                            <a ng-click="sortType = 'title'; sortReverse = !sortReverse">
-                            Title 
-                            <span ng-show="sortType == 'title' && !sortReverse" class="fa fa-caret-down"></span>
-                            <span ng-show="sortType == 'title' && sortReverse" class="fa fa-caret-up"></span>
-                            </a>
-                            
-                        </td>
-                        <td>
-                            <a ng-click="sortType = 'date'; sortReverse = !sortReverse">
-                            Date
-                            <span ng-show="sortType == 'date' && !sortReverse" class="fa fa-caret-down"></span>
-                            <span ng-show="sortType == 'date' && sortReverse" class="fa fa-caret-up"></span>
-                            </a>
-                        </td>
-                        
-                        <td>
-                            <a ng-click="sortType = 'location'; sortReverse = !sortReverse">
-                            Location 
-                            <span ng-show="sortType == 'location' && !sortReverse" class="fa fa-caret-down"></span>
-                            <span ng-show="sortType == 'location' && sortReverse" class="fa fa-caret-up"></span>
-                            </a>
-                        </td>
-                        
-                    </tr>
-                    
-                </thead>
-                <tbody>
-                    <tr class="c-row" ng-repeat-start="production in $data |orderBy:sortType:sortReverse | filter:search" href="#" ng-click="isCollapsed = !isCollapsed">
+        <table ng-table="tableParams" class="table table-bordered table-striped"  fixed-table-headers="scrollable-area">
+            <thead>
+                <tr>
+                    <td>
+                        <a ng-click="sortType = 'title'; sortReverse = !sortReverse">
+                        Title 
+                        <span ng-show="sortType == 'title' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'title' && sortReverse" class="fa fa-caret-up"></span>
+                        </a>
 
-                        <td data-title="'Title'" class="panel-title">
-                                {{production.title}}   
-                        </td>
-                        <td data-title="'Date'" ng-bind="production.date | date:'MM/dd/yy'"></td>
-                        <td data-title="'Location'">{{production.location}}</td>
-                    </tr>
-                    <tr collapse="isCollapsed" ng-repeat-end="">
-                        <td colspan="3">
-                            <h3>Description</h3>
-                            <p>{{production.description}}</p>
-                            <!--button href="#exampleplay" class="btn btn-primary">See more!</button-->
-                            <a href="#exampleplay" >VIEW MORE</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                    </td>
+                    <td>
+                        <a ng-click="sortType = 'date'; sortReverse = !sortReverse">
+                        Date
+                        <span ng-show="sortType == 'date' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'date' && sortReverse" class="fa fa-caret-up"></span>
+                        </a>
+                    </td>
+
+                    <td>
+                        <a ng-click="sortType = 'location'; sortReverse = !sortReverse">
+                        Location 
+                        <span ng-show="sortType == 'location' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'location' && sortReverse" class="fa fa-caret-up"></span>
+                        </a>
+                    </td>
+
+                </tr>
+            </thead>      
+            <tbody>       
+                <tr class="c-row" ng-repeat-start="production in $data |orderBy:sortType:sortReverse | filter:search" href="#" ng-click="isCollapsed = !isCollapsed">
+                    <td data-title="'Title'" class="panel-title">
+                        {{production.title}}   
+                    </td>
+                    <td data-title="'Date'" ng-bind="production.date | date:longDate"></td> 
+                    <td data-title="'Location'">{{production.location}}</td>
+                </tr>
+                <tr collapse="isCollapsed" ng-repeat-end="">
+                    <td colspan="3">
+                    <h3>Description</h3>
+                    <p>{{production.description}}</p>
+                    <!--button href="#exampleplay" class="btn btn-primary">See more!</button-->
+                    <a href="#exampleplay" >VIEW MORE</a>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+
 	</div>
 
 

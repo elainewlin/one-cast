@@ -1,5 +1,7 @@
+
 #search-div {
     margin-top: 16px;
+    
 }
 
 .search-container {
@@ -60,13 +62,13 @@ table th , table td  {
   border-top: 1px solid #ccc;
 }
 
-.panel-heading a:after {
+.panel-heading .panel-title2:after {
     font-family:'Glyphicons Halflings';
     content:"\e114";
-    float: right;
+    float: left;
     color: grey;
 }
-.panel-heading a.collapsed:after {
+.panel-heading .panel-title2.collapsed:after {
     content:"\e080";
 }
 
