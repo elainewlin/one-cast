@@ -90,10 +90,20 @@
             
             
 <!--  AGE  -->
+<!-- 
             <div class="input-group search-container left">
                 <div class="input-group-addon"><i class="fa fa-calendar-o"></i></div>
                 <input type="text" class="form-control" placeholder="Search for age" ng-model="search.age">
             </div> 
+-->    
+            
+
+            <div class="input-group search-container left">
+                <rzslider rz-slider-model="slider.minValue" rz-slider-high="slider.maxValue" rz-slider-options="slider.options">
+                </rzslider>
+            </div>
+
+
             
 <!--
             <div id="age-range-box" class="input-group search-container left">

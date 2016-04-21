@@ -257,6 +257,16 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
     
     $scope.sortType = 'title';
     $scope.sortReverse = false;
+    
+    $scope.slider = {
+        minValue: 10,
+        maxValue: 90,
+        options: {
+            floor: 15,
+            ceil: 90,
+            step: 1
+        }
+    };
 
 
 //    $scope.tableParams = new ngTableParams({
