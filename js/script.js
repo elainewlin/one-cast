@@ -185,9 +185,24 @@ onecastApp.controller('searchController', function($scope, ngTableParams) {
     
     $scope.sortType = 'title';
     $scope.sortReverse = false;
-//    $scope.searchProduction = '';
-//    $scope.searchDate = '';
-//    $scope.searchLocation = '';
+    
+//    window.onload = function () {
+////        alert('works');
+//        var tableOffset = $("#actual-table").offset().top;
+//        var $header = $("#actual-table > thead").clone();
+//        var $fixedHeader = $("#header-fixed").append($header);
+//
+//        $(window).bind("scroll", function() {
+//            var offset = $(this).scrollTop();
+//
+//            if (offset >= tableOffset && $fixedHeader.is(":hidden"))             {
+//                $fixedHeader.show();
+//            }
+//            else if (offset < tableOffset) {
+//                $fixedHeader.hide();
+//            }
+//        });
+//    };
 
     $scope.tableParams = new ngTableParams({
         page: 1,            // show first page
