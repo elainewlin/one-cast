@@ -59,7 +59,7 @@
                         <td data-title="'Title'" class="panel-title">
                                 {{production.title}}   
                         </td>
-                        <td data-title="'Date'" ng-bind="production.date | date:'MM/dd/yy'"></td>
+                         <td data-title="'Date'" ng-bind="production.date | date:longDate"></td> 
                         <td data-title="'Location'">{{production.location}}</td>
                     </tr>
                     <tr collapse="isCollapsed" ng-repeat-end="">
