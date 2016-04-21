@@ -17,10 +17,25 @@
                 <input type="text" class="form-control" placeholder="Search for name" ng-model="search.name">
             </div>    
 <!--  GENDER -->
+<!--
             <div class="input-group search-container left">
                 <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                 <input type="text" class="form-control" placeholder="Search for gender" ng-model="search.gender">
             </div>  
+-->
+            <div class="input-group search-container left">
+                <label for="repeatSelect"> Repeat select: </label>
+                <select name="repeatSelect" id="repeatSelect" ng-options="gender as gender for gender in genders" ng-model="search.gender">
+                    <!--<option ng-repeat="gender in genders" value="{{gender}}">{{gender}}</option>-->
+                </select>
+            </div>
+
+<!--
+            <div class="input-group search-container left">
+                <select class="ac-select stateList" ac-model="selectedState" ac-options="gender in genders" 
+            ac-settings="{ comboMode: true, loadOnOpen: true, minWidth: '300px' }" ac-change="stateSelected(value)"></select>
+            </div>
+-->
             
 <!--
             <div class="dropdown-container" ng-class="{ show: listVisible }">
@@ -148,7 +163,7 @@
     <!--  TODO: pull up modal with calendar  -->
 </div>
 
-<script type="text/javascript" src="production-script.js"></script>
+<!--<script type="text/javascript" src="production-script.js"></script>-->
 
 <!-- used for age slider -->
 <script src='../js/nouislider.min.js'></script>

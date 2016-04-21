@@ -235,6 +235,8 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
         );
     }
     
+    $scope.genders = ["male", "female", "other"];
+    
     $scope.actors = [{name: "Twila Harman", location: "Chesapeake, VA", age: "33", height: "6'", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",  description: "son to Montague"},
                 {name: "Ming Correll", location: "Newark, NJ", age: "58", height: "5'7\"", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "daughter to Capulet"},
                 {name: "Jerrold Mercier", location: "Detroit, MI", age: "40", height: "7'2\"", weight: "", gender:"male", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "kinsman to the prince, and friend to Romeo"},
