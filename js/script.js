@@ -476,10 +476,6 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
           $scope.status = 'You cancelled the dialog.';
         });
         
-        while(angular.element(document).find('md-dialog').length > 1) {
-            $mdDialog.cancel();
-        }
-        
     };
     
     $scope.addTimes = function() {
@@ -493,10 +489,6 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
           parent: angular.element('#pag-wrapper'),
           clickOutsideToClose:true,
         });
-        
-        while(angular.element(document).find('md-dialog').length > 1) {
-            $mdDialog.cancel();
-        }
         
     };
     
