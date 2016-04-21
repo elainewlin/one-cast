@@ -573,7 +573,7 @@ onecastApp.directive('fixedTableHeaders', ['$timeout', function($timeout) {
 
 onecastApp.config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
-    .primaryPalette('purple')
+    .primaryPalette('pink')
     .accentPalette('pink');
 });
 
