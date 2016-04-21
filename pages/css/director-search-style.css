@@ -17,17 +17,26 @@
     margin-bottom: 32px;
 }
 #age-range-text {
-  display: inline-block;
-  margin-right: 25px;
+    display: inline-block;
+    margin-right: 25px;
 }
 
 #slider-age {
-  width: 300px;
-  display: inline-block;
+    width: 60%;
+    display: inline-block;
+    
 }
 
 #age-range-values {
-  display: inline-block;
-  margin-left: 10px;
+    display: inline-block;
+    margin-left: 10px;
 }
 
+#age-range-box {
+    max-height: inherit;
+}
+
+#gender-dropdown {
+/*    width: 20px;*/
+/*    max-height: 33px;*/
+}

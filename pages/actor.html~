@@ -71,7 +71,15 @@
                 </tr>
             </tbody>
         </table>
+<<<<<<< HEAD
 
+=======
+<!--
+        <table id="header-fixed">
+            <tbody><tr>stuff</tr></tbody>
+        </table>
+-->
+>>>>>>> 2777ab6e01c28f9e86539c1ef8584eb2a89bef7a
 	</div>
 
 
