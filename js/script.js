@@ -70,6 +70,10 @@ onecastApp.controller('directorPlayController', function($scope, $rootScope, $wi
     
     $scope.addRole = function() {
         
+        while(angular.element(document).find('md-dialog').length > 0) {
+            $mdDialog.cancel();
+        }
+        
         $mdDialog.show({
           controller: 'addRoleController',
           templateUrl: 'new-role.html',
@@ -83,6 +87,10 @@ onecastApp.controller('directorPlayController', function($scope, $rootScope, $wi
         }, function() {
           $scope.status = 'You cancelled the dialog.';
         });
+        
+        while(angular.element(document).find('md-dialog').length > 1) {
+            $mdDialog.cancel();
+        }
         
     }
     
@@ -121,6 +129,10 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
     $(function(){
 
         $(".create-button").on("click",function(){
+            
+            while(angular.element(document).find('md-dialog').length > 0) {
+                $mdDialog.cancel();
+            }
 
               $mdDialog.show({
                   controller: 'addCastingController',
@@ -134,6 +146,10 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
                 }, function() {
                   $scope.status = 'You cancelled the dialog.';
                 });
+            
+            while(angular.element(document).find('md-dialog').length > 1) {
+                $mdDialog.cancel();
+            }
 
         });
 
@@ -239,6 +255,10 @@ onecastApp.controller('productionController', function($scope, $mdDialog) {
     $(function(){
 
         $("#apply-button").on("click",function(){
+            
+            while(angular.element(document).find('md-dialog').length > 0) {
+                $mdDialog.cancel();
+            }
 
               $mdDialog.show({
                   controller: 'applyTimeController',
@@ -247,6 +267,10 @@ onecastApp.controller('productionController', function($scope, $mdDialog) {
                   parent: angular.element('#pag-wrapper'),
                   clickOutsideToClose:true,
                 });
+            
+            while(angular.element(document).find('md-dialog').length > 1) {
+                $mdDialog.cancel();
+            }
 
         });
 
@@ -294,6 +318,7 @@ onecastApp.controller('applyTimeController', function($scope, $rootScope, $mdDia
     
     $scope.cancel = function() {
         $mdDialog.cancel();
+        //$(".create-button").click();
     };
     
     $scope.ok = function() {
@@ -303,10 +328,79 @@ onecastApp.controller('applyTimeController', function($scope, $rootScope, $mdDia
     
 });
 
+onecastApp.controller('applyTimeControllerDirector', function($scope, $rootScope, $mdDialog, $location) {
+    
+    $scope.cancel = function() {
+        
+         $mdDialog.cancel();
+
+          $mdDialog.show({
+              controller: 'addCastingController',
+              templateUrl: 'new-casting.html',
+              parent: angular.element('#wrapper'),
+              clickOutsideToClose:true,
+              //fullscreen: 'useFullScreen'
+            })
+            .then(function(answer) {
+              $scope.status = 'You said the information was "' + answer + '".';
+            }, function() {
+              $scope.status = 'You cancelled the dialog.';
+            });
+
+            while(angular.element(document).find('md-dialog').length > 1) {
+                $mdDialog.cancel();
+            }
+        
+    };
+    
+    $scope.ok = function() {
+        
+         $mdDialog.cancel();
+
+          $mdDialog.show({
+              controller: 'addCastingController',
+              templateUrl: 'new-casting.html',
+              parent: angular.element('#wrapper'),
+              clickOutsideToClose:true,
+              //fullscreen: 'useFullScreen'
+            })
+            .then(function(answer) {
+              $scope.status = 'You said the information was "' + answer + '".';
+            }, function() {
+              $scope.status = 'You cancelled the dialog.';
+            });
+
+            while(angular.element(document).find('md-dialog').length > 1) {
+                $mdDialog.cancel();
+            }
+        
+    }
+    
+});
+
 onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialog) {
     
     $scope.add = function() {
-        $mdDialog.hide();
+        
+          $mdDialog.cancel();
+
+          $mdDialog.show({
+              controller: 'addCastingController',
+              templateUrl: 'new-casting.html',
+              parent: angular.element('#wrapper'),
+              clickOutsideToClose:true,
+              //fullscreen: 'useFullScreen'
+            })
+            .then(function(answer) {
+              $scope.status = 'You said the information was "' + answer + '".';
+            }, function() {
+              $scope.status = 'You cancelled the dialog.';
+            });
+
+            while(angular.element(document).find('md-dialog').length > 1) {
+                $mdDialog.cancel();
+            }
+        
     };
     
 });
@@ -316,6 +410,9 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
     console.log("Binded");
     
     $scope.addRole = function() {
+        
+        $mdDialog.cancel();
+        
         $mdDialog.show({
           controller: 'addRoleController',
           templateUrl: 'new-role.html',
@@ -329,16 +426,29 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
         }, function() {
           $scope.status = 'You cancelled the dialog.';
         });
+        
+        while(angular.element(document).find('md-dialog').length > 1) {
+            $mdDialog.cancel();
+        }
+        
     };
     
     $scope.addTimes = function() {
+        
+        $mdDialog.cancel();
+        
         $mdDialog.show({
-          controller: 'applyTimeController',
+          controller: 'applyTimeControllerDirector',
           templateUrl: 'director-times-cal.html',
           ariaLabel: "Choose Audition Times",
           parent: angular.element('#pag-wrapper'),
           clickOutsideToClose:true,
         });
+        
+        while(angular.element(document).find('md-dialog').length > 1) {
+            $mdDialog.cancel();
+        }
+        
     };
     
     $scope.save = function() {
