@@ -1,3 +1,12 @@
+<style>
+    #apply-button {
+        float: right;
+        position: fixed;
+        right: 32px;
+        bottom: 12px;
+    }
+</style>
+
 <!-- Production Summary -->
 <div id="dialog-container">
     <div id="production-summary-container" >
@@ -41,7 +50,7 @@
     <!--  Apply  -->
     <div class="submission-button" ng-controller="productionController">
         <!--input href="#applycalendar" id="apply-button" type="submit" value="Apply"-->
-        <a ng-click="selectTime" id="apply-button">APPLY!</a>
+        <md-button class="md-primary md-raised" ng-click="selectTime" id="apply-button">APPLY!</md-button>
         <!--  TODO: pull up modal with calendar  -->
     </div>
     
