@@ -51,23 +51,25 @@
                     </td>
 
                 </tr>
-                <tr>
+            </thead>      
+            <tbody>       
+                <tr class="c-row" ng-repeat-start="production in $data |orderBy:sortType:sortReverse | filter:search" href="#" ng-click="isCollapsed = !isCollapsed">
                     <td data-title="'Title'" class="panel-title">
-                            {{production.title}}   
+                        {{production.title}}   
                     </td>
-                     <td data-title="'Date'" ng-bind="production.date | date:longDate"></td> 
+                    <td data-title="'Date'" ng-bind="production.date | date:longDate"></td> 
                     <td data-title="'Location'">{{production.location}}</td>
                 </tr>
                 <tr collapse="isCollapsed" ng-repeat-end="">
                     <td colspan="3">
-                        <h3>Description</h3>
-                        <p>{{production.description}}</p>
-                        <!--button href="#exampleplay" class="btn btn-primary">See more!</button-->
-                        <a href="#exampleplay" >VIEW MORE</a>
-                    </td>
+                    <h3>Description</h3>
+                    <p>{{production.description}}</p>
+                    <!--button href="#exampleplay" class="btn btn-primary">See more!</button-->
+                    <a href="#exampleplay" >VIEW MORE</a>
+                </td>
                 </tr>
-                </tbody>
-            </table>
+            </tbody>
+        </table>
 
 	</div>
 
