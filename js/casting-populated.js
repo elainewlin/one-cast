@@ -38,7 +38,7 @@ $(function() {
                 rendering: 'background',
                 block: true,
             }, ]);
-            $("#calendar").fullCalendar("unselect");
+//            $("#calendar").fullCalendar("unselect");
         },
         selectOverlap: function(event) {
             return ! event.block;
