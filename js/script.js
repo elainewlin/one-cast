@@ -57,10 +57,11 @@ onecastApp.config(function($routeProvider) {
 
 onecastApp.controller('mainController', function($scope, $rootScope, $window, $mdDialog) {
     $rootScope.pageTitle = "OneCast";
+    $scope.primary = 'purple';
 });
 
 onecastApp.controller('directorPlayController', function($scope, $rootScope, $window, $mdDialog, $location, ngTableParams) {
-    
+    $scope.primary = 'purple';
     var data = [{role: "Romeo", accepted: true, rejected: false, backup: false, pending:false},
                 {role: "Juliet", accepted: false, rejected: false, backup: false, pending:true},
                 {role: "Capulet", accepted: false, rejected: false, backup: false, pending:false},
@@ -116,7 +117,7 @@ onecastApp.controller('directorPlayController', function($scope, $rootScope, $wi
 
 onecastApp.controller('mainActorController', function($scope, $rootScope, $window, $mdDialog) {
     $rootScope.pageTitle = "OneCast";
-    
+    $scope.primary = 'purple';
     $("#create-casting").hide();
     $("#create-button").hide();
     
@@ -132,7 +133,7 @@ onecastApp.controller('mainActorController', function($scope, $rootScope, $windo
 
 onecastApp.controller('mainDirectorController', function($scope, $rootScope, $window, $mdDialog) {
     $rootScope.pageTitle = "OneCast";
-    
+    $scope.primary = 'purple';
     $rootScope.newOption = "New Casting";
     $rootScope.homeUrl = "#directorhome";
     $rootScope.userIcon = "fa-film";
@@ -177,9 +178,11 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
 
 onecastApp.controller('actorController', function($scope, $rootScope, $window) {
     $rootScope.pageTitle = "Romeo & Juliet";
+    $scope.primary = 'purple';
 });
 
 onecastApp.controller('searchController', function($scope, ngTableParams) {
+    $scope.primary = 'purple';
     var data = [{title: "Romeo & Juliet", date: "2016-04-29", location: "Chesapeake, VA", description: "les miserables"},{title: "Les Miserables", date: "2016-04-29", location: "Chesapeake, VA", description: "les miserables"},
                 {title: "Cabaret", date: "2016-05-09", location: "Newark, NJ", description: "cabaret"},
                 {title: "Mamma Mia", date: "2016-05-17", location: "Detroit, MI", description: "mamma mia"},
@@ -239,7 +242,7 @@ onecastApp.controller('searchController', function($scope, ngTableParams) {
 
 
 onecastApp.controller('directorSearchController', function($scope, ngTableParams, $mdDialog) {
-    
+    $scope.primary = 'purple';
     $scope.invite = function() {
         $mdDialog.show(
           $mdDialog.alert()
@@ -311,7 +314,7 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
 
 
 onecastApp.controller('productionController', function($scope, $mdDialog) {
-    
+    $scope.primary = 'purple';
     $(function(){
 
         $("#apply-button").on("click",function(){
@@ -356,6 +359,7 @@ onecastApp.controller('productionController', function($scope, $mdDialog) {
 });
 
 onecastApp.controller('actorPageController', function($scope) {
+    $scope.primary = 'purple';
     $scope.roles = [{name: "Romeo", description: "son to Montague"},
                 {name: "Juliet", description: "daughter to Capulet"},
                 {name: "Mercutio",description: "kinsman to the prince, and friend to Romeo"},
@@ -375,7 +379,7 @@ onecastApp.controller('actorPageController', function($scope) {
 });
 
 onecastApp.controller('applyTimeController', function($scope, $rootScope, $mdDialog, $location) {
-    
+    $scope.primary = 'purple';
     $scope.cancel = function() {
         $mdDialog.cancel();
         //$(".create-button").click();
@@ -389,6 +393,51 @@ onecastApp.controller('applyTimeController', function($scope, $rootScope, $mdDia
 });
 
 onecastApp.controller('applyTimeControllerDirector', function($scope, $rootScope, $mdDialog, $location) {
+    $scope.primary = 'purple';
+        $('#calendar').fullCalendar({
+            // put your options and callbacks here
+            header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+            },
+            weekends: false, // will hide Saturdays and Sundays
+            defaultView: 'agendaWeek',
+            viewDisplay: resizeCalendar,
+            firstHour: (new Date()).getHours(),
+            minTime: "07:00:00",
+            maxTime: "24:00:00",
+            slotDuration: "00:15:00",
+            allDaySlot: false,
+            timezone: "local",
+            fixedWeekCount: false, // makes calendar just display the weeks in that month
+            height: "auto",
+            selectable: true,
+    //        selectHelper: true,
+            select: function (start, end, jsEvent, view) {
+                $('#calendar').fullCalendar('addEventSource', [{
+                    start: start,
+                    end: end,
+                    rendering: 'background',
+                    block: true,
+                }, ]);
+                $("#calendar").fullCalendar("unselect");
+            },
+            selectOverlap: function(event) {
+                return ! event.block;
+            },
+            editable: true, //for drag and drop
+        });
+    
+        function resizeCalendar() {
+            var currentView = $('#calendar').fullCalendar('getView');
+            if(currentView.name === 'agendaWeek' || currentView.name === 'agendaDay') {
+                currentView.setHeight(9999);
+            }
+            $('#calendar').fullCalendar('option', 'height', $('#calendar_container').outerHeight()*0.94);
+        }
+    
+        $(".fc-today-button").click();
     
     $scope.cancel = function() {
         
@@ -439,7 +488,7 @@ onecastApp.controller('applyTimeControllerDirector', function($scope, $rootScope
 });
 
 onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialog) {
-    
+    $scope.primary = 'purple';
     $scope.add = function() {
         
           $mdDialog.cancel();
@@ -466,7 +515,7 @@ onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialo
 });
 
 onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDialog) {
-    
+    $scope.primary = 'purple';
     console.log("Binded");
     
     $scope.addRole = function() {
@@ -499,6 +548,12 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
           ariaLabel: "Choose Audition Times",
           parent: angular.element('#pag-wrapper'),
           clickOutsideToClose:true,
+          onComplete: function(){
+            setTimeout(function(){
+              console.log("Hello!");
+              console.log($(".fc-today-button").click());
+            }, 0);
+          }
         });
         
     };
@@ -526,6 +581,12 @@ onecastApp.directive('fixedTableHeaders', ['$timeout', function($timeout) {
     }
   }
 }]);
+
+onecastApp.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('pink')
+    .accentPalette('pink');
+});
 
 function DialogController($scope, $mdDialog) {
   $scope.hide = function() {
