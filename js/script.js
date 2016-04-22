@@ -1,4 +1,4 @@
-var onecastApp = angular.module('onecastApp', ['ngRoute', 'ui.bootstrap', 'ngMaterial', 'ngTable']);
+var onecastApp = angular.module('onecastApp', ['ngRoute', 'ui.bootstrap', 'ngMaterial', 'ngTable', 'rzModule', 'ui-rangeSlider']);
 
 onecastApp.config(function($routeProvider) {
     $routeProvider
@@ -251,12 +251,12 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
         );
     }
     
-    $scope.genders = [{option:"male", id:"m"}, {option:"female", id:"f"}, {option:"both", id:""}];
+    $scope.genders = [ {option:"", id:""},{option:"male", id:"m"}, {option:"female", id:"f"}];
     
     $scope.actors = [{name: "Twila Harman", location: "Chesapeake, VA", age: "33", height: "6'", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",  description: "son to Montague", image:"../public/images/twila_harman.jpg"},
                 {name: "Ming Correll", location: "Newark, NJ", age: "58", height: "5'7\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "daughter to Capulet", image:"../public/images/ming_correll.jpg"},
-                {name: "Jerrold Mercier", location: "Detroit, MI", age: "40", height: "7'2\"", weight: "", gender:"m", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "kinsman to the prince, and friend to Romeo", image: "jerrold_mercier.jpg"},
-                {name: "Naoma Wayland", location: "Dallas, TX", age: "57", height: "7'", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "nephew to Lady Capulet", image:"../public/images/naoma_wayland.png"},
+                {name: "Jerrold Mercier", location: "Detroit, MI", age: "40", height: "7'2\"", weight: "", gender:"m", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "kinsman to the prince, and friend to Romeo", image: "../public/images/jerrold_mercier.jpg"},
+                {name: "Naoma Wayland", location: "Dallas, TX", age: "57", height: "7'", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "nephew to Lady Capulet", image:"../public/images/naoma_wayland.jpg"},
                 {name: "Emiko Swanberg", location: "Honolulu, HI", age: "17", height: "5'4\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "Nurse to Juliet", image:"../public/images/emiko_swanberg.jpg"},
                 {name: "Gena Whitehill", location: "Albuquerque, NM", age: "38", height: "5'2\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "Franciscan", image:"../public/images/gena_whitehill.jpg"},
                 {name: "Lourie Faires", location: "Sacramento, CA", age: "22", height: "4'11\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "head of Capulet household", image:"../public/images/lourie_faires.jpg"},
@@ -274,6 +274,8 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
     $scope.sortType = 'title';
     $scope.sortReverse = false;
     
+    $scope.ageRange = {min: 0, max: 100};
+    
     $scope.slider = {
         minValue: 10,
         maxValue: 90,
@@ -282,6 +284,15 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
             ceil: 90,
             step: 1
         }
+    };
+    
+    $scope.byRange = function (fieldName, minValue, maxValue) {
+        if (minValue === undefined) minValue = Number.MIN_VALUE;
+        if (maxValue === undefined) maxValue = Number.MAX_VALUE;
+
+        return function predicateFunc(item) {
+            return minValue <= item[fieldName] && item[fieldName] <= maxValue;
+        };
     };
 
 

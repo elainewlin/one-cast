@@ -16,27 +16,46 @@
 .end {
     margin-bottom: 32px;
 }
-#age-range-text {
+#age-range-text-filter {
     display: inline-block;
     margin-right: 25px;
 }
 
-#slider-age {
-    width: 60%;
-    display: inline-block;
+#slider-age-filter{
+/*    margin-bottom: 10px;*/
+    margin-left: 10px;
+    width: 70%;
+/*    display: inline-block;*/
     
 }
 
-#age-range-values {
-    display: inline-block;
-    margin-left: 10px;
-}
-
 #age-range-box {
-    max-height: inherit;
+    width: 50%;
 }
 
-#gender-dropdown {
-/*    width: 20px;*/
-/*    max-height: 33px;*/
+#age-range-values-filter {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/*
+#role-title {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+*/
+
+#slider-label-left-filter, #slider-label-right-filter {
+  font-weight: bolder;
+}
+
+#slider-bar {
+    margin: 0;
+    padding: 0;
+    width: 70%;
+    display: inline-block;
+}
+
+#slider-container {
+/*    padding: 0;*/
 }

@@ -8,7 +8,7 @@
 </style>
 
 <!-- Search Box -->
-<div id="search-div" >
+<div id="director-search-div" >
 
     <form>
         <div class="form-group">
@@ -24,64 +24,22 @@
             </div>  
 -->
             <div class="input-group search-container left">
-                <label for="repeatSelect"> Repeat select: </label>
-                <select name="repeatSelect" id="repeatSelect" ng-options="gender.id as gender.option for gender in genders" ng-model="search.gender">
+                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                <select name="repeatSelect" class="form-control" id="repeatSelect" ng-options="gender.id as gender.option for gender in genders" ng-model="search.gender" >
+<!--                    <option value="" id="">---Please select---</option>-->
                     <!--<option ng-repeat="gender in genders" value="{{gender}}">{{gender}}</option>-->
                 </select>
             </div>
-
+            
 <!--
             <div class="input-group search-container left">
-                <select class="ac-select stateList" ac-model="selectedState" ac-options="gender in genders" 
-            ac-settings="{ comboMode: true, loadOnOpen: true, minWidth: '300px' }" ac-change="stateSelected(value)"></select>
+                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                <select class="ac-select" ac-model="search.gender" ac-options="gender.id as gender.option for gender in genders" ac-settings="{comboMode: true, loadOnOpen: true, minWidth: '300px' }" >
+                </select>
             </div>
 -->
             
-<!--
-            <div class="dropdown-container" ng-class="{ show: listVisible }">
-                <div class="dropdown-display" ng-click="show();" ng-class="{ clicked: listVisible }">
-                    <span ng-if="!isPlaceholder">{{display}}</span>
-                    <span class="placeholder" ng-if="isPlaceholder">{{placeholder}}lt;/span>
-                    <i class="fa fa-angle-down"></i>
-                </div>
-                <div class="dropdown-list">
-                    <div>
-                        <div ng-repeat="item in list" ng-click="select(item)" ng-class="{ selected: isSelected(item) }">
-                            <span>{{property !== undefined ? item[property] : item}}</span>
-                            <i class="fa fa-check"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
--->
-            
-<!--
-            <div layout="column"   class="input-group search-container left" id="gender-dropdown">
-                <md-menu >
-                    <md-button aria-label="Open demo menu"  ng-click="$mdOpenMenu($event)">
-                        <i class="fa fa-calendar"></i>
-                        <md-icon md-menu-origin="" md-svg-icon="call:chat"></md-icon>
-                    </md-button>
-                    <md-menu-content width="2">
-                        <md-menu-item ng-repeat="item in [1, 2, 3]">
-                            <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target="">Option</span> {{item}} </md-button>
-                        </md-menu-item>
-                    </md-menu-content>
-                </md-menu>
-            </div>
--->
-            
-<!--
-            <div class="dropdown input-group search-container left" id="gender-dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <span id="genderToReplace">Gender</span>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a class="clicky">Female</a></li>
-                    <li><a class="clicky">Male</a></li>
-                </ul>
-            </div>
--->
+
             
             <div class="input-group search-container right">
                 <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
@@ -96,25 +54,48 @@
                 <input type="text" class="form-control" placeholder="Search for age" ng-model="search.age">
             </div> 
 -->    
-            
-
             <div class="input-group search-container left">
-                <rzslider rz-slider-model="slider.minValue" rz-slider-high="slider.maxValue" rz-slider-options="slider.options">
-                </rzslider>
+                <div class="input-group-addon"><i class="fa fa-calendar-o"></i></div>
+                <div id="slider-container"class="form-control"> 
+                    <div range-slider min="0" max="100" model-min="ageRange.min" model-max="ageRange.max" attach-handle-values="true"  id="slider-bar"ng-model="search.age"></div>
+                    <div id="age-range-values-filter">
+                        Age: 
+                        <span id="slider-label-left-filter">{{ageRange.min}}</span>
+                        to 
+                        <span id="slider-label-right-filter">{{ageRange.max}}</span>
+                    </div>
+                </div>
             </div>
+
+<!--
+            <div id="age-range-box" class="input-group search-container left">
+                <div class="input-group-addon"><i class="fa fa-calendar-o"></i></div>
+                <div >
+                    <rzslider rz-slider-model="slider.minValue" rz-slider-high="slider.maxValue" rz-slider-options="slider.options" id="slider-age-filter"  ng-model="search.age">
+                    </rzslider>
+                    <div id="age-range-values-filter">
+                        <span id="slider-label-left-filter"></span>
+                        to 
+                        <span id="slider-label-right-filter"></span>
+                    </div>
+                </div>
+            </div>
+-->
 
 
             
 <!--
             <div id="age-range-box" class="input-group search-container left">
-                <p id="age-range-text">Age Range</p>
-                <div id="slider-age">
+                <div class="input-group-addon"><i class="fa fa-calendar-o"></i></div>
+                <div class="form-control">
+                    <div id="slider-age" class="form-control">
 
-                </div>
-                <div id="age-range-values">
-                    <span id="slider-label-left"></span>
-                    to 
-                    <span id="slider-label-right"></span>
+                    </div>
+                    <div id="age-range-values-filter">
+                        <span id="slider-label-left"></span>
+                        to 
+                        <span id="slider-label-right"></span>
+                    </div>
                 </div>
             </div>
 -->
@@ -144,7 +125,7 @@
 
     <h2>Talent</h2>
     <div class='' layout="row" layout-wrap>
-        <md-card class="talent-card-container"  ng-repeat="actor in actors | filter:search">
+        <md-card class="talent-card-container"  ng-repeat="actor in actors | filter:search |filter:byRange('age', ageRange.min, ageRange.max)">
             
             <img src="{{actor.image}}" class="md-card-image" alt="user avatar">
             <md-card-content>
@@ -157,7 +138,6 @@
                 <p>Location: {{actor.location}}</p>
                 <p>Age: {{actor.age}}</p>
                 <p>Height: {{actor.height}}</p>
-<!--                <p>{{actor.weight}}</p>-->
                 
             </md-card-content>
             <div class="md-actions" layout="row" layout-align="end center">
@@ -178,5 +158,6 @@
 <!-- used for age slider -->
 <script src='../js/nouislider.min.js'></script>
 <script src="../js/new-role.js"></script>
+
 
 
