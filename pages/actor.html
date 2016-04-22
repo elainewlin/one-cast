@@ -56,6 +56,7 @@
             <tbody>       
                 <tr class="c-row" ng-repeat-start="production in $data |orderBy:sortType:sortReverse | filter:search" href="#" ng-click="isCollapsed = !isCollapsed">
                     <td data-title="'Title'" class="panel-title">
+                        <i ng-class="isCollapsed ? 'fa fa-angle-right': 'fa fa-angle-down'"> </i>
                         {{production.title}}   
                     </td>
                     <td data-title="'Date'" ng-bind="production.date | date:longDate"></td> 
