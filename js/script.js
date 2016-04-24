@@ -515,7 +515,7 @@ onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialo
     
 });
 
-onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDialog) {
+onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDialog, $location) {
     $scope.primary = 'purple';
     console.log("Binded");
     
@@ -561,6 +561,7 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
     
     $scope.save = function() {
         $mdDialog.cancel();
+        $location.path('/romeojulietdirect');
     }
     
     $scope.cancel = function() {
