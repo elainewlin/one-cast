@@ -255,7 +255,7 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
         );
     }
     
-    $scope.genders = [ {option:"", id:""},{option:"male", id:"m"}, {option:"female", id:"f"}];
+    $scope.genders = [ {option:"None", id:""},{option:"Male", id:"m"}, {option:"Female", id:"f"}];
     
     $scope.actors = [{name: "Twila Harman", location: "Chesapeake, VA", age: "33", height: "6'", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",  description: "son to Montague", image:"../public/images/twila_harman.jpg"},
                 {name: "Ming Correll", location: "Newark, NJ", age: "58", height: "5'7\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "daughter to Capulet", image:"../public/images/ming_correll.jpg"},
