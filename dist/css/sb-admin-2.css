@@ -58,8 +58,6 @@ md-toolbar {
     width: 540px;
     margin: auto auto;
     padding: 32px;
-    background: #F48FB1;
-    border-radius: 300px;
     margin-top: 100px;
 }
 
@@ -68,24 +66,17 @@ md-toolbar {
     font-size: 28px;
 }
 
-.welcome .btn {
-    background-color: #615292;
-    color: white;
-    font-size: 22px;
-}
-
-.welcome .btn:hover {
-    background-color: #403075;
-    color: white;
-    font-size: 24px;
-}
-
 .clipart {
     position: fixed;
     left: 0px;
     bottom: -15px;
     width: 250px;
     opacity: .8;
+}
+
+.welcome-button {
+    font-size: 22px;
+    padding: 8px;
 }
 
 .side-footer {

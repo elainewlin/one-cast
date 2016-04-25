@@ -147,3 +147,12 @@
     width: 600px;
     margin: 32px;
 }
+
+#addRoleOne {
+    width: 95%;
+    margin-bottom: 16px;
+}
+
+#setTimeButton {
+    width: 95%;
+}
