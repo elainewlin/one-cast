@@ -1,8 +1,5 @@
 
-<!--link rel="stylesheet" href='css/style.css'-->
 <link rel="stylesheet" href='css/new-casting.css' />
-<link rel="stylesheet" href='css/bootstrap-datepicker.standalone.min.css'/>
-<link rel="stylesheet" href='css/bootstrap-timepicker.min.css'/>
     <div class="container" id="castingBox">
       <div class="row-fluid header-div">
         <h2 class="casting-header">New Casting</h2>
@@ -12,12 +9,14 @@
         <div class="col-md-5 col-sm-5">
           <div class="row">
             <div id="col-first">
-              <textarea id="description" class="form-control" placeholder="Description"></textarea>
-              <div class="input-group input-append date datepickertext" id="datePicker">
-                  <input type="text" class="form-control datepickertext" placeholder="Production Date" name="date" />
-                  <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-              </div>
-                <button type="submit" class="link-btn" ng-click="addTimes()">Set Casting Calendar</button>
+                <textarea id="description" class="form-control" placeholder="Description"></textarea>
+                <md-content>
+                    <md-datepicker ng-model="myDate" md-placeholder="Enter date">
+                    </md-datepicker>
+                </md-content>
+                
+              <button type="submit" class="link-btn" ng-click="addTimes()">Set Casting Calendar
+              </button>
               <div id="submit-btns">
                 <span class="btn" id="save-btn" ng-click="save()">Save</span>
                 <span class="btn" id="cancel-btn" ng-click="cancel()"></i>Cancel</span>
@@ -43,5 +42,4 @@
       </div>
     </div>
 
-    <script src='../js/bootstrap-datepicker.min.js'/></script>
     <script src="../js/new-casting.js"></script>
