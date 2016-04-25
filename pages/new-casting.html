@@ -1,26 +1,38 @@
 
 <link rel="stylesheet" href='css/new-casting.css' />
+<<<<<<< HEAD
     <div class="container" id="castingBox">
       <div class="row-fluid header-div">
         <h2 class="casting-header">New Casting</h2>
+=======
+<link rel="stylesheet" href='css/bootstrap-datepicker.standalone.min.css'/>
+<link rel="stylesheet" href='css/bootstrap-timepicker.min.css'/>
+<md-dialog aria-label="Create New Casting"  ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Create New Casting</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+>>>>>>> 7835067fa56868d77b7bb4d7880589c4ddc2b589
       </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="container" id="castingBox">
       <div class="row">
         <!-- Description, Calendar -->
         <div class="col-md-5 col-sm-5">
           <div class="row">
             <div id="col-first">
-                <textarea id="description" class="form-control" placeholder="Description"></textarea>
-                <md-content>
-                    <md-datepicker ng-model="myDate" md-placeholder="Enter date">
-                    </md-datepicker>
-                </md-content>
-                
-              <button type="submit" class="link-btn" ng-click="addTimes()">Set Casting Calendar
-              </button>
-              <div id="submit-btns">
-                <span class="btn" id="save-btn" ng-click="save()">Save</span>
-                <span class="btn" id="cancel-btn" ng-click="cancel()"></i>Cancel</span>
+              <textarea id="description" class="form-control" placeholder="Description"></textarea>
+              <div class="input-group input-append date datepickertext" id="datePicker">
+                  <input type="text" class="form-control datepickertext" placeholder="Production Date" name="date" />
+                  <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
               </div>
+                <md-button id="setTimeButton" type="submit" class="md-primary md-raised" ng-click="addTimes()">Set Casting Calendar</md-button>
             </div>
           </div>
         </div>
@@ -30,10 +42,9 @@
         <div class="col-md-offset-2 col-md-5 col-sm-5">
           <div class="row">
             <div id="col-second">
-              <button id="addRoleOne" type="submit" class="link-btn" ng-click="addRole()">Add Role</button>
+              <md-button id="addRoleOne" type="submit" class="md-raised md-primary" ng-click="addRole()">Add Role</md-button>
               <div id="roles-box">
-                <p id="empty-roles-text">You have no roles yet. Create one by clicking below</p>
-                <button type="submit" class="link-btn" id="empty-roles-btn" ng-click="addRole()">Add Role</button>
+                <p id="empty-roles-text">You have no roles yet. Create one by clicking above</p>
               </div>
             </div>
           </div>
@@ -41,5 +52,18 @@
         <!-- end Add Roles -->
       </div>
     </div>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button class="md-primary" type="submit" id="cancel-button" ng-click="cancel()">
+       Cancel
+      </md-button>
+      <md-button class="md-accent" type="submit" id="accept-button" style="margin-right:20px;" ng-click="save()">
+        Save
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
 
     <script src="../js/new-casting.js"></script>

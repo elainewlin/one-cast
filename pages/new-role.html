@@ -12,52 +12,73 @@
     <link rel="stylesheet" href='css/nouislider.min.css'/>
     <!--link rel="stylesheet" href='css/style.css' /-->
     <link rel="stylesheet" href='css/new-casting.css' />
-    <div class="container role-container">
-      <div class="row-fluid header-div">
-        <h2 class="casting-header">Add Role</h2>
+
+<md-dialog aria-label="Add New Role"  ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Add New Role</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
       </div>
-      <div class="row">
-        <!-- New Role -->
-        <div class="col-md-10 col-sm-10">
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="container role-container">
           <div class="row">
-            
-            <input class="form-control" id="role-title" placeholder="Role Title">
-            <div id="age-range-box">
-              <p id="age-range-text">Age Range</p>
-              <div id="slider-age">
-                
+            <!-- New Role -->
+            <div class="col-md-10 col-sm-10">
+              <div class="row">
+
+                <input class="form-control" id="role-title" placeholder="Role Title">
+                <div id="age-range-box">
+                  <p id="age-range-text">Age Range</p>
+                  <div id="slider-age">
+
+                  </div>
+                  <div id="age-range-values">
+                    <span id="slider-label-left"></span>
+                     to 
+                    <span id="slider-label-right"></span>
+                  </div>
+                </div>
+                <div class="dropdown" id="gender-dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <span id="genderToReplace">Gender</span>
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a class="clicky">Female</a></li>
+                    <li><a class="clicky">Male</a></li>
+                  </ul>
+                </div>
+                <textarea id="description" class="form-control" placeholder="Role Description"></textarea>
+                <div class="file-upload-box" id="drop-zone">
+                  <div id="clickHere">Upload casting scripts  <i class="fa fa-upload"></i>
+                    <input type="file" name="file" id="file" multiple />
+                  </div>
+                  <div id='filename'></div>
+                </div>
+
               </div>
-              <div id="age-range-values">
-                <span id="slider-label-left"></span>
-                 to 
-                <span id="slider-label-right"></span>
-              </div>
             </div>
-            <div class="dropdown" id="gender-dropdown">
-              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <span id="genderToReplace">Gender</span>
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a class="clicky">Female</a></li>
-                <li><a class="clicky">Male</a></li>
-              </ul>
-            </div>
-            <textarea id="description" class="form-control" placeholder="Role Description"></textarea>
-            <div class="file-upload-box" id="drop-zone">
-              <div id="clickHere">Upload casting scripts  <i class="fa fa-upload"></i>
-                <input type="file" name="file" id="file" multiple />
-              </div>
-              <div id='filename'></div>
-            </div>
-            <div id="submit-btns">
-              <span class="btn" id="save-btn" ng-click="add()">Add</span>
-              <span class="btn" id="cancel-btn" ng-click="add()"></i>Cancel</span>
-            </div>
-            
+            <!-- end New Role -->
           </div>
         </div>
-        <!-- end New Role -->
       </div>
-    </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button class="md-primary" type="submit" id="" ng-click="add()">
+       Cancel
+      </md-button>
+      <md-button class="md-accent" type="submit" id="" style="margin-right:20px;" ng-click="add()">
+        Add
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+
     <script src='../js/nouislider.min.js'/></script>
     <script src="../js/new-role.js"></script>
