@@ -1,7 +1,14 @@
 
 #search-div {
     margin-top: 16px;
-    
+    margin-bottom: 16px;
+/*    position: fixed;*/
+    width: 77%;
+    top: 5%;
+/*    right: 10%;*/
+/*    left: 20%;*/
+    background-color: white;
+    z-index: 9;
 }
 
 .search-container {
@@ -44,18 +51,20 @@ Just make this block scrollable
 
 
 /* table styles */
-body {
-	/*font-family: Arial;*/
-	/*font-size: 12px;*/
-}
 
 thead {
 	background: #efefef;
+    z-index: 10;
+/*    position: fixed;*/
+/*    margin-top: 0px;*/
+}
+tbody{
+    margin-top: 20%;
 }
 table {
   width: 100%;
   border-spacing:0;
-  margin:0;
+  margin-top:10%;
 }
 table th , table td  {
   border-left: 1px solid #ccc;

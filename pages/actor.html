@@ -23,9 +23,10 @@
         
         
         
-        <table ng-table="tableParams" class="table table-bordered table-striped"  fixed-table-headers="scrollable-area">
+        <table id="actual-table" ng-table="tableParams" class="table table-bordered table-striped"  fixed-table-headers="scrollable-area">
+            
             <thead>
-                <tr>
+                <tr id="thead-contents">
                     <td>
                         <a ng-click="sortType = 'title'; sortReverse = !sortReverse">
                         Title 
@@ -55,6 +56,7 @@
             <tbody>       
                 <tr class="c-row" ng-repeat-start="production in $data |orderBy:sortType:sortReverse | filter:search" href="#" ng-click="isCollapsed = !isCollapsed">
                     <td data-title="'Title'" class="panel-title">
+                        <i ng-class="isCollapsed ? 'fa fa-angle-right': 'fa fa-angle-down'"> </i>
                         {{production.title}}   
                     </td>
                     <td data-title="'Date'" ng-bind="production.date | date:longDate"></td> 
@@ -62,10 +64,9 @@
                 </tr>
                 <tr collapse="isCollapsed" ng-repeat-end="">
                     <td colspan="3">
-                    <h3>Description</h3>
                     <p>{{production.description}}</p>
                     <!--button href="#exampleplay" class="btn btn-primary">See more!</button-->
-                    <a href="#exampleplay" >VIEW MORE</a>
+                    <a href="#exampleplay" >VIEW CASTING</a>
                 </td>
                 </tr>
             </tbody>
