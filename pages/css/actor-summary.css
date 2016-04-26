@@ -1,9 +1,13 @@
-html, body, .actor-summary {
-    height: 100%;
+.login-panel {
+    text-align: center;
 }
 
-.actor-summary{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.grid {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.number {
+    font-size: 36pt;
 }

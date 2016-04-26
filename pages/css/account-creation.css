@@ -124,3 +124,18 @@ body {
     cursor: inherit;
     display: block;
 }
+
+.form {
+    padding-top: 92px;
+    width: 60%;
+    margin: auto auto;
+    font-size: 18px;
+}
+
+.account-file {
+    opactity: 0;
+}
+
+.half-input {
+    width: 48%;
+}
