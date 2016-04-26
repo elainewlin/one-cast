@@ -14,19 +14,19 @@
         <div class="form-group">
             <div class="input-group search-container name">
                 <div class="input-group-addon"><i class="fa fa-search"></i></div>
-                <input type="text" class="form-control" placeholder="Search for name" ng-model="search.name">
+                <input type="text" class="form-control" placeholder="Search by name" ng-model="search.name">
             </div>    
 <!--  GENDER -->
 <!--
             <div class="input-group search-container left">
                 <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                <input type="text" class="form-control" placeholder="Search for gender" ng-model="search.gender">
+                <input type="text" class="form-control" placeholder="Search by gender" ng-model="search.gender">
             </div>  
 -->
             <div class="input-group search-container left">
                 <div class="input-group-addon"><i class="fa fa-venus-mars"></i></div>
                 <select name="repeatSelect" class="form-control" id="repeatSelect" ng-options="gender.id as gender.option for gender in genders" ng-model="search.gender" >
-<!--                    <option value="" id="">---Please select---</option>-->
+                    <option value="" id="dropdown-placeholder" disabled selected>Choose a gender</option>
                     <!--<option ng-repeat="gender in genders" value="{{gender}}">{{gender}}</option>-->
                 </select>
             </div>
@@ -43,7 +43,7 @@
             
             <div class="input-group search-container right">
                 <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
-                <input type="text" class="form-control" placeholder="Search for location" ng-model="search.location">
+                <input type="text" class="form-control" placeholder="Search by location" ng-model="search.location">
             </div>  
             
             
@@ -51,7 +51,7 @@
 <!-- 
             <div class="input-group search-container left">
                 <div class="input-group-addon"><i class="fa fa-calendar-o"></i></div>
-                <input type="text" class="form-control" placeholder="Search for age" ng-model="search.age">
+                <input type="text" class="form-control" placeholder="Search by age" ng-model="search.age">
             </div> 
 -->    
             <div class="input-group search-container left">
@@ -71,17 +71,17 @@
             
             <div class="input-group search-container right">
                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                <input type="text" class="form-control" placeholder="Search for hair color" ng-model="search.haircolor">
+                <input type="text" class="form-control" placeholder="Search by hair color" ng-model="search.haircolor">
             </div> 
             
             <div class="input-group search-container left end">
                 <div class="input-group-addon"><i class="fa fa-eye"></i></div>
-                <input type="text" class="form-control" placeholder="Search for eye color" ng-model="search.eyecolor">
+                <input type="text" class="form-control" placeholder="Search by eye color" ng-model="search.eyecolor">
             </div> 
             
             <div class="input-group search-container right end">
                 <div class="input-group-addon"><i class="fa fa-male"></i></div>
-                <input type="text" class="form-control" placeholder="Search for build" ng-model="search.build">
+                <input type="text" class="form-control" placeholder="Search by build" ng-model="search.build">
             </div> 
         </div>
     </form>
