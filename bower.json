@@ -37,6 +37,7 @@
     "datatables-responsive": "~1.0.3",
     "bootstrap-social": "~4.8.0",
     "flot.tooltip": "~0.8.4",
-    "fullcalendar": "2.6.1"
+    "fullcalendar": "2.6.1",
+    "angular-daterangepicker": "^0.2.2"
   }
 }

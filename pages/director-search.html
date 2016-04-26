@@ -57,7 +57,7 @@
             <div class="input-group search-container left">
                 <div class="input-group-addon"><i class="fa fa-calendar-o"></i></div>
                 <div id="slider-container"class="form-control"> 
-                    <div range-slider min="0" max="100" model-min="ageRange.min" model-max="ageRange.max" attach-handle-values="true"  id="slider-bar"ng-model="search.age"></div>
+                    <div range-slider min="0" max="100" model-min="ageRange.min" model-max="ageRange.max" attach-handle-values="true"  id="slider-bar" ng-model=""></div>
                     <div id="age-range-values-filter">
                         Age: 
                         <span id="slider-label-left-filter">{{ageRange.min}}</span>
@@ -67,38 +67,6 @@
                 </div>
             </div>
 
-<!--
-            <div id="age-range-box" class="input-group search-container left">
-                <div class="input-group-addon"><i class="fa fa-calendar-o"></i></div>
-                <div >
-                    <rzslider rz-slider-model="slider.minValue" rz-slider-high="slider.maxValue" rz-slider-options="slider.options" id="slider-age-filter"  ng-model="search.age">
-                    </rzslider>
-                    <div id="age-range-values-filter">
-                        <span id="slider-label-left-filter"></span>
-                        to 
-                        <span id="slider-label-right-filter"></span>
-                    </div>
-                </div>
-            </div>
--->
-
-
-            
-<!--
-            <div id="age-range-box" class="input-group search-container left">
-                <div class="input-group-addon"><i class="fa fa-calendar-o"></i></div>
-                <div class="form-control">
-                    <div id="slider-age" class="form-control">
-
-                    </div>
-                    <div id="age-range-values-filter">
-                        <span id="slider-label-left"></span>
-                        to 
-                        <span id="slider-label-right"></span>
-                    </div>
-                </div>
-            </div>
--->
             
             
             <div class="input-group search-container right">
@@ -125,7 +93,7 @@
 
     <h2>Talent</h2>
     <div class='' layout="row" layout-wrap>
-        <md-card class="talent-card-container"  ng-repeat="actor in actors | filter:search |filter:byRange('age', ageRange.min, ageRange.max)">
+        <md-card class="talent-card-container"  ng-repeat="actor in actors | filter:search |filter:byAgeRange('age', ageRange.min, ageRange.max)">
             
             <img src="{{actor.image}}" class="md-card-image" alt="user avatar">
             <md-card-content>

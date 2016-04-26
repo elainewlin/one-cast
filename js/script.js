@@ -1,4 +1,4 @@
-var onecastApp = angular.module('onecastApp', ['ngRoute', 'ui.bootstrap', 'ngMaterial', 'ngTable', 'rzModule', 'ui-rangeSlider']);
+var onecastApp = angular.module('onecastApp', ['ngRoute', 'ui.bootstrap', 'ngMaterial', 'ngTable', 'rzModule', 'ui-rangeSlider', 'daterangepicker']);
 
 onecastApp.config(function($routeProvider) {
     $routeProvider
@@ -206,23 +206,36 @@ onecastApp.controller('searchController', function($scope, ngTableParams) {
     $scope.sortType = 'title';
     $scope.sortReverse = false;
     
-//    window.onload = function () {
-////        alert('works');
-//        var tableOffset = $("#actual-table").offset().top;
-//        var $header = $("#actual-table > thead").clone();
-//        var $fixedHeader = $("#header-fixed").append($header);
-//
-//        $(window).bind("scroll", function() {
-//            var offset = $(this).scrollTop();
-//
-//            if (offset >= tableOffset && $fixedHeader.is(":hidden"))             {
-//                $fixedHeader.show();
-//            }
-//            else if (offset < tableOffset) {
-//                $fixedHeader.hide();
-//            }
-//        });
-//    };
+//    var today = new Date();
+//    today = today.toISOString().substring(0, 10);
+//    var next = new Date();
+//    next = next.toISOString().substring(0, 10);
+    
+    $scope.datePicker = {date: {startDate: "", endDate: ""}};
+    
+    $scope.byDateRange = function (fieldName, minValue, maxValue) {
+        
+        // reformat the dates
+        if(typeof(minValue)!= "string" && minValue != null) {
+            minValue = minValue.format("YYYY-MM-DD");
+
+        }
+        if(typeof(maxValue)!= "string" && maxValue != null) {
+            maxValue = maxValue.format("YYYY-MM-DD");
+        }        
+        if(minValue != "" && minValue != null) {
+            if(maxValue != "" && maxValue != null) {
+                if (minValue === undefined) minValue = Number.MIN_VALUE;
+                if (maxValue === undefined) maxValue = Number.MAX_VALUE;
+
+                return function predicateFunc(item) {
+                    return minValue <= item[fieldName] && item[fieldName] <= maxValue;
+                };
+            }
+        }
+        
+        
+    };
 
     $scope.tableParams = new ngTableParams({
         page: 1,            // show first page
@@ -290,7 +303,7 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
         }
     };
     
-    $scope.byRange = function (fieldName, minValue, maxValue) {
+    $scope.byAgeRange = function (fieldName, minValue, maxValue) {
         if (minValue === undefined) minValue = Number.MIN_VALUE;
         if (maxValue === undefined) maxValue = Number.MAX_VALUE;
 
@@ -298,6 +311,7 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
             return minValue <= item[fieldName] && item[fieldName] <= maxValue;
         };
     };
+    
 
 
 //    $scope.tableParams = new ngTableParams({
