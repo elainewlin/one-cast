@@ -63,6 +63,10 @@
     background-image: linear-gradient(#FF69B4, #FF69B4) !important;
 }
 
+.ngrs-range-slider {
+    border: 0 !important;
+}
+
 #slider-container {
 /*    padding: 0;*/
 }
