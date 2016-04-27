@@ -270,23 +270,22 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
     
     $scope.genders = [ {option:"None", id:""},{option:"Male", id:"m"}, {option:"Female", id:"f"}];
     
-    $scope.actors = [{name: "Twila Harman", location: "Chesapeake, VA", age: "33", height: "6'", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",  description: "son to Montague", image:"../public/images/twila_harman.jpg"},
-                {name: "Ming Correll", location: "Newark, NJ", age: "58", height: "5'7\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "daughter to Capulet", image:"../public/images/ming_correll.jpg"},
-                {name: "Jerrold Mercier", location: "Detroit, MI", age: "40", height: "7'2\"", weight: "", gender:"m", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "kinsman to the prince, and friend to Romeo", image: "../public/images/jerrold_mercier.jpg"},
-                {name: "Naoma Wayland", location: "Dallas, TX", age: "57", height: "7'", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "nephew to Lady Capulet", image:"../public/images/naoma_wayland.jpg"},
-                {name: "Emiko Swanberg", location: "Honolulu, HI", age: "17", height: "5'4\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "Nurse to Juliet", image:"../public/images/emiko_swanberg.jpg"},
-                {name: "Gena Whitehill", location: "Albuquerque, NM", age: "38", height: "5'2\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "Franciscan", image:"../public/images/gena_whitehill.jpg"},
-                {name: "Lourie Faires", location: "Sacramento, CA", age: "22", height: "4'11\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "head of Capulet household", image:"../public/images/lourie_faires.jpg"},
-                {name: "Deirdre Vick", location: "Pittsburgh, PA", age: "60", height: "6'2\"", weight: "", gender:"m", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "a young nobleman", image:"../public/images/deirdre_vick.jpg"},
-                {name: "Claretta Conley", location: "Fort Worth, TX", age: "57", height: "5'8\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "nephew to Montague, and friend to Romeo", image:"../public/images/claretta_conley.jpg"},
-                {name: "Vada Blaine", location: "Aurora, CO", age: "48", height: "", weight: "5'6\"", gender:"m", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "wife to Capulet", image:"../public/images/vada_blaine.jpg"},
-                {name: "David Horrocks", location: "Oklahoma City, OK", age: "40", height: "6'1\"", weight: "", gender:"m", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "head of Montague household", image:"../public/images/david_horrocks.jpg"},
-                {name: "Loise Delk", location: "Virginia Beach, VA", age: "48", height: "5'7\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "servant to Romeo", image:"../public/images/loise_delk.jpg"},
-                {name: "Olin Cotnoir", location: "Toledo, OH", age: "29", height: "5'6\"", weight: "", gender:"m", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "servant to Juliet's nurse", image:"../public/images/olin_cotnoir.jpg"},
-                {name: "Jon Griner", location: "Memphis, TN", age: "21", height: "5'3\"", weight: "", gender:"m", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "servant to Montague", image:"../public/images/jon_griner.jpg"},
-                {name: "Christinia Guse", location: "Tampa, FL", age: "60", height: "5'10\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "servant to Capulet", image:"../public/images/christinia_guse.jpg"}];
+    $scope.actors = [{name: "Twila Harman", location: "Chesapeake, VA", age: "33", height: "6'", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",  description: "son to Montague", image:"../public/images/twila_harman.jpg", selected: false},
+                {name: "Ming Correll", location: "Newark, NJ", age: "58", height: "5'7\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "daughter to Capulet", image:"../public/images/ming_correll.jpg", selected: false},
+                {name: "Jerrold Mercier", location: "Detroit, MI", age: "40", height: "7'2\"", weight: "", gender:"m", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "kinsman to the prince, and friend to Romeo", image: "../public/images/jerrold_mercier.jpg", selected: false},
+                {name: "Naoma Wayland", location: "Dallas, TX", age: "57", height: "7'", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "nephew to Lady Capulet", image:"../public/images/naoma_wayland.jpg", selected: false},
+                {name: "Emiko Swanberg", location: "Honolulu, HI", age: "17", height: "5'4\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "Nurse to Juliet", image:"../public/images/emiko_swanberg.jpg", selected: false},
+                {name: "Gena Whitehill", location: "Albuquerque, NM", age: "38", height: "5'2\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "Franciscan", image:"../public/images/gena_whitehill.jpg", selected: false},
+                {name: "Lourie Faires", location: "Sacramento, CA", age: "22", height: "4'11\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "head of Capulet household", image:"../public/images/lourie_faires.jpg", selected: false},
+                {name: "Deirdre Vick", location: "Pittsburgh, PA", age: "60", height: "6'2\"", weight: "", gender:"m", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "a young nobleman", image:"../public/images/deirdre_vick.jpg", selected: false},
+                {name: "Claretta Conley", location: "Fort Worth, TX", age: "57", height: "5'8\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "nephew to Montague, and friend to Romeo", image:"../public/images/claretta_conley.jpg", selected: false},
+                {name: "Vada Blaine", location: "Aurora, CO", age: "48", height: "", weight: "5'6\"", gender:"m", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "wife to Capulet", image:"../public/images/vada_blaine.jpg", selected: false},
+                {name: "David Horrocks", location: "Oklahoma City, OK", age: "40", height: "6'1\"", weight: "", gender:"m", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "head of Montague household", image:"../public/images/david_horrocks.jpg", selected: false},
+                {name: "Loise Delk", location: "Virginia Beach, VA", age: "48", height: "5'7\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "servant to Romeo", image:"../public/images/loise_delk.jpg", selected: false},
+                {name: "Olin Cotnoir", location: "Toledo, OH", age: "29", height: "5'6\"", weight: "", gender:"m", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "servant to Juliet's nurse", image:"../public/images/olin_cotnoir.jpg", selected: false},
+                {name: "Jon Griner", location: "Memphis, TN", age: "21", height: "5'3\"", weight: "", gender:"m", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "servant to Montague", image:"../public/images/jon_griner.jpg", selected: false},
+                {name: "Christinia Guse", location: "Tampa, FL", age: "60", height: "5'10\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "servant to Capulet", image:"../public/images/christinia_guse.jpg", selected: false}];
     
-//    $scope.isCollapsed=true;
     
     $scope.sortType = 'title';
     $scope.sortReverse = false;
@@ -302,6 +301,30 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
             step: 1
         }
     };
+    
+    // function to determine if any actors have been selected
+    
+    $scope.notSelected = true;
+    $scope.selected = false;
+    $scope.anySelected = function () {
+        setTimeout(func, 0);
+        function func() {
+            done = false;
+            for(i in $scope.actors) {
+                actor = $scope.actors[i];
+                if(actor['selected']) {
+                    $scope.selected = true;
+                    $scope.notSelected = false;
+                    done = true;
+                }
+            }
+            if(!done) {
+                $scope.slected = false;
+                $scope.notSelected = true;
+            }
+        }
+        
+    }
     
     $scope.byAgeRange = function (fieldName, minValue, maxValue) {
         if (minValue === undefined) minValue = Number.MIN_VALUE;
