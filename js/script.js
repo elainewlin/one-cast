@@ -398,22 +398,22 @@ onecastApp.controller('productionController', function($scope, $mdDialog) {
 
 onecastApp.controller('actorPageController', function($scope) {
     $scope.primary = 'purple';
-    $scope.roles = [{name: "Romeo", description: "son to Montague"},
-                {name: "Juliet", description: "daughter to Capulet"},
-                {name: "Mercutio",description: "kinsman to the prince, and friend to Romeo"},
-                {name: "Tybalt", description: "nephew to Lady Capulet"},
-                {name: "The Nurse", description: "Nurse to Juliet"},
-                {name: "Friar Laurence", description: "Franciscan"},
-                {name: "Capulet", description: "head of Capulet household"},
-                {name: "Paris", description: "a young nobleman"},
-                {name: "Benvolio",  description: "nephew to Montague, and friend to Romeo"},
-                {name: "Lady Capulet", description: "wife to Capulet"},
-                {name: "Montague", description: "head of Montague household"},
-                {name: "Balthasar", description: "servant to Romeo"},
-                {name: "Peter", description: "servant to Juliet's nurse"},
-                {name: "Abraham", description: "servant to Montague"},
-                {name: "Sampson", description: "servant to Capulet"},
-                {name: "Gregory", description: "servant to Capulet"}];
+    $scope.roles = [{name: "Romeo", description: "son to Montague", status: "accepted"},
+                {name: "Juliet", description: "daughter to Capulet", status: "applied"},
+                {name: "Mercutio",description: "kinsman to the prince, and friend to Romeo", status: "applied"},
+                {name: "Tybalt", description: "nephew to Lady Capulet", status: "applied"},
+                {name: "The Nurse", description: "Nurse to Juliet", status: "applied"},
+                {name: "Friar Laurence", description: "Franciscan", status: "rejected"},
+                {name: "Capulet", description: "head of Capulet household", status: "rejected"},
+                {name: "Paris", description: "a young nobleman", status: "rejected"},
+                {name: "Benvolio",  description: "nephew to Montague, and friend to Romeo", status: "rejected"},
+                {name: "Lady Capulet", description: "wife to Capulet", status: "rejected"},
+                {name: "Montague", description: "head of Montague household", status: "rejected"},
+                {name: "Balthasar", description: "servant to Romeo", status: "applied"},
+                {name: "Peter", description: "servant to Juliet's nurse", status: "applied"},
+                {name: "Abraham", description: "servant to Montague", status: "rejected"},
+                {name: "Sampson", description: "servant to Capulet", status: "backup"},
+                {name: "Gregory", description: "servant to Capulet", status: "backup"}];
 });
 
 onecastApp.controller('applyTimeController', function($scope, $rootScope, $mdDialog, $location) {
