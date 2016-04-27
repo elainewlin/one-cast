@@ -21,7 +21,7 @@
         
         <h4>Applied: </h4>
         <div class='md-padding applied-roles' layout="row" layout-wrap>
-            <md-card class="card-container"  ng-repeat="role in roles">
+            <md-card class="card-container"  ng-repeat="role in roles" ng-if="'applied' == role.status">
                 <md-card-content>
                     <h2>{{role.name}}</h2>
                     <p>{{role.description}}</p>
@@ -34,7 +34,7 @@
         
         <h4>Accepted:</h4>
         <div class='md-padding accepted-roles' layout="row" layout-wrap>
-            <md-card class="card-container"  ng-repeat="role in roles">
+            <md-card class="card-container"  ng-repeat="role in roles" ng-if="'accepted' == role.status">
                 <md-card-content>
                     <h2>{{role.name}}</h2>
                     <p>{{role.description}}</p>
@@ -49,7 +49,7 @@
         
         <h4>Rejected:</h4>
         <div class='md-padding rejected-roles' layout="row" layout-wrap>
-            <md-card class="card-container"  ng-repeat="role in roles">
+            <md-card class="card-container"  ng-repeat="role in roles" ng-if="'rejected' == role.status">
                 <md-card-content>
                     <h2>{{role.name}}</h2>
                     <p>{{role.description}}</p>
@@ -64,7 +64,7 @@
         
         <h4>Backup:</h4>
         <div class='md-padding backup-roles' layout="row" layout-wrap>
-            <md-card class="card-container"  ng-repeat="role in roles">
+            <md-card class="card-container"  ng-repeat="role in roles" ng-if="'backup' == role.status">
                 <md-card-content>
                     <h2>{{role.name}}</h2>
                     <p>{{role.description}}</p>
