@@ -14,10 +14,6 @@ onecastApp.config(function($routeProvider) {
     		templateUrl: 'directorwelcome.html',
             controller: 'mainDirectorController'
     	})
-        .when('/romeojuliet', {
-            templateUrl: 'actor.html',
-            controller: 'actorController'
-        })
         .when('/romeojulietdirect', {
             templateUrl: 'casting-populated.html',
             controller: 'directorPlayController'
