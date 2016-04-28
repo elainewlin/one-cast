@@ -7,20 +7,25 @@
             <div class="form-group">
                 <div class="input-group search-container">
                     <div class="input-group-addon"><i class="fa fa-search"></i></div>
-                    <input type="text" class="form-control" placeholder="Search for production" ng-model="search.title">
+                    <input type="text" class="form-control" placeholder="Search by production" ng-model="search.title">
                 </div>    
                 <div class="input-group search-container date">
                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                    <input type="text" class="form-control" placeholder="Search for date" ng-model="search.date">
-                </div>  
+                    <!-- CALENDAR PICKER -->
+                <input date-range-picker class="form-control date-picker" placeholder="Search by date" type="text" ng-model="datePicker.date"  >
+                </input>
+<!--                    <input type="text" class="form-control" placeholder="Search by date" ng-model="search.date">-->
+                </div>
+                
+                
+                
                 <div class="input-group search-container location">
                     <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
-                    <input type="text" class="form-control" placeholder="Search for location" ng-model="search.location">
+                    <input type="text" class="form-control" placeholder="Search by location" ng-model="search.location">
                 </div>  
             </div>
         </form>
         </div>
-        
         
         
         <table id="actual-table" ng-table="tableParams" class="table table-bordered table-striped"  fixed-table-headers="scrollable-area">
@@ -54,7 +59,7 @@
                 </tr>
             </thead>      
             <tbody>       
-                <tr class="c-row" ng-repeat-start="production in $data |orderBy:sortType:sortReverse | filter:search" href="#" ng-click="isCollapsed = !isCollapsed">
+                <tr class="c-row" ng-repeat-start="production in $data |orderBy:sortType:sortReverse | filter:search | filter:byDateRange('date', datePicker.date.startDate, datePicker.date.endDate)" href="#" ng-click="isCollapsed = !isCollapsed">
                     <td data-title="'Title'" class="panel-title">
                         <i ng-class="isCollapsed ? 'fa fa-angle-right': 'fa fa-angle-down'"> </i>
                         {{production.title}}   

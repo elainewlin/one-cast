@@ -87,3 +87,26 @@ table th , table td  {
 }
 
 a { cursor: pointer; cursor: hand; }
+
+.strip {
+    height: 4px;
+    width: 100%;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.strip-accepted {
+    background-color: forestgreen;
+}
+
+.strip-applied {
+    background-color: hotpink;
+}
+
+.strip-rejected {
+    background-color: red;
+}
+
+.strip-backup {
+    background-color: orange;
+}

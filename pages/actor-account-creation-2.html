@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="accountApp">
 <head>
     <title>Account Creation</title>
     
@@ -13,8 +13,25 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     
-    <script src="/js/jquery-1.12.3.min.js"></script>
-    <script src="/js/jquery-ui.min.js"></script>
+    <!-- Calendar Library -->
+    <link rel="stylesheet" href="../bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <script src="../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../bower_components/angular-daterangepicker/js/angular-daterangepicker.js"></script>
+    
+    <!-- Material Angular CSS -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.3/ui-bootstrap-tpls.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-table/0.3.3/ng-table.min.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>    
+    <script src="../js/account.js"></script>
+    
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/jquery-ui.min.css">
     <script src="/js/bootstrap.min.js"></script>
@@ -25,22 +42,101 @@
         <div class="navbar-header">
             <a class="navbar-brand"><img src="../img/logowhite.png" height="32px"></img></a>
         </div>
-        <!-- /.navbar-header -->
-
-        <ul class="nav navbar-top-links navbar-left">
-            <li class="dropdown">
-                <a class="dropdown-toggle" href="actor-account-creation-1.html">About Me</a>
-            </li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" href="actor-account-creation-2.html">Experience</a>
-            </li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" href="actor-account-creation-3.html">Additional Media</a>
-            </li>
-        </ul>
     </nav>
+    
+    <div class="form" ng-controller="formController" layout="column">
+      <md-content layout-padding>
+        <form name="projectForm">
+          <h3>Experience</h3>
+              <md-input-container class="half-input">
+                <label>College</label>
+                <input name="college" ng-model="account.college">
+                <div ng-messages="projectForm.college.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+              <md-input-container class="half-input" style="float: right">
+                <label>Company</label>
+                <input name="comp" ng-model="account.comp" />
+                <div ng-messages="projectForm.comp.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+              <md-input-container class="half-input">
+                <label>Major</label>
+                <input name="major" ng-model="account.major">
+                <div ng-messages="projectForm.major.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+              <md-input-container class="half-input" style="float: right">
+                <label>Role</label>
+                <input name="role" ng-model="account.role" />
+                <div ng-messages="projectForm.role.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+              <md-input-container class="half-input">
+                <label>Graduation Year</label>
+                <input name="grad" ng-model="account.grad" type="number">
+                <div ng-messages="projectForm.grad.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+              <md-input-container class="half-input" style="float: right">
+                <label>Company Location</label>
+                <input name="loc" ng-model="account.loc" />
+                <div ng-messages="projectForm.loc.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+              <md-input-container class="half-input">
+                <label>College Location</label>
+                <input name="loc2" ng-model="account.loc2">
+                <div ng-messages="projectForm.loc2.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+              <md-input-container class="half-input" style="float: right">
+                <label>Company Start Date</label>
+                <input name="start" ng-model="account.start" type="date" />
+                <div ng-messages="projectForm.start.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+              <md-input-container class="half-input">
+                <label>College Start Date</label>
+                <input name="start2" ng-model="account.start2" type="date">
+                <div ng-messages="projectForm.start2.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+              <md-input-container class="half-input" style="float: right">
+                <label>Company End Date</label>
+                <input name="end" ng-model="account.end" type="date"/>
+                <div ng-messages="projectForm.end.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+                <md-input-container class="half-input">
+                <label>College End Date</label>
+                <input name="end2" ng-model="account.end2" type="date" />
+                <div ng-messages="projectForm.end2.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+            <!--label>Please upload any additional media</label><br /-->
+            <div class="half-input" style="float: right">
+                <a href="index.html#actorhome" class="md-button md-primary md-raised" style="float: right;">Next</a>
+                <a href="actor-account-creation-1.html" class="md-button md-raised" style="float: right;">Back</a>
+                <label for="file" class="md-button md-raised md-primary" style="">Choose Files <i class="fa fa-upload"></i></label>
+                <input class="ng-hide" type="file" name="file" id="file" multiple/>
+            </div>
+        </form>
+      </md-content>
+    </div>
 
-    <form class="form-horizontal" id="page-wrapper">
+    <!--form class="form-horizontal" id="page-wrapper">
         <div class="col-sm-5">
             <h3>Education</h3>
             <div class="form-group">
@@ -121,7 +217,7 @@
                 <a href="actor-account-creation-3.html" class="btn btn-default">Next</a>
             </div>   
         </div> 
-    </form>
+    </form-->
 </body>
 </html>
 
