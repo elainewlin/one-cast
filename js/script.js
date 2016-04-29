@@ -266,6 +266,12 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
     
     $scope.genders = [ {option:"None", id:""},{option:"Male", id:"m"}, {option:"Female", id:"f"}];
     
+    $scope.eyeColors = [{option:"None", id:""}, {option:"Blue", id:"blue"}, {option: "Brown", id:"brown"}, {option: "Hazel", id:"hazel"}, {option: "Other", id:"other"}];
+    
+    $scope.hairColors = [{option: "None", id: ""},{option:"Brunette", id:"brunette"}, {option:"Blonde",id:"blodne"}, {option:"Red",id:"red"}, {option:"White", id:"white"}, {option:"Other", id:"other"}];
+    
+    $scope.buildTypes = [{option: "None", id: ""},{option:"Ectomorph", id:"ectomorph"}, {option:"Mesomorph",id:"mesomorph"}, {option:"Endomorph",id:"endomorph"}, {option:"Other", id:"other"}]
+    
     $scope.actors = [{name: "Twila Harman", location: "Chesapeake, VA", age: "33", height: "6'", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",  description: "son to Montague", image:"../public/images/twila_harman.jpg", selected: false},
                 {name: "Ming Correll", location: "Newark, NJ", age: "58", height: "5'7\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "daughter to Capulet", image:"../public/images/ming_correll.jpg", selected: false},
                 {name: "Jerrold Mercier", location: "Detroit, MI", age: "40", height: "7'2\"", weight: "", gender:"m", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "kinsman to the prince, and friend to Romeo", image: "../public/images/jerrold_mercier.jpg", selected: false},
