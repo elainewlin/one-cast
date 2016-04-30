@@ -178,6 +178,7 @@ onecastApp.controller('actorController', function($scope, $rootScope, $window) {
 });
 
 onecastApp.controller('searchController', function($scope, ngTableParams) {
+    $rootScope.pageTitle = "OneCast Search";
     $scope.primary = 'purple';
     var data = [{title: "Romeo & Juliet", date: "2016-04-29", location: "Chesapeake, VA", description: "Romeo and Juliet is a tragedy written by William Shakespeare early in his career about two young star-crossed lovers whose deaths ultimately reconcile their feuding families."},
                 {title: "Les Miserables", date: "2016-04-29", location: "Chesapeake, VA", description: "Les Misérables is a French historical novel by Victor Hugo, first published in 1862, that is considered one of the greatest novels of the 19th century."},
@@ -251,7 +252,8 @@ onecastApp.controller('searchController', function($scope, ngTableParams) {
    });
 
 
-onecastApp.controller('directorSearchController', function($scope, ngTableParams, $mdDialog) {
+onecastApp.controller('directorSearchController', function($scope, ngTableParams, $mdDialog, $rootScope) {
+    $rootScope.pageTitle = "OneCast Search";
     $scope.primary = 'purple';
     $scope.invite = function() {
         $mdDialog.show(
@@ -353,7 +355,8 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
 });
 
 
-onecastApp.controller('productionController', function($scope, $mdDialog) {
+onecastApp.controller('productionController', function($scope, $mdDialog, $rootScope) {
+    $rootScope.pageTitle = "OneCast Apply";
     $scope.primary = 'purple';
     $(function(){
 
@@ -398,7 +401,8 @@ onecastApp.controller('productionController', function($scope, $mdDialog) {
     
 });
 
-onecastApp.controller('actorPageController', function($scope) {
+onecastApp.controller('actorPageController', function($scope, $rootScope) {
+    $rootScope.pageTitle = "Production Overview";
     $scope.primary = 'purple';
     $scope.roles = [{name: "Romeo", description: "son to Montague", status: "accepted"},
                 {name: "Juliet", description: "daughter to Capulet", status: "applied"},
