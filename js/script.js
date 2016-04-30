@@ -111,7 +111,7 @@ onecastApp.controller('directorPlayController', function($scope, $rootScope, $wi
     
 });
 
-onecastApp.controller('mainActorController', function($scope, $rootScope, $window, $mdDialog) {
+onecastApp.controller('mainActorController', function($scope, $rootScope, $window, $mdDialog, $location) {
     $rootScope.pageTitle = "OneCast";
     $scope.primary = 'purple';
     $("#create-casting").hide();
@@ -125,9 +125,18 @@ onecastApp.controller('mainActorController', function($scope, $rootScope, $windo
     $rootScope.romeoUrl = "#romeojuliet";
     $rootScope.actor = true;
     
+    console.log($rootScope.applied);
+    
+    if($rootScope.applied) {
+        $('#rom-jul-link').show();
+        $location.path("/summary");
+    } else {
+        $('#rom-jul-link').hide();
+    }
+    
 });
 
-onecastApp.controller('mainDirectorController', function($scope, $rootScope, $window, $mdDialog) {
+onecastApp.controller('mainDirectorController', function($scope, $rootScope, $window, $mdDialog, $location) {
     $rootScope.pageTitle = "OneCast";
     $scope.primary = 'purple';
     $rootScope.newOption = "New Casting";
@@ -140,6 +149,15 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
     
     $("#create-casting").show();
     $("#create-button").show();
+    
+    console.log($rootScope.created);
+    
+    if($rootScope.created) {
+        $('#rom-jul-link').show();
+        $location.path("/summary");
+    } else {
+        $('#rom-jul-link').hide();
+    }
     
     $(function(){
 
@@ -251,7 +269,6 @@ onecastApp.controller('searchController', function($scope, ngTableParams, $rootS
        .defaultIconSet('img/icons/sets/core-icons.svg', 24);
    });
 
-
 onecastApp.controller('directorSearchController', function($scope, ngTableParams, $mdDialog, $rootScope) {
     $rootScope.pageTitle = "OneCast Search";
     $scope.primary = 'purple';
@@ -354,7 +371,6 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
     
 });
 
-
 onecastApp.controller('productionController', function($scope, $mdDialog, $rootScope) {
     $rootScope.pageTitle = "OneCast Apply";
     $scope.primary = 'purple';
@@ -430,6 +446,9 @@ onecastApp.controller('applyTimeController', function($scope, $rootScope, $mdDia
     };
     
     $scope.ok = function() {
+        console.log("Setting to applied");
+        $rootScope.applied = true;
+        $('#rom-jul-link').show();
         $location.path('/summary');
         $mdDialog.cancel();
     }
@@ -604,6 +623,8 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
     
     $scope.save = function() {
         $mdDialog.cancel();
+        $rootScope.created = true;
+        $('#rom-jul-link').show();
         $location.path('/romeojulietdirect');
     }
     
