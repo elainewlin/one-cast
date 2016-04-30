@@ -177,7 +177,7 @@ onecastApp.controller('actorController', function($scope, $rootScope, $window) {
     $scope.primary = 'purple';
 });
 
-onecastApp.controller('searchController', function($scope, ngTableParams) {
+onecastApp.controller('searchController', function($scope, ngTableParams, $rootScope) {
     $rootScope.pageTitle = "OneCast Search";
     $scope.primary = 'purple';
     var data = [{title: "Romeo & Juliet", date: "2016-04-29", location: "Chesapeake, VA", description: "Romeo and Juliet is a tragedy written by William Shakespeare early in his career about two young star-crossed lovers whose deaths ultimately reconcile their feuding families."},
