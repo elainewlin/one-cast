@@ -69,19 +69,38 @@
 
             
             
+            <!-- HAIR COLOR -->
+            
             <div class="input-group search-container right">
                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                <input type="text" class="form-control" placeholder="Search by hair color" ng-model="search.haircolor">
+<!--                <input type="text" class="form-control" placeholder="Search by hair color" ng-model="search.haircolor">-->
+                
+                <select name="repeatSelect" class="form-control" id="repeatSelect" ng-options="color.id as color.option for color in hairColors" ng-model="search.haircolor" >
+                    <option value="" id="dropdown-placeholder" disabled selected>Choose hair color</option>
+                </select>
             </div> 
             
+            
+            <!-- EYE COLOR -->
             <div class="input-group search-container left end">
                 <div class="input-group-addon"><i class="fa fa-eye"></i></div>
-                <input type="text" class="form-control" placeholder="Search by eye color" ng-model="search.eyecolor">
+<!--                <input type="text" class="form-control" placeholder="Search by eye color" ng-model="search.eyecolor">-->
+                
+                <select name="repeatSelect" class="form-control" id="repeatSelect" ng-options="eye.id as eye.option for eye in eyeColors" ng-model="search.eyecolor" >
+                    <option value="" id="dropdown-placeholder" disabled selected>Choose eye color</option>
+                </select>
+                
             </div> 
             
+            
+            <!-- BUILD TYPE -->
             <div class="input-group search-container right end">
                 <div class="input-group-addon"><i class="fa fa-male"></i></div>
-                <input type="text" class="form-control" placeholder="Search by build" ng-model="search.build">
+<!--                <input type="text" class="form-control" placeholder="Search by build" ng-model="search.build">-->
+                <select name="repeatSelect" class="form-control" id="repeatSelect" ng-options="build.id as build.option for build in buildTypes" ng-model="search.build" >
+                    <option value="" id="dropdown-placeholder" disabled selected>Choose body type</option>
+                </select>
+                
             </div> 
         </div>
     </form>

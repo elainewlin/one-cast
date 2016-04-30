@@ -111,7 +111,7 @@ onecastApp.controller('directorPlayController', function($scope, $rootScope, $wi
     
 });
 
-onecastApp.controller('mainActorController', function($scope, $rootScope, $window, $mdDialog) {
+onecastApp.controller('mainActorController', function($scope, $rootScope, $window, $mdDialog, $location) {
     $rootScope.pageTitle = "OneCast";
     $scope.primary = 'purple';
     $("#create-casting").hide();
@@ -125,9 +125,18 @@ onecastApp.controller('mainActorController', function($scope, $rootScope, $windo
     $rootScope.romeoUrl = "#romeojuliet";
     $rootScope.actor = true;
     
+    console.log($rootScope.applied);
+    
+    if($rootScope.applied) {
+        $('#rom-jul-link').show();
+        $location.path("/summary");
+    } else {
+        $('#rom-jul-link').hide();
+    }
+    
 });
 
-onecastApp.controller('mainDirectorController', function($scope, $rootScope, $window, $mdDialog) {
+onecastApp.controller('mainDirectorController', function($scope, $rootScope, $window, $mdDialog, $location) {
     $rootScope.pageTitle = "OneCast";
     $scope.primary = 'purple';
     $rootScope.newOption = "New Casting";
@@ -140,6 +149,15 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
     
     $("#create-casting").show();
     $("#create-button").show();
+    
+    console.log($rootScope.created);
+    
+    if($rootScope.created) {
+        $('#rom-jul-link').show();
+        $location.path("/summary");
+    } else {
+        $('#rom-jul-link').hide();
+    }
     
     $(function(){
 
@@ -177,7 +195,8 @@ onecastApp.controller('actorController', function($scope, $rootScope, $window) {
     $scope.primary = 'purple';
 });
 
-onecastApp.controller('searchController', function($scope, ngTableParams) {
+onecastApp.controller('searchController', function($scope, ngTableParams, $rootScope) {
+    $rootScope.pageTitle = "OneCast Search";
     $scope.primary = 'purple';
     var data = [{title: "Romeo & Juliet", date: "2016-04-29", location: "Chesapeake, VA", description: "Romeo and Juliet is a tragedy written by William Shakespeare early in his career about two young star-crossed lovers whose deaths ultimately reconcile their feuding families."},
                 {title: "Les Miserables", date: "2016-04-29", location: "Chesapeake, VA", description: "Les Misérables is a French historical novel by Victor Hugo, first published in 1862, that is considered one of the greatest novels of the 19th century."},
@@ -250,8 +269,8 @@ onecastApp.controller('searchController', function($scope, ngTableParams) {
        .defaultIconSet('img/icons/sets/core-icons.svg', 24);
    });
 
-
-onecastApp.controller('directorSearchController', function($scope, ngTableParams, $mdDialog) {
+onecastApp.controller('directorSearchController', function($scope, ngTableParams, $mdDialog, $rootScope) {
+    $rootScope.pageTitle = "OneCast Search";
     $scope.primary = 'purple';
     $scope.invite = function() {
         $mdDialog.show(
@@ -265,6 +284,12 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
     }
     
     $scope.genders = [ {option:"None", id:""},{option:"Male", id:"m"}, {option:"Female", id:"f"}];
+    
+    $scope.eyeColors = [{option:"None", id:""}, {option:"Blue", id:"blue"}, {option: "Brown", id:"brown"}, {option: "Hazel", id:"hazel"}, {option: "Other", id:"other"}];
+    
+    $scope.hairColors = [{option: "None", id: ""},{option:"Brunette", id:"brunette"}, {option:"Blonde",id:"blodne"}, {option:"Red",id:"red"}, {option:"White", id:"white"}, {option:"Other", id:"other"}];
+    
+    $scope.buildTypes = [{option: "None", id: ""},{option:"Ectomorph", id:"ectomorph"}, {option:"Mesomorph",id:"mesomorph"}, {option:"Endomorph",id:"endomorph"}, {option:"Other", id:"other"}]
     
     $scope.actors = [{name: "Twila Harman", location: "Chesapeake, VA", age: "33", height: "6'", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",  description: "son to Montague", image:"../public/images/twila_harman.jpg", selected: false},
                 {name: "Ming Correll", location: "Newark, NJ", age: "58", height: "5'7\"", weight: "", gender:"f", haircolor: "brunette", build: "n/a", eyecolor: "brown",description: "daughter to Capulet", image:"../public/images/ming_correll.jpg", selected: false},
@@ -346,8 +371,8 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
     
 });
 
-
-onecastApp.controller('productionController', function($scope, $mdDialog) {
+onecastApp.controller('productionController', function($scope, $mdDialog, $rootScope) {
+    $rootScope.pageTitle = "OneCast Apply";
     $scope.primary = 'purple';
     $(function(){
 
@@ -392,7 +417,8 @@ onecastApp.controller('productionController', function($scope, $mdDialog) {
     
 });
 
-onecastApp.controller('actorPageController', function($scope) {
+onecastApp.controller('actorPageController', function($scope, $rootScope) {
+    $rootScope.pageTitle = "Production Overview";
     $scope.primary = 'purple';
     $scope.roles = [{name: "Romeo", description: "son to Montague", status: "accepted"},
                 {name: "Juliet", description: "daughter to Capulet", status: "applied"},
@@ -420,6 +446,9 @@ onecastApp.controller('applyTimeController', function($scope, $rootScope, $mdDia
     };
     
     $scope.ok = function() {
+        console.log("Setting to applied");
+        $rootScope.applied = true;
+        $('#rom-jul-link').show();
         $location.path('/summary');
         $mdDialog.cancel();
     }
@@ -613,6 +642,8 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
     
     $scope.save = function() {
         $mdDialog.cancel();
+        $rootScope.created = true;
+        $('#rom-jul-link').show();
         $location.path('/romeojulietdirect');
     }
     

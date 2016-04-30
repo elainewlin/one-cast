@@ -142,6 +142,7 @@
 .role-container {
     width: 600px;
     margin: 32px;
+    margin-top: 0px;
 }
 
 #addRoleOne {

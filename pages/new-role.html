@@ -31,10 +31,10 @@
             <!-- New Role -->
             <div class="col-md-10 col-sm-10">
               <div class="row">
-
-                <input class="form-control" id="role-title" placeholder="Role Title">
+                <h4>Role Title</h4>
+                <input class="form-control" id="role-title" placeholder="Ex: Romeo">
                 <div id="age-range-box">
-                  <p id="age-range-text">Age Range</p>
+                  <h4 id="age-range-text">Age Range</h4>
                   <div id="slider-age">
 
                   </div>
@@ -44,16 +44,19 @@
                     <span id="slider-label-right"></span>
                   </div>
                 </div>
+                <h4>Gender</h4>
                 <div class="dropdown" id="gender-dropdown">
-                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <span id="genderToReplace">Gender</span>
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <span id="genderToReplace">None</span>
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                     <li><a class="clicky">Female</a></li>
                     <li><a class="clicky">Male</a></li>
+                    <li><a class="clicky">None</a></li>  
                   </ul>
                 </div>
-                <textarea id="description" class="form-control" placeholder="Role Description"></textarea>
+                <h4>Role Description</h4>
+                <textarea id="description" class="form-control" placeholder="Ex: Romeo is in love with..."></textarea>
                 <div class="file-upload-box" id="drop-zone">
                     <label for="file" class="md-button md-raised md-primary" style="">Choose Files <i class="fa fa-upload"></i></label>
                     <input class="ng-hide" type="file" name="file" id="file" multiple/>
