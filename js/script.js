@@ -385,9 +385,15 @@ onecastApp.controller('productionController', function($scope, $mdDialog, $rootS
               $mdDialog.show({
                   controller: 'applyTimeController',
                   templateUrl: 'actor-apply-cal.html',
-                  ariaLabel: "Choose Audition Times",
+                  ariaLabel: "Select Audition Slot",
                   parent: angular.element('#pag-wrapper'),
                   clickOutsideToClose:true,
+                  onComplete: function(){
+                    setTimeout(function(){
+                      console.log("Hello!");
+                      console.log($(".fc-today-button").click());
+                    }, 0);
+                  }
                 });
             
             while(angular.element(document).find('md-dialog').length > 1) {
