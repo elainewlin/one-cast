@@ -1,8 +1,10 @@
-<md-dialog aria-label="Select Audition Time"  ng-cloak>
+<link href="../bower_components/fullcalendar/dist/fullcalendar.css" rel="stylesheet" type="text/css">
+
+<md-dialog aria-label="Select Audition Slot"  ng-cloak>
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2>Select Audition Time</h2>
+        <h2>Select Audition Slot</h2>
         <span flex></span>
         <md-button class="md-icon-button" ng-click="cancel()">
           <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
@@ -11,7 +13,7 @@
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
-        <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=onecast4%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        <div id='calendar'></div>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
@@ -25,3 +27,7 @@
     </md-dialog-actions>
   </form>
 </md-dialog>
+
+<!--  FullCalendar (has to be after jQuery and Moment)  -->
+<script src="../bower_components/fullcalendar/dist/fullcalendar.js"></script>
+<script src="../js/actor-apply-cal.js"></script>
