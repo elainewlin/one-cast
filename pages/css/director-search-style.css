@@ -56,11 +56,11 @@
     display: inline-block;
 }
 .ngrs-join {
-    background-color: #FF69B4 !important;
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #FF69B4), color-stop(100%, #FF69B4)) !important;
-    background-image: -moz-linear-gradient(#FF69B4, #FF69B4) !important;
-    background-image: -webkit-linear-gradient(#FF69B4, #FF69B4) !important;
-    background-image: linear-gradient(#FF69B4, #FF69B4) !important;
+    background-color: #d81b60 !important;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d81b60), color-stop(100%, #d81b60)) !important;
+    background-image: -moz-linear-gradient(#d81b60, #d81b60) !important;
+    background-image: -webkit-linear-gradient(#d81b60, #d81b60) !important;
+    background-image: linear-gradient(#d81b60, #d81b60) !important;
 }
 
 .ngrs-range-slider {

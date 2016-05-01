@@ -31,52 +31,39 @@
             <!-- New Role -->
             <div class="col-md-10 col-sm-10">
               <div class="row">
-                <h4>Role Title</h4>
-                <input class="form-control" id="role-title" placeholder="Ex: Romeo">
-                <div id="age-range-box">
-                  <h4 id="age-range-text">Age Range</h4>
-                    <div id="slider-container" class="form-control"> 
-                        <div range-slider min="0" max="100" model-min="ageRange.min" model-max="ageRange.max" attach-handle-values="true"  id="slider-bar"></div>
-                        <div id="age-range-values-filter">
-                            Age: 
-                            <span id="slider-label-left-filter">{{ageRange.min}}</span>
-                            to 
-                            <span id="slider-label-right-filter">{{ageRange.max}}</span>
+                <div class="block">
+                    <h4 class="section-title">Role Title</h4>
+                    <input class="form-control" id="role-title" placeholder="Ex: Romeo">
+                </div>
+                <div class="block">
+                    <div id="age-range-box">
+                      <h4 id="age-range-text">Age Range</h4>
+                        <div id="slider-container" > 
+                            <div range-slider min="0" max="100" model-min="ageRange.min" model-max="ageRange.max" attach-handle-values="true"  id="slider-bar"></div>
+                            <div id="age-range-values-filter">
+                                Age: 
+                                <span id="slider-label-left-filter">{{ageRange.min}}</span>
+                                to 
+                                <span id="slider-label-right-filter">{{ageRange.max}}</span>
+                            </div>
                         </div>
                     </div>
-                    
-<!--
-                  <div id="slider-age">
-
-                  </div>
-                  <div id="age-range-values">
-                    <span id="slider-label-left"></span>
-                     to 
-                    <span id="slider-label-right"></span>
-                  </div>
--->
                 </div>
-                <h4>Gender</h4>
-                <div class="dropdown" id="gender-dropdown">
-                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <span id="genderToReplace">None</span>
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a class="clicky">Female</a></li>
-                    <li><a class="clicky">Male</a></li>
-                    <li><a class="clicky">None</a></li>  
-                  </ul>
+                <div class="block">
+                    <h4 class="section-title">Gender</h4>
+                    <div class="input-group search-container" id="gender-dropdown">
+                        <select class="form-control" ng-options="gender.id as gender.option for gender in genders" ng-model="gender" >
+                            <option value="" id="dropdown-placeholder" disabled selected>Choose a gender</option>
+                        </select>
+                    </div>
                 </div>
-                <h4>Role Description</h4>
-                <textarea id="description" class="form-control" placeholder="Ex: Romeo is in love with..."></textarea>
-                <div class="file-upload-box" id="drop-zone">
-                    <label for="file" class="md-button md-raised md-primary" style="">Choose Files <i class="fa fa-upload"></i></label>
-                    <input class="ng-hide" type="file" name="file" id="file" multiple/>
-                  <!--div id="clickHere">Upload casting scripts  <i class="fa fa-upload"></i>
-                    <input type="file" name="file" id="file" multiple />
-                  </div>
-                  <div id='filename'></div-->
+                <div class="block">
+                    <h4 class="section-title">Role Description</h4>
+                    <textarea id="description" class="form-control" placeholder="Ex: Romeo is in love with..."></textarea>  
                 </div>
+                <h4 class="section-title">Upload Casting Scripts </h4>
+                <label id="file-uploader" for="file" class="md-button md-raised md-primary" style="">Choose Files <i class="fa fa-upload"></i></label>
+                <input class="ng-hide" type="file" name="file" id="file" multiple/>
 
               </div>
             </div>

@@ -608,6 +608,8 @@ onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialo
         
     };
     
+    $scope.genders = [ {option:"None", id:""},{option:"Male", id:"m"}, {option:"Female", id:"f"}];
+    
     $scope.ageRange = {min: 0, max: 100};
     
     $scope.slider = {
