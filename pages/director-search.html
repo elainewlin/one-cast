@@ -23,39 +23,23 @@
                 <input type="text" class="form-control" placeholder="Search by gender" ng-model="search.gender">
             </div>  
 -->
-            <div class="input-group search-container left">
+            <div class="input-group search-container left" >
                 <div class="input-group-addon"><i class="fa fa-venus-mars"></i></div>
                 <select name="repeatSelect" class="form-control" id="repeatSelect" ng-options="gender.id as gender.option for gender in genders" ng-model="search.gender" >
-                    <option value="" id="dropdown-placeholder" disabled selected>Choose a gender</option>
+                    <option value="" id="dropdown-placeholder" disabled selected>Choose gender</option>
                     <!--<option ng-repeat="gender in genders" value="{{gender}}">{{gender}}</option>-->
                 </select>
-            </div>
-            
-<!--
-            <div class="input-group search-container left">
-                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                <select class="ac-select" ac-model="search.gender" ac-options="gender.id as gender.option for gender in genders" ac-settings="{comboMode: true, loadOnOpen: true, minWidth: '300px' }" >
-                </select>
-            </div>
--->
-            
-
+            </div>     
             
             <div class="input-group search-container right">
-                <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                <div class="input-group-addon right-col-addon"><i id="location-icon" class="fa fa-map-marker"></i></div>
                 <input type="text" class="form-control" placeholder="Search by location" ng-model="search.location">
             </div>  
             
             
-<!--  AGE  -->
-<!-- 
+<!--  AGE  -->  
             <div class="input-group search-container left">
-                <div class="input-group-addon"><i class="fa fa-calendar-o"></i></div>
-                <input type="text" class="form-control" placeholder="Search by age" ng-model="search.age">
-            </div> 
--->    
-            <div class="input-group search-container left">
-                <div class="input-group-addon"><i class="fa fa-calendar-o"></i></div>
+                <div class="input-group-addon"><img class="img-addon" src="../img/age-icon.svg"></div>
                 <div id="slider-container"class="form-control"> 
                     <div range-slider min="0" max="100" model-min="ageRange.min" model-max="ageRange.max" attach-handle-values="true"  id="slider-bar"></div>
                     <div id="age-range-values-filter">
@@ -72,7 +56,7 @@
             <!-- HAIR COLOR -->
             
             <div class="input-group search-container right">
-                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                <div class="input-group-addon right-col-addon"><img class="img-addon" src="../img/female-hair-shape-gray.svg"></div>
 <!--                <input type="text" class="form-control" placeholder="Search by hair color" ng-model="search.haircolor">-->
                 
                 <select name="repeatSelect" class="form-control" id="repeatSelect" ng-options="color.id as color.option for color in hairColors" ng-model="search.haircolor" >
@@ -95,8 +79,7 @@
             
             <!-- BUILD TYPE -->
             <div class="input-group search-container right end">
-                <div class="input-group-addon"><i class="fa fa-male"></i></div>
-<!--                <input type="text" class="form-control" placeholder="Search by build" ng-model="search.build">-->
+                <div class="input-group-addon right-col-addon"><i id ="build-type-icon" class="fa fa-male"></i></div>
                 <select name="repeatSelect" class="form-control" id="repeatSelect" ng-options="build.id as build.option for build in buildTypes" ng-model="search.build" >
                     <option value="" id="dropdown-placeholder" disabled selected>Choose body type</option>
                 </select>
