@@ -1,4 +1,4 @@
-var onecastApp = angular.module('onecastApp', ['ngRoute', 'ui.bootstrap', 'ngMaterial', 'ngTable', 'rzModule', 'ui-rangeSlider', 'daterangepicker']);
+var onecastApp = angular.module('onecastApp', ['ngRoute', 'ui.bootstrap', 'ngMaterial', 'ngTable', 'rzModule', 'ui-rangeSlider', 'daterangepicker', 'ngMessages']);
 
 onecastApp.config(function($routeProvider) {
     $routeProvider
@@ -585,20 +585,16 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
 
     $scope.minDate = new Date(
         $scope.myDate.getFullYear(),
-        $scope.myDate.getMonth() - 2,
+        $scope.myDate.getMonth(),
         $scope.myDate.getDate()
     );
 
     $scope.maxDate = new Date(
       $scope.myDate.getFullYear(),
-      $scope.myDate.getMonth() + 2,
+      $scope.myDate.getMonth() + 24,
       $scope.myDate.getDate()
     );
   
-    $scope.onlyWeekendsPredicate = function(date) {
-        var day = date.getDay();
-        return day === 0 || day === 6;
-      }
     
     $scope.addRole = function() {
         
