@@ -575,6 +575,8 @@ onecastApp.controller('applyTimeControllerDirector', function($scope, $rootScope
     
 });
 
+//$scope, ngTableParams, $mdDialog, $rootScope
+
 onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialog) {
     $scope.primary = 'purple';
     $scope.add = function() {
@@ -598,6 +600,26 @@ onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialo
                 $mdDialog.cancel();
             }
         
+    };
+    
+    $scope.ageRange = {min: 0, max: 100};
+    
+    $scope.slider = {
+        minValue: 10,
+        maxValue: 90,
+        options: {
+            floor: 15,
+            ceil: 90,
+            step: 1
+        }
+    };
+    $scope.byAgeRange = function (fieldName, minValue, maxValue) {
+        if (minValue === undefined) minValue = Number.MIN_VALUE;
+        if (maxValue === undefined) maxValue = Number.MAX_VALUE;
+
+        return function predicateFunc(item) {
+            return minValue <= item[fieldName] && item[fieldName] <= maxValue;
+        };
     };
     
 });
