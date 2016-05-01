@@ -379,22 +379,47 @@ onecastApp.controller('productionController', function($scope, $mdDialog) {
 
     });
     
-    $scope.roles = [{name: "Romeo", description: "son to Montague"},
-                {name: "Juliet", description: "daughter to Capulet"},
+    $scope.roles = [{name: "Romeo", description: "son to Montague", selected: false},
+                {name: "Juliet", description: "daughter to Capulet", selected: false},
                 {name: "Mercutio",description: "kinsman to the prince, and friend to Romeo"},
-                {name: "Tybalt", description: "nephew to Lady Capulet"},
-                {name: "The Nurse", description: "Nurse to Juliet"},
-                {name: "Friar Laurence", description: "Franciscan"},
-                {name: "Capulet", description: "head of Capulet household"},
-                {name: "Paris", description: "a young nobleman"},
+                {name: "Tybalt", description: "nephew to Lady Capulet", selected: false},
+                {name: "The Nurse", description: "Nurse to Juliet", selected: false},
+                {name: "Friar Laurence", description: "Franciscan", selected: false},
+                {name: "Capulet", description: "head of Capulet household", selected: false},
+                {name: "Paris", description: "a young nobleman", selected: false},
                 {name: "Benvolio",  description: "nephew to Montague, and friend to Romeo"},
-                {name: "Lady Capulet", description: "wife to Capulet"},
-                {name: "Montague", description: "head of Montague household"},
-                {name: "Balthasar", description: "servant to Romeo"},
-                {name: "Peter", description: "servant to Juliet's nurse"},
-                {name: "Abraham", description: "servant to Montague"},
-                {name: "Sampson", description: "servant to Capulet"},
-                {name: "Gregory", description: "servant to Capulet"}];
+                {name: "Lady Capulet", description: "wife to Capulet", selected: false},
+                {name: "Montague", description: "head of Montague household", selected: false},
+                {name: "Balthasar", description: "servant to Romeo", selected: false},
+                {name: "Peter", description: "servant to Juliet's nurse", selected: false},
+                {name: "Abraham", description: "servant to Montague", selected: false},
+                {name: "Sampson", description: "servant to Capulet", selected: false},
+                {name: "Gregory", description: "servant to Capulet", selected: false}];
+    
+     // function to determine if any roles have been selected
+    
+    $scope.notSelected = true;
+    $scope.selected = false;
+    $scope.anySelected = function () {
+        setTimeout(func, 0);
+        function func() {
+            done = false;
+            for(i in $scope.roles) {
+                role = $scope.roles[i];
+                if(role['selected']) {
+                    $scope.selected = true;
+                    $scope.notSelected = false;
+                    done = true;
+                }
+            }
+            if(!done) {
+                $scope.selected = false;
+                $scope.notSelected = true;
+            }
+        }
+        
+    }
+    
     
 });
 

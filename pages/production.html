@@ -36,7 +36,7 @@
                     
                     
                     <div class="checkbox-containter">
-                        <md-checkbox class="apply-checkbox apply-role">{{role.name}}</md-checkbox>
+                        <md-checkbox class="apply-checkbox apply-role" ng-model="role.selected" ng-click="anySelected()">{{role.name}}</md-checkbox>
                     </div>
                     
                     <p>{{role.description}}</p>
@@ -49,9 +49,9 @@
     </div>
     
     <!--  Apply  -->
-    <div class="submission-button" ng-controller="productionController">
+    <div class="submission-button" >
         <!--input href="#applycalendar" id="apply-button" type="submit" value="Apply"-->
-        <md-button class="md-primary md-raised" ng-click="selectTime" id="apply-button">APPLY!</md-button>
+        <md-button class="md-primary md-raised" ng-click="selectTime" id="apply-button" ng-disabled="notSelected">APPLY!</md-button>
         <!--  TODO: pull up modal with calendar  -->
     </div>
     
