@@ -22,7 +22,9 @@
                 <h4>Casting Description</h4>
                 <textarea id="description" class="form-control" placeholder="Ex: This is a cast for the next cool movie..."></textarea>
                 <h4>Production Date</h4>
-                <md-datepicker name="dateField" ng-model="myDate" md-placeholder="Enter date" required="" ></md-datepicker>
+<!--                <md-content>-->
+                    <md-datepicker name="dateField" ng-model="myDate" md-placeholder="Enter date" required="" ></md-datepicker>
+<!--                </md-contnet>-->
 
                 <div class="validation-messages" ng-messages="myForm.dateField.$error">
                     <div ng-message="valid">The entered value is not a date!</div>
