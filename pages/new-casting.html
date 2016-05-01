@@ -19,18 +19,24 @@
         <div class="col-md-5 col-sm-5">
           <div class="row">
             <div id="col-first">
-                <h4>Casting Description</h4>
-                <textarea id="description" class="form-control" placeholder="Ex: This is a cast for the next cool movie..."></textarea>
-                <h4>Production Date</h4>
-<!--                <md-content>-->
-                    <md-datepicker name="dateField" ng-model="myDate" md-placeholder="Enter date" required="" ></md-datepicker>
-<!--                </md-contnet>-->
-
-                <div class="validation-messages" ng-messages="myForm.dateField.$error">
-                    <div ng-message="valid">The entered value is not a date!</div>
-                    <div ng-message="required">This date is required!</div>
+                <div class="block">
+                    <h4 class="section-title">Casting Description</h4>
+                    <textarea id="description" class="form-control" placeholder="Ex: This is a cast for the next cool movie..."></textarea>
                 </div>
-                <md-button id="setTimeButton" type="submit" class="md-primary md-raised" ng-click="addTimes()">Set Casting Calendar</md-button>
+                <div class="block">
+                    <h4>Production Date</h4>
+                    <md-datepicker name="dateField" ng-model="myDate" md-placeholder="Enter date" md-min-date="minDate" required="" ></md-datepicker>
+
+                    <div class="validation-messages" ng-messages="myForm.dateField.$error">
+                        <div ng-message="valid">The entered value is not a date!</div>
+                        <div ng-message="required">This date is required!</div>
+                        <div ng-message="mindate">Date is too early!</div>
+                    </div>
+                </div>
+                <div class="block">
+                    <h4 class="section-title">Set Casting Calendar</h4>
+                    <md-button id="setTimeButton" type="submit" class="md-primary md-raised" ng-click="addTimes()">Manage Calendar</md-button>
+                </div>
             </div>
           </div>
         </div>
@@ -40,6 +46,7 @@
         <div class="col-md-offset-2 col-md-5 col-sm-5">
           <div class="row">
             <div id="col-second">
+              <h4 class="section-title">Roles</h4>
               <md-button id="addRoleOne" type="submit" class="md-raised md-primary" ng-click="addRole()">Add Role</md-button>
               <div id="roles-box">
                 <p id="empty-roles-text">You have no roles yet. Create one by clicking above</p>

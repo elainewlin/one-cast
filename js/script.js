@@ -613,12 +613,6 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
         $scope.myDate.getMonth(),
         $scope.myDate.getDate()
     );
-
-    $scope.maxDate = new Date(
-      $scope.myDate.getFullYear(),
-      $scope.myDate.getMonth() + 24,
-      $scope.myDate.getDate()
-    );
   
     
     $scope.addRole = function() {
