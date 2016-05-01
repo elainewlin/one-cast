@@ -1,3 +1,8 @@
+.form-control:focus {
+  border-color: #ee7aa5;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(216, 27, 96, 0.6);
+}
+
 .block {
     margin-bottom: 30px;
 }
@@ -125,13 +130,22 @@
   font-weight: bolder;
 }
 
-#gender-dropdown, #age-range-box {
+#age-range-box {
   margin: 15px 0;
   width: inherit;
 }
 
+.ngrs-runner {
+    background-color: white;
+}
+
+#file-uploader {
+    margin: 0;
+}
+
 #slider-container {
     border: none;
+    padding: 0;
 }
 
 .noUi-handle-lower:before, .noUi-handle-upper:before {
@@ -140,6 +154,10 @@
 
 .noUi-handle-lower:after, .noUi-handle-upper:after {
   left: 11px;
+}
+
+#gender-dropdown {
+    width: 70%;
 }
 
 #castingBox {
