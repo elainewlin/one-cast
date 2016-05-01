@@ -1,10 +1,7 @@
 
-<!--link rel="stylesheet" href='css/style.css'-->
 <link rel="stylesheet" href='css/new-casting.css' />
-<link rel="stylesheet" href='css/bootstrap-datepicker.standalone.min.css'/>
-<link rel="stylesheet" href='css/bootstrap-timepicker.min.css'/>
 <md-dialog aria-label="Create New Casting"  ng-cloak>
-  <form>
+  <form name="myForm">
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2>Create New Casting</h2>
@@ -22,11 +19,15 @@
         <div class="col-md-5 col-sm-5">
           <div class="row">
             <div id="col-first">
-              <textarea id="description" class="form-control" placeholder="Description"></textarea>
-              <div class="input-group input-append date datepickertext" id="datePicker">
-                  <input type="text" class="form-control datepickertext" placeholder="Production Date" name="date" />
-                  <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-              </div>
+                <h4>Casting Description</h4>
+                <textarea id="description" class="form-control" placeholder="Ex: This is a cast for the next cool movie..."></textarea>
+                <h4>Production Date</h4>
+                <md-datepicker name="dateField" ng-model="myDate" md-placeholder="Enter date" required="" ></md-datepicker>
+
+                <div class="validation-messages" ng-messages="myForm.dateField.$error">
+                    <div ng-message="valid">The entered value is not a date!</div>
+                    <div ng-message="required">This date is required!</div>
+                </div>
                 <md-button id="setTimeButton" type="submit" class="md-primary md-raised" ng-click="addTimes()">Set Casting Calendar</md-button>
             </div>
           </div>
@@ -61,5 +62,4 @@
   </form>
 </md-dialog>
 
-    <script src='../js/bootstrap-datepicker.min.js'/></script>
     <script src="../js/new-casting.js"></script>

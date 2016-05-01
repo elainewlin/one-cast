@@ -1,4 +1,4 @@
-var onecastApp = angular.module('onecastApp', ['ngRoute', 'ui.bootstrap', 'ngMaterial', 'ngTable', 'rzModule', 'ui-rangeSlider', 'daterangepicker']);
+var onecastApp = angular.module('onecastApp', ['ngRoute', 'ui.bootstrap', 'ngMaterial', 'ngTable', 'rzModule', 'ui-rangeSlider', 'daterangepicker', 'ngMessages']);
 
 onecastApp.config(function($routeProvider) {
     $routeProvider
@@ -605,6 +605,21 @@ onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialo
 onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDialog, $location) {
     $scope.primary = 'purple';
     console.log("Binded");
+    
+    $scope.myDate = new Date();
+
+    $scope.minDate = new Date(
+        $scope.myDate.getFullYear(),
+        $scope.myDate.getMonth(),
+        $scope.myDate.getDate()
+    );
+
+    $scope.maxDate = new Date(
+      $scope.myDate.getFullYear(),
+      $scope.myDate.getMonth() + 24,
+      $scope.myDate.getDate()
+    );
+  
     
     $scope.addRole = function() {
         
