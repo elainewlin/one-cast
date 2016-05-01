@@ -1,9 +1,9 @@
 
 #search-div {
     margin-top: 16px;
-    margin-bottom: 16px;
+    margin-bottom: 0px;
 /*    position: fixed;*/
-    width: 77%;
+    width: 100%;
     top: 5%;
 /*    right: 10%;*/
 /*    left: 20%;*/
@@ -64,7 +64,7 @@ tbody{
 table {
   width: 100%;
   border-spacing:0;
-  margin-top:10%;
+  margin-top:16px;
 }
 table th , table td  {
   border-left: 1px solid #ccc;
