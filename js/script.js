@@ -748,7 +748,7 @@ onecastApp.directive('fixedTableHeaders', ['$timeout', function($timeout) {
 onecastApp.config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
     .primaryPalette('pink')
-    .accentPalette('blue-grey');
+    .accentPalette('pink');
 });
 
 function DialogController($scope, $mdDialog) {
