@@ -66,7 +66,7 @@
           <label>Please upload any additional media</label><br />
             <label for="file" class="md-button md-raised md-primary" style="margin-left: 0;">Choose Files <i class="fa fa-upload"></i></label>
             <input class="ng-hide" type="file" name="file" id="file" multiple style=""/>
-            <a href="index.html#directorhome" class="md-button md-primary md-raised" style="float: right;">Submit</a>
+            <md-button ng-disabled="projectForm.$valid == false" href="index.html#directorhome" class="md-primary md-raised" style="float: right;">Submit</md-button>
         </form>
       </md-content>
     </div>

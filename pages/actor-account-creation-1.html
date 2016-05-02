@@ -45,20 +45,20 @@
           <h3>About Me</h3>
           <md-input-container class="md-block">
             <label>Name</label>
-            <input type="text" name="name" ng-model="account.name" >
+            <input required type="text" name="name" ng-model="account.name" >
             <div ng-messages="projectForm.name.$error">
               <div ng-message="required">This is required.</div>
             </div>
           </md-input-container>
           <md-input-container class="half-input">
-            <label>Height</label>
+            <label>Height (in.)</label>
             <input required name="clientName" ng-model="account.clientName" type="number" />
             <div ng-messages="projectForm.clientName.$error">
               <div ng-message="required">This is required.</div>
             </div>
           </md-input-container>
           <md-input-container class="half-input" style="float: right">
-            <label>Weight</label>
+            <label>Weight (lbs.)</label>
             <input required name="clientEmail" ng-model="account.clientEmail" type="number" />
             <div ng-messages="projectForm.clientEmail.$error">
               <div ng-message="required">This is required.</div>
@@ -75,20 +75,22 @@
             </md-input-container>
             <md-input-container class="half-input" style="float: right;">
                 <label>Hair Color</label>
-                <md-select ng-model="account.eye">
+                <md-select ng-model="account.hair">
                   <md-option ng-repeat="color in hairColors" value="{{color}}">
                     {{color}}
                   </md-option>
                 </md-select>
             </md-input-container>
             </div>
+            <div style="margin-bottom: 32px;">
             <md-input-container class="half-input">
                 <label>Build</label>
-                <input required name="build" ng-model="account.build">
-                <div ng-messages="projectForm.build.$error">
-                  <div ng-message="required">This is required.</div>
-                </div>
-              </md-input-container>
+                <md-select ng-model="account.build">
+                  <md-option ng-repeat="build in builds" value="{{build}}">
+                    {{build}}
+                  </md-option>
+                </md-select>
+            </md-input-container>
             <md-input-container class="half-input" style="float: right">
                 <label>Age</label>
                 <input required name="age" ng-model="account.age" type="number" />
@@ -96,6 +98,7 @@
                   <div ng-message="required">This is required.</div>
                 </div>
               </md-input-container>
+            </div>
             <md-input-container class="half-input">
                 <label>Ethnicity</label>
                 <input required name="ethn" ng-model="account.ethn">
@@ -110,7 +113,7 @@
                   <div ng-message="required">This is required.</div>
                 </div>
               </md-input-container>
-            <a href="actor-account-creation-2.html" class="md-button md-primary md-raised" style="float: right;" >Next</a>
+            <md-button ng-disabled="projectForm.$valid == false" href="actor-account-creation-2.html" class="md-primary md-raised" style="float: right;" >Next</md-button>
         </form>
       </md-content>
     </div>
