@@ -117,6 +117,8 @@ onecastApp.controller('directorPlayController', function($scope, $rootScope, $wi
     
     $scope.addRole = function() {
         
+        $rootScope.noCastingCancel = true;
+        
         while(angular.element(document).find('md-dialog').length > 0) {
             $mdDialog.cancel();
         }
@@ -194,6 +196,8 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
     $(function(){
 
         $(".create-button").on("click",function(){
+            
+            $rootScope.noCastingCancel = false;
             
             while(angular.element(document).find('md-dialog').length > 0) {
                 $mdDialog.cancel();
@@ -621,8 +625,9 @@ onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialo
     $scope.add = function() {
         
           $mdDialog.cancel();
-
-          $mdDialog.show({
+        
+          if(!$rootScope.noCastingCancel) {
+              $mdDialog.show({
               controller: 'addCastingController',
               templateUrl: 'new-casting.html',
               parent: angular.element('#wrapper'),
@@ -638,6 +643,7 @@ onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialo
             while(angular.element(document).find('md-dialog').length > 1) {
                 $mdDialog.cancel();
             }
+          }
         
     };
     
