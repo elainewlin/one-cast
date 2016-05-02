@@ -146,6 +146,7 @@
 #slider-container {
     border: none;
     padding: 0;
+    margin-left: 10px;
 }
 
 .noUi-handle-lower:before, .noUi-handle-upper:before {
