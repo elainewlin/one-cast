@@ -12,26 +12,26 @@
           <div class="row">
             <!-- Casting Description -->
             <div id="description-box">
-              <p id="casting-title">Romeo and Juliet</p>
-              <button id="find-talent-btn" ng-click="findTalent()">
-                <span class="fa fa-search"></span><span> Find Talent </span>
-              </button>
+              <p id="casting-title">{{castingObject.title}}</p>
+              <md-button class="md-raised md-primary" id="find-talent-btn" ng-click="findTalent()">
+                  <span class="fa fa-search"></span><span> Find Talent </span>
+              </md-button>
               <div id="casting-description">
-                <p>This play is about eternal love of the two - Romeo and Juliet. Then we will put some more text here just to see how it's going to look when we are going to get text overflow. </p>
+                <p>{{castingObject.description}} </p>
               </div>
               <div id="casting-location-div">
                 <div class="location-icon">
                   <i class="fa fa-map-marker"></i>  
                 </div>
                 <div class="location-text-box">
-                  <p class="location-text">77 Massachusetts Avenue, Cambridge, MA</p>
+                  <p class="location-text">{{castingObject.location}}</p>
                 </div>
               </div>
               <div id="casting-date-box">
-                <p class="casting-date">Casting: April 8 - May 5, 2016</p>
+                <p class="casting-date">Casting: {{castingObject.castingStartDate}} - {{castingObject.castingEndDate}}</p>
               </div>
               <div id="production-date-box">
-                <p class="production-date">Production: July 26, 2016</p>
+                <p class="production-date">Production: {{castingObject.productionDate}}</p>
               </div>
             </div>
             <!-- end Casting Description -->
@@ -40,37 +40,13 @@
             <div id="roles-box">
               <p class="header-text">Roles</p>
               <div id="role-titles-box">
-                <div class="roles">
-                  <p>Romeo<p>
-                </div>
-                <div class="roles">
-                  <p>Juliet<p>
-                </div>
-                <div class="roles">
-                  <p>Capulet<p>
-                </div>
-                <div class="roles">
-                  <p>King<p>
-                </div>
-                <div class="roles">
-                  <p>Romeo<p>
-                </div>
-                <div class="roles">
-                  <p>Juliet<p>
-                </div>
-                <div class="roles">
-                  <p>Capulet<p>
-                </div>
-                <div class="roles">
-                  <p>King<p>
-                </div>
+                <md-button ng-repeat="role in castingObject.roles" class="md-raised roles">
+                  {{role}}
+                </md-button>
               </div>
-              <div id="edit-role">
-                <i class="fa fa-pencil"></i>
-              </div>
-              <div id="add-role" ng-click="addRole()">
-                <i class="fa fa-plus" ></i>
-              </div>
+              <md-button class="md-raised md-primary" id="add-role" ng-click="addRole()">
+                  <span class="fa fa-plus"></span><span> Add Role </span>
+              </md-button>
             </div>
             <!-- end Casting Roles -->
             <hr>

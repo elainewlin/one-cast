@@ -75,7 +75,29 @@ onecastApp.controller('directorPlayController', function($scope, $rootScope, $wi
         }
     });
     
-    $rootScope.pageTitle = "Romeo & Juliet";
+    $rootScope.castingObject = {
+        title:"Romeo & Juliet", 
+        description:"This play is about eternal love of the two - Romeo and Juliet. Then we will put some more text here just to see how it's going to look when we are going to get text overflow.",
+        location:"77 Massachusetts Avenue, Cambridge, MA",
+        castingStartDate:"April 8",
+        castingEndDate:"May 5, 2016",
+        productionDate:"July 26, 2016",
+        roles: ["Romeo", "Juliet", "Capulet","King", "Mercutio","Tybalt","Benvolio", "Rosaline", "Count Paris","Lady Capulet","Montague", "Lady Montague","Prince Escalus"],
+        applicants: [
+            {Romeo:[
+                {name:"Monte Pan", status:"p"},
+                {name: "Fausto Prager", status:"p"},
+                {name: "Adan Worrell", status: "p"}
+            ]},
+            {Juliet:[
+                {name:"Kristin Mullaney", status:"p"},
+                {name:"Lorinda Donald", status:"p"}
+            ]},
+            {Capulet:[
+                {name:"Cornell Arnwine", status:"p"},
+                {name:"Donovan Ogilvie", status:"p"}
+            ]}
+        ]};
     
     $scope.findTalent = function() {
         
