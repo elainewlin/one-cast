@@ -1,0 +1,99 @@
+thead {
+    background-color: white;
+}
+
+th {
+    font-weight: normal;
+}
+
+th.month {
+    color: white;
+    background-color: #d81b60;
+}
+
+.daterangepicker td.start-date.end-date {
+    border-radius: 18px;
+}
+
+.daterangepicker td.active, .daterangepicker td.active:hover {
+    background-color: #d81b60;
+}
+
+.daterangepicker .input-mini.active {
+    border: 1px solid #d81b60;
+}
+
+.input-mini:focus {
+    border-color: #ee7aa5;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(216, 27, 96, 0.6);
+}
+
+.daterangepicker td {
+    border-radius: 18px;
+}
+
+.daterangepicker td.end-date {
+    border-radius: 18px;
+}
+
+.daterangepicker td.start-date {
+    border-radius: 18px;
+}
+
+.daterangepicker td.in-range {
+    background-color: #fef4f8;
+}
+
+.btn-success {
+    color: #d81b60;
+    background-color: white;
+    position: absolute;
+    left: 409px;
+    top: 294px;
+    text-transform: uppercase;
+    border-color: white;
+    width: 66px;
+}
+
+.btn-success:hover, .btn-success:active, .btn-success.focus, .btn-success:focus {
+    color: #d81b60;
+    border-color: #ECECEC;
+    background-color: #ECECEC;
+}
+
+.btn-success:active:focus {
+    color: #d81b60;
+    border-color: #ECECEC;
+    background-color: #ECECEC;
+    outline: none;
+}
+
+.btn-default {
+    color: #535353;
+    background-color: #fff;
+    text-transform: uppercase;
+    position: absolute;
+    left: 325px;
+    top: 294px;
+    border-color: white;
+}
+
+.btn-default:hover, .btn-default:active, .btn-default:focus {
+    color: #535353;
+    border-color: #ECECEC;
+    background-color: #ECECEC;
+}
+
+.btn-default:active:focus {
+    color: #535353;
+    border-color: #ECECEC;
+    background-color: #ECECEC;
+    outline: none;
+}
+
+    
+.daterangepicker.dropdown-menu {
+    height: 331px;
+}
+
+
