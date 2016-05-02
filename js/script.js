@@ -82,21 +82,31 @@ onecastApp.controller('directorPlayController', function($scope, $rootScope, $wi
         castingStartDate:"April 8",
         castingEndDate:"May 5, 2016",
         productionDate:"July 26, 2016",
-        roles: ["Romeo", "Juliet", "Capulet","King", "Mercutio","Tybalt","Benvolio", "Rosaline", "Count Paris","Lady Capulet","Montague", "Lady Montague","Prince Escalus"],
-        applicants: [
-            {Romeo:[
-                {name:"Monte Pan", status:"p"},
-                {name: "Fausto Prager", status:"p"},
+        roles: ["Benvolio", "Capulet","Count Paris","Juliet", "King", "Lady Capulet","Lady Montague","Mercutio", "Montague", "Prince Escalus", "Romeo","Rosaline","Tybalt"],
+        applicantData: [
+            {roleTitle:"Benvolio", applicants:[
+            ]},
+            {roleTitle:"Capulet", applicants:[
+                {name:"Cornell Arnwine", status:"p"},
+                {name:"Donovan Ogilvie", status:"p"},
+                {name:"Sherrie Mukai", status:"p"},
+            ]},
+            {roleTitle:"Juliet", applicants:[
+                {name:"Kristin Mullaney", status:"p"},
+                {name:"Lorinda Donald", status:"p"},
+                {name:"Debbra Lofgren", status:"p"},
+                {name:"Mui Scarbrough", status:"p"}
+            ]},
+            {roleTitle:"King", applicants:[
+                {name:"Jimmy Kays", status:"p"},
+                {name: "Shelby Greenly", status:"p"},
                 {name: "Adan Worrell", status: "p"}
             ]},
-            {Juliet:[
-                {name:"Kristin Mullaney", status:"p"},
-                {name:"Lorinda Donald", status:"p"}
+            {roleTitle:"Romeo", applicants:[
+                {name:"Monte Pan", status:"p"},
+                {name: "Fausto Prager", status:"p"},
+                {name: "Irvin Gildersleeve", status: "p"}
             ]},
-            {Capulet:[
-                {name:"Cornell Arnwine", status:"p"},
-                {name:"Donovan Ogilvie", status:"p"}
-            ]}
         ]};
     
     $scope.findTalent = function() {
@@ -738,7 +748,7 @@ onecastApp.directive('fixedTableHeaders', ['$timeout', function($timeout) {
 onecastApp.config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
     .primaryPalette('pink')
-    .accentPalette('blue');
+    .accentPalette('blue-grey');
 });
 
 function DialogController($scope, $mdDialog) {

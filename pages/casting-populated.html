@@ -1,4 +1,6 @@
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/t/bs/jqc-1.12.0,dt-1.10.11,fc-3.2.1,kt-2.1.1,r-2.0.2,rr-1.1.1/datatables.min.css"/>
     <link rel="stylesheet" href='css/style.css' />
     <link rel="stylesheet" href='css/casting-populated.css' />
@@ -38,7 +40,7 @@
             <hr>
             <!-- Casting Roles -->
             <div id="roles-box">
-              <p class="header-text">Roles</p>
+              <p class="header-text">All Roles</p>
               <div id="role-titles-box">
                 <md-button ng-repeat="role in castingObject.roles" class="md-raised roles">
                   {{role}}
@@ -52,109 +54,23 @@
             <hr>
             <!-- Casting Applicants -->
             <div id="applicants-box" >
-              <p class="header-text">Applicants</p>
+              <p class="header-text">Applicants By Role</p>
               <div class="casting-status" id="accepted">Accepted</div>
               <div class="casting-status" id="rejected">Rejected</div>
               <div  class="casting-status" id="backup">Backup</div>
               <div class="casting-status" id="pending">Pending</div>
-              <h3 class="role-title">Romeo</h3>
-              <div class="role-details">
-                <p>John Smith <i class="fa fa-check accepted-check" aria-hidden="true"></i></p>
-                <p>John Smith <i class="fa fa-check rejected-check" aria-hidden="true"></i></p>
-                <p>John Smith <i class="fa fa-check backup-check" aria-hidden="true"></i></p>
+              <div class="role-title" ng-repeat="roleObj in castingObject.applicantData" ng-model="collapsed" ng-click="isCollapsed = !isCollapsed"> <i ng-class="isCollapsed ? 'fa fa-angle-right': 'fa fa-angle-down'" > </i> <span class="r-title">{{roleObj.roleTitle}}</span>
+                  <div collapse="isCollapsed" ng-repeat="applicant in roleObj.applicants" class="role-details">
+                    <div class="applicant-name-box">             {{applicant.name | limitTo: 13}}     {{applicant.name.length > 13 ? '...' : ''}} 
+                        <i class="material-icons accepted-icons">check_circle</i>
+                        <p class="accepted-icon-text">Accepted</p>
+                        <i class="material-icons pending-icons">update</i>
+                        <i class="material-icons backup-icons">help_outline</i>
+                        <i class="material-icons rejected-icons">highlight_off</i>
+                    </div>
+                  </div>
               </div>
-              <h3 class="role-title">Juliet</h3>
-              <div class="role-details">
-                <p>John Smith <i class="fa fa-check rejected-check" aria-hidden="true"></i></p>
-                <p>John Smith <i class="fa fa-check pending-check" aria-hidden="true"></i></p>
-                <p>John Smith <i class="fa fa-check pending-check" aria-hidden="true"></i></p>
-              </div>
-              <h3 class="role-title">Capulet</h3>
-              <div class="role-details">
-                <p>John Smith <i class="fa fa-check accepted-check" aria-hidden="true"></i></p>
-                <p>John Smith <i class="fa fa-check rejected-check" aria-hidden="true"></i></p>
-              </div>
-              <h3 class="role-title">King</h3>
-              <div class="role-details">
-                <p>Bob Smith <i class="fa fa-check accepted-check" aria-hidden="true"></i></p>
-              </div>
-
-            </div>
-            <!-- end Casting Applicants -->
-            
-            <!--  New Applicants table  -->
-            <div ng-controller="directorPlayController">
-                <table ng-table="tableParams" class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <td>
-                                Applicant 
-                            </td>
-                            <td>
-                                Accepted
-                            </td>
-                            <td>
-                                Rejected
-                            </td>
-                            <td>
-                                Backup
-                            </td>
-                            <td>
-                                Pending
-                            </td>
-
-                        </tr>
-
-                    </thead>
-                    <tbody>
-                        <tr class="c-row" ng-repeat-start="role in $data" href="#" ng-click="isCollapsed = !isCollapsed">
-
-                            <td data-title="'Applicant'" class="panel-title">
-                                <i ng-class="isCollapsed ? 'fa fa-angle-right': 'fa fa-angle-down'"> </i>
-                            {{role.role}}   
-                            </td>
-                            <td data-title="'Accepted'" ng-bind="role.date | date:'MM/dd/yy'"></td>
-                            <td data-title="'Rejected'"></td>
-                            <td data-title="'Backup'"></td>
-                            <td data-title="'Pending'"></td>
-                        </tr>
-                        <tr collapse="isCollapsed" ng-repeat-end="">
-                            <td >
-                                
-                                <!-- PLACEHOLDER-->
-                                
-                            </td>
-                            <td colspan="4">
-                                <md-radio-group layout="row" layout-align="start center">
-                                    <md-radio-button flex
-                                        ng-value="role.accepted"
-                                        class="md-primary" >
-                                        
-                                    </md-radio-button>
-                                    <md-radio-button flex
-                                        ng-value="role.rejected"
-                                        class="md-primary" >
-                                        
-                                    </md-radio-button>
-                                    <md-radio-button flex
-                                        ng-value="role.backup"
-                                        class="md-primary" >
-                                        
-                                    </md-radio-button>
-                                    <md-radio-button flex
-                                        ng-value="role.pending"
-                                        class="md-primary" >
-                                        
-                                    </md-radio-button>
-                                    
-                                </md-radio-group>
-                                
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-              
+            </div>  
               
             <hr>
             <!-- Casting Schedule -->

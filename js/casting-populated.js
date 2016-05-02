@@ -1,14 +1,14 @@
 // This allows the Javascript code inside this block to only run when the page
 // has finished loading in the browser.
 $(function() {
-  $('#applicants-box h3').each(function() {
-      var tis = $(this), state = false, answer = tis.next('div').hide().css('height','auto').slideUp();
-      tis.click(function() {
-        state = !state;
-        answer.slideToggle(state);
-        tis.toggleClass('active',state);
-      });
-  });
+//  $('#applicants-box h3').each(function() {
+//      var tis = $(this), state = false, answer = tis.next('div').hide().css('height','auto').slideUp();
+//      tis.click(function() {
+//        state = !state;
+//        answer.slideToggle(state);
+//        tis.toggleClass('active',state);
+//      });
+//  });
     $(window).on('resize', resizeCalendar);
     
     $('#calendar').fullCalendar({

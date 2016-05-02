@@ -90,8 +90,9 @@ hr {
   background-color: #d81b60;
 }
 
-#applicants-box h3 {
-  cursor:pointer;
+#applicants-box {
+  position: relative;
+  margin-bottom: 50px;
 }
 
 .casting-status {
@@ -105,8 +106,15 @@ hr {
 }
 
 .role-title {
-  margin-bottom: 10px;
-  font-weight: bold;
+    width: 570px;
+    margin-bottom: 10px;
+    position: relative;
+    padding: 2px 0px 9px 3px;
+    border-bottom: 1px solid #ccc;
+}
+
+.r-title {
+    font-weight: bolder;
 }
 
 .accepted-check {
@@ -127,4 +135,55 @@ hr {
 
 .role-details {
   margin-bottom: 10px;
+}
+
+.applicant-name-box {
+    max-width: 130px;
+    position: relative;
+    margin: 10px 0px;
+}
+
+.accepted-icons {
+    position: absolute;
+    left: 170px;
+    top: -4px;
+    font-size: 27px;
+    color: #ccc;
+}
+
+.accepted-icon-text {
+    display: none;
+    position: absolute;
+    left: 170px;
+    top: -4px;
+    text-align: center;
+    color: #ccc;
+}
+
+.accepted-icon-text:hover {
+    display: block;
+}
+
+.pending-icons {
+    position: absolute;
+    top: -5px;
+    left: 506px;
+    font-size: 31px;
+    color: #d81b60;
+}
+
+.backup-icons {
+    position: absolute;
+    top: -4px;
+    left: 396px;
+    font-size: 28px;
+    color: #ccc;
+}
+
+.rejected-icons {
+    position: absolute;
+    top: -5px;
+    font-size: 28px;
+    left: 283px;
+    color: #ccc;
 }
