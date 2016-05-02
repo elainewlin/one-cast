@@ -75,7 +75,39 @@ onecastApp.controller('directorPlayController', function($scope, $rootScope, $wi
         }
     });
     
-    $rootScope.pageTitle = "Romeo & Juliet";
+    $rootScope.castingObject = {
+        title:"Romeo & Juliet", 
+        description:"This play is about eternal love of the two - Romeo and Juliet. Then we will put some more text here just to see how it's going to look when we are going to get text overflow.",
+        location:"77 Massachusetts Avenue, Cambridge, MA",
+        castingStartDate:"April 8",
+        castingEndDate:"May 5, 2016",
+        productionDate:"July 26, 2016",
+        roles: ["Benvolio", "Capulet","Count Paris","Juliet", "King", "Lady Capulet","Lady Montague","Mercutio", "Montague", "Prince Escalus", "Romeo","Rosaline","Tybalt"],
+        applicantData: [
+            {roleTitle:"Benvolio", applicants:[
+            ]},
+            {roleTitle:"Capulet", applicants:[
+                {name:"Cornell Arnwine", status:"p"},
+                {name:"Donovan Ogilvie", status:"p"},
+                {name:"Sherrie Mukai", status:"p"},
+            ]},
+            {roleTitle:"Juliet", applicants:[
+                {name:"Kristin Mullaney", status:"p"},
+                {name:"Lorinda Donald", status:"p"},
+                {name:"Debbra Lofgren", status:"p"},
+                {name:"Mui Scarbrough", status:"p"}
+            ]},
+            {roleTitle:"King", applicants:[
+                {name:"Jimmy Kays", status:"p"},
+                {name: "Shelby Greenly", status:"p"},
+                {name: "Adan Worrell", status: "p"}
+            ]},
+            {roleTitle:"Romeo", applicants:[
+                {name:"Monte Pan", status:"p"},
+                {name: "Fausto Prager", status:"p"},
+                {name: "Irvin Gildersleeve", status: "p"}
+            ]},
+        ]};
     
     $scope.findTalent = function() {
         
@@ -716,7 +748,7 @@ onecastApp.directive('fixedTableHeaders', ['$timeout', function($timeout) {
 onecastApp.config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
     .primaryPalette('pink')
-    .accentPalette('blue');
+    .accentPalette('pink');
 });
 
 function DialogController($scope, $mdDialog) {

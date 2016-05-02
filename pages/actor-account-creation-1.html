@@ -45,7 +45,7 @@
           <h3>About Me</h3>
           <md-input-container class="md-block">
             <label>Name</label>
-            <input required name="name" ng-model="account.name">
+            <input type="text" name="name" ng-model="account.name" >
             <div ng-messages="projectForm.name.$error">
               <div ng-message="required">This is required.</div>
             </div>
@@ -110,7 +110,7 @@
                   <div ng-message="required">This is required.</div>
                 </div>
               </md-input-container>
-            <a href="actor-account-creation-2.html" class="md-button md-primary md-raised" style="float: right;">Next</a>
+            <a href="actor-account-creation-2.html" class="md-button md-primary md-raised" style="float: right;" >Next</a>
         </form>
       </md-content>
     </div>
