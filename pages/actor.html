@@ -35,7 +35,7 @@
             <thead>
                 <tr id="thead-contents">
                     <td>
-                        <a ng-click="sortType = 'title'; sortReverse = !sortReverse">
+                        <a class="md-primary" ng-click="sortType = 'title'; sortReverse = !sortReverse">
                         Title 
                         <span ng-show="sortType == 'title' && !sortReverse" class="fa fa-caret-down"></span>
                         <span ng-show="sortType == 'title' && sortReverse" class="fa fa-caret-up"></span>
@@ -43,7 +43,7 @@
 
                     </td>
                     <td>
-                        <a ng-click="sortType = 'date'; sortReverse = !sortReverse">
+                        <a class="md-primary" ng-click="sortType = 'date'; sortReverse = !sortReverse">
                         Date
                         <span ng-show="sortType == 'date' && !sortReverse" class="fa fa-caret-down"></span>
                         <span ng-show="sortType == 'date' && sortReverse" class="fa fa-caret-up"></span>
@@ -51,7 +51,7 @@
                     </td>
 
                     <td>
-                        <a ng-click="sortType = 'location'; sortReverse = !sortReverse">
+                        <a class="md-primary" ng-click="sortType = 'location'; sortReverse = !sortReverse">
                         Location 
                         <span ng-show="sortType == 'location' && !sortReverse" class="fa fa-caret-down"></span>
                         <span ng-show="sortType == 'location' && sortReverse" class="fa fa-caret-up"></span>
@@ -71,9 +71,9 @@
                 </tr>
                 <tr collapse="isCollapsed" ng-repeat-end="">
                     <td colspan="3">
-                    <p>{{production.description}}</p>
+                    <p class="prod-descrpt">{{production.description}}</p>
                     <!--button href="#exampleplay" class="btn btn-primary">See more!</button-->
-                    <a href="#exampleplay" >VIEW CASTING</a>
+                    <a href="#exampleplay" class="md-button md-accent" style="float: right;">View Casting</a>
                 </td>
                 </tr>
             </tbody>
