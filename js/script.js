@@ -53,11 +53,11 @@ onecastApp.config(function($routeProvider) {
 
 onecastApp.controller('mainController', function($scope, $rootScope, $window, $mdDialog) {
     $rootScope.pageTitle = "OneCast";
-    $scope.primary = 'purple';
+    $scope.primary = 'pink';
 });
 
 onecastApp.controller('directorPlayController', function($scope, $rootScope, $window, $mdDialog, $location, ngTableParams) {
-    $scope.primary = 'purple';
+    $scope.primary = 'pink';
     var data = [{role: "Romeo", accepted: true, rejected: false, backup: false, pending:false},
                 {role: "Juliet", accepted: false, rejected: false, backup: false, pending:true},
                 {role: "Capulet", accepted: false, rejected: false, backup: false, pending:false},
@@ -113,7 +113,7 @@ onecastApp.controller('directorPlayController', function($scope, $rootScope, $wi
 
 onecastApp.controller('mainActorController', function($scope, $rootScope, $window, $mdDialog, $location) {
     $rootScope.pageTitle = "OneCast";
-    $scope.primary = 'purple';
+    $scope.primary = 'pink';
     $("#create-casting").hide();
     $("#create-button").hide();
     
@@ -138,7 +138,7 @@ onecastApp.controller('mainActorController', function($scope, $rootScope, $windo
 
 onecastApp.controller('mainDirectorController', function($scope, $rootScope, $window, $mdDialog, $location) {
     $rootScope.pageTitle = "OneCast";
-    $scope.primary = 'purple';
+    $scope.primary = 'pink';
     $rootScope.newOption = "New Casting";
     $rootScope.homeUrl = "#directorhome";
     $rootScope.userIcon = "fa-film";
@@ -192,7 +192,7 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
 
 onecastApp.controller('actorController', function($scope, $rootScope, $window) {
     $rootScope.pageTitle = "Romeo & Juliet";
-    $scope.primary = 'purple';
+    $scope.primary = 'pink';
 });
 
 onecastApp.controller('searchController', function($scope, ngTableParams, $rootScope) {
@@ -271,7 +271,7 @@ onecastApp.controller('searchController', function($scope, ngTableParams, $rootS
 
 onecastApp.controller('directorSearchController', function($scope, ngTableParams, $mdDialog, $rootScope) {
     $rootScope.pageTitle = "OneCast Search";
-    $scope.primary = 'purple';
+    $scope.primary = 'pink';
     $scope.invite = function() {
         $mdDialog.show(
           $mdDialog.alert()
@@ -374,7 +374,7 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
 
 onecastApp.controller('productionController', function($scope, $mdDialog, $rootScope) {
     $rootScope.pageTitle = "OneCast Apply";
-    $scope.primary = 'purple';
+    $scope.primary = 'pink';
     $(function(){
 
         $("#apply-button").on("click",function(){
@@ -451,7 +451,7 @@ onecastApp.controller('productionController', function($scope, $mdDialog, $rootS
 
 onecastApp.controller('actorPageController', function($scope, $rootScope) {
     $rootScope.pageTitle = "Production Overview";
-    $scope.primary = 'purple';
+    $scope.primary = 'pink';
     $scope.roles = [{name: "Romeo", description: "son to Montague", status: "accepted"},
                 {name: "Juliet", description: "daughter to Capulet", status: "applied"},
                 {name: "Mercutio",description: "kinsman to the prince, and friend to Romeo", status: "applied"},
@@ -471,7 +471,7 @@ onecastApp.controller('actorPageController', function($scope, $rootScope) {
 });
 
 onecastApp.controller('applyTimeController', function($scope, $rootScope, $mdDialog, $location) {
-    $scope.primary = 'purple';
+    $scope.primary = 'pink';
     $scope.cancel = function() {
         $mdDialog.cancel();
         //$(".create-button").click();
@@ -488,7 +488,7 @@ onecastApp.controller('applyTimeController', function($scope, $rootScope, $mdDia
 });
 
 onecastApp.controller('applyTimeControllerDirector', function($scope, $rootScope, $mdDialog, $location) {
-    $scope.primary = 'purple';
+    $scope.primary = 'pink';
         $('#calendar').fullCalendar({
             // put your options and callbacks here
             header: {
@@ -585,7 +585,7 @@ onecastApp.controller('applyTimeControllerDirector', function($scope, $rootScope
 //$scope, ngTableParams, $mdDialog, $rootScope
 
 onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialog) {
-    $scope.primary = 'purple';
+    $scope.primary = 'pink';
     $scope.add = function() {
         
           $mdDialog.cancel();
@@ -634,7 +634,7 @@ onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialo
 });
 
 onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDialog, $location) {
-    $scope.primary = 'purple';
+    $scope.primary = 'pink';
     console.log("Binded");
     
     $scope.myDate = new Date();
@@ -716,7 +716,7 @@ onecastApp.directive('fixedTableHeaders', ['$timeout', function($timeout) {
 onecastApp.config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
     .primaryPalette('pink')
-    .accentPalette('purple');
+    .accentPalette('blue');
 });
 
 function DialogController($scope, $mdDialog) {
