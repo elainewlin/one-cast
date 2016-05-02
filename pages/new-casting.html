@@ -49,7 +49,8 @@
               <h4 class="section-title">Roles</h4>
               <md-button id="addRoleOne" type="submit" class="md-raised md-primary" ng-click="addRole()">Add Role</md-button>
               <div id="roles-box">
-                <p id="empty-roles-text">You have no roles yet. Create one by clicking above</p>
+                <p id="empty-roles-text" ng-show="$parent.roles.length == 0">You have no roles yet. Create one by clicking above</p>
+                <p ng-repeat="role in $parent.roles">{{role.name}}</p>
               </div>
             </div>
           </div>

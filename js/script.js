@@ -118,6 +118,7 @@ onecastApp.controller('directorPlayController', function($scope, $rootScope, $wi
     $scope.addRole = function() {
         
         $rootScope.noCastingCancel = true;
+        $rootScope.roleBeingEdited = undefined;
         
         while(angular.element(document).find('md-dialog').length > 0) {
             $mdDialog.cancel();
@@ -142,6 +143,36 @@ onecastApp.controller('directorPlayController', function($scope, $rootScope, $wi
         }
         
     }
+    
+    $scope.editRole = function(index) {
+        
+        $rootScope.noCastingCancel = true;
+        
+        $rootScope.roleBeingEdited = $rootScope.roles[index];
+        
+        while(angular.element(document).find('md-dialog').length > 0) {
+            $mdDialog.cancel();
+        }
+        
+        $mdDialog.show({
+          controller: 'addRoleController',
+          templateUrl: 'new-role.html',
+          ariaLabel: "Add Role",
+          parent: angular.element('#pag-wrapper'),
+          clickOutsideToClose:true,
+          //fullscreen: 'useFullScreen'
+        })
+        .then(function(answer) {
+          console.log(answer);
+        }, function() {
+          $scope.status = 'You cancelled the dialog.';
+        });
+        
+        while(angular.element(document).find('md-dialog').length > 1) {
+            $mdDialog.cancel();
+        }
+        
+    };
     
 });
 
@@ -184,6 +215,8 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
     $("#create-casting").show();
     $("#create-button").show();
     
+    $rootScope.roles = [];
+    
     console.log($rootScope.created);
     
     if($rootScope.created) {
@@ -198,6 +231,7 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
         $(".create-button").on("click",function(){
             
             $rootScope.noCastingCancel = false;
+            $rootScope.roleBeingEdited = undefined;
             
             while(angular.element(document).find('md-dialog').length > 0) {
                 $mdDialog.cancel();
@@ -622,30 +656,6 @@ onecastApp.controller('applyTimeControllerDirector', function($scope, $rootScope
 
 onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialog) {
     $scope.primary = 'pink';
-    $scope.add = function() {
-        
-          $mdDialog.cancel();
-        
-          if(!$rootScope.noCastingCancel) {
-              $mdDialog.show({
-              controller: 'addCastingController',
-              templateUrl: 'new-casting.html',
-              parent: angular.element('#wrapper'),
-              clickOutsideToClose:true,
-              //fullscreen: 'useFullScreen'
-            })
-            .then(function(answer) {
-              $scope.status = 'You said the information was "' + answer + '".';
-            }, function() {
-              $scope.status = 'You cancelled the dialog.';
-            });
-
-            while(angular.element(document).find('md-dialog').length > 1) {
-                $mdDialog.cancel();
-            }
-          }
-        
-    };
     
     $scope.genders = [ {option:"None", id:""},{option:"Male", id:"m"}, {option:"Female", id:"f"}];
     
@@ -668,6 +678,78 @@ onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialo
             return minValue <= item[fieldName] && item[fieldName] <= maxValue;
         };
     };
+    
+    $scope.add = function() {
+        
+          var role = {
+            name: $scope.roleName,
+            description: $scope.roleDescription,
+            gender: $scope.roleGender,
+            ageMin: $scope.ageRange.min,
+            ageMax: $scope.ageRange.max
+          };
+          
+          $rootScope.roles.push(role);
+        
+          console.log($rootScope.roles);
+        
+          $mdDialog.cancel();
+        
+          if(!$rootScope.noCastingCancel) {
+              $mdDialog.show({
+              controller: 'addCastingController',
+              templateUrl: 'new-casting.html',
+              parent: angular.element('#wrapper'),
+              clickOutsideToClose:true,
+              //fullscreen: 'useFullScreen'
+            })
+            .then(function(answer) {
+              $scope.status = 'You said the information was "' + answer + '".';
+            }, function() {
+              $scope.status = 'You cancelled the dialog.';
+            });
+
+            while(angular.element(document).find('md-dialog').length > 1) {
+                $mdDialog.cancel();
+            }
+          }
+    };
+    
+    $scope.cancel = function() {
+        
+          $mdDialog.cancel();
+        
+          if(!$rootScope.noCastingCancel) {
+              $mdDialog.show({
+              controller: 'addCastingController',
+              templateUrl: 'new-casting.html',
+              parent: angular.element('#wrapper'),
+              clickOutsideToClose:true,
+              //fullscreen: 'useFullScreen'
+            })
+            .then(function(answer) {
+              $scope.status = 'You said the information was "' + answer + '".';
+            }, function() {
+              $scope.status = 'You cancelled the dialog.';
+            });
+
+            while(angular.element(document).find('md-dialog').length > 1) {
+                $mdDialog.cancel();
+            }
+          }
+    };
+    
+    if($rootScope.roleBeingEdited) {
+        
+        $scope.roleName = $rootScope.roleBeingEdited.name;
+        $scope.roleGender = $rootScope.roleBeingEdited.gender;
+        $scope.roleDescription = $rootScope.roleBeingEdited.description;
+        $scope.ageRange.min = $rootScope.roleBeingEdited.ageMin;
+        $scope.ageRange.max = $rootScope.roleBeingEdited.ageMax;
+        
+    }
+    
+    $scope.roles = $rootScope.roles;
     
 });
 

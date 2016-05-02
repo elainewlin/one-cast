@@ -33,7 +33,7 @@
               <div class="row">
                 <div class="block">
                     <h4 class="section-title">Role Title</h4>
-                    <input class="form-control" id="role-title" placeholder="Ex: Romeo">
+                    <input ng-model="roleName" class="form-control" id="role-title" placeholder="Ex: Romeo">
                 </div>
                 <div class="block">
                     <div id="age-range-box">
@@ -52,14 +52,14 @@
                 <div class="block">
                     <h4 class="section-title">Gender</h4>
                     <div class="input-group search-container" id="gender-dropdown">
-                        <select class="form-control" ng-options="gender.id as gender.option for gender in genders" ng-model="gender" >
+                        <select class="form-control" ng-options="gender.id as gender.option for gender in genders" ng-model="roleGender" >
                             <option value="" id="dropdown-placeholder" disabled selected>Choose a gender</option>
                         </select>
                     </div>
                 </div>
                 <div class="block">
                     <h4 class="section-title">Role Description</h4>
-                    <textarea id="description" class="form-control" placeholder="Ex: Romeo is in love with..."></textarea>  
+                    <textarea id="description" class="form-control" placeholder="Ex: Romeo is in love with..." ng-model="roleDescription"></textarea>  
                 </div>
                 <h4 class="section-title">Upload Casting Scripts </h4>
                 <label id="file-uploader" for="file" class="md-button md-raised md-primary" style="">Choose Files <i class="fa fa-upload"></i></label>
@@ -74,7 +74,7 @@
     </md-dialog-content>
     <md-dialog-actions layout="row">
       <span flex></span>
-      <md-button class="md-accent" type="submit" id="" ng-click="add()">
+      <md-button class="md-accent" type="submit" id="" ng-click="cancel()">
        Cancel
       </md-button>
       <md-button class="md-primary" type="submit" id="" style="margin-right:20px;" ng-click="add()">
