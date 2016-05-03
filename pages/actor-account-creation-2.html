@@ -76,21 +76,21 @@
               </md-input-container>
               <md-input-container class="half-input" style="float: right">
                 <label>Job title</label>
-                <input name="role" ng-model="account.role" />
+                <input name="role" ng-model="account.job" />
                 <div ng-messages="projectForm.role.$error">
                   <div ng-message="required">This is required.</div>
                 </div>
               </md-input-container>
               <md-input-container class="half-input">
                 <label>University Location</label>
-                <input name="loc2" ng-model="account.loc2">
+                <input name="loc2" ng-model="account.univLoc">
                 <div ng-messages="projectForm.loc2.$error">
                   <div ng-message="required">This is required.</div>
                 </div>
               </md-input-container>
               <md-input-container class="half-input" style="float: right">
                 <label>Company Location</label>
-                <input name="loc" ng-model="account.loc" />
+                <input name="loc" ng-model="account.compLoc" />
                 <div ng-messages="projectForm.loc.$error">
                   <div ng-message="required">This is required.</div>
                 </div>
@@ -115,7 +115,7 @@
                 <input class="ng-hide" type="file" name="file" id="file" multiple/>
             </div>
             <div class="half-input" style="float: right">
-                <a href="index.html#actorhome" class="md-button md-primary md-raised" style="float: right;">Submit</a>
+                <a ng-click="finishActor()" class="md-button md-primary md-raised" style="float: right;">Submit</a>
                 <a href="actor-account-creation-1.html" class="md-button md-raised" style="float: right;">Back</a>
             </div>
         </form>

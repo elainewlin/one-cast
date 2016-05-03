@@ -14,26 +14,26 @@
           <div class="row">
             <!-- Casting Description -->
             <div id="description-box">
-              <p id="casting-title">{{castingObject.title}}</p>
+              <p id="casting-title">{{$parent.tempCasting.title}}</p>
               <md-button class="md-raised md-primary" id="find-talent-btn" ng-click="findTalent()">
                   <span class="fa fa-search"></span><span> Find Talent </span>
               </md-button>
               <div id="casting-description">
-                <p>{{castingObject.description}} </p>
+                <p>{{$parent.tempCasting.description}} </p>
               </div>
               <div id="casting-location-div">
                 <div class="location-icon">
                   <i class="fa fa-map-marker"></i>  
                 </div>
                 <div class="location-text-box">
-                  <p class="location-text">{{castingObject.location}}</p>
+                  <p class="location-text">{{$parent.tempCasting.location}}</p>
                 </div>
               </div>
               <div id="casting-date-box">
-                <p class="casting-date">Casting: {{castingObject.castingStartDate}} - {{castingObject.castingEndDate}}</p>
+                <p class="casting-date">Casting: {{castingStart}} - {{castingEnd}}</p>
               </div>
               <div id="production-date-box">
-                <p class="production-date">Production: {{castingObject.productionDate}}</p>
+                <p class="production-date">Production: {{prodDate}}</p>
               </div>
             </div>
             <!-- end Casting Description -->
@@ -41,11 +41,12 @@
             <!-- Casting Roles -->
             <div id="roles-box">
               <p class="header-text">All Roles</p>
+              <h3 ng-show="$parent.tempCasting.roles == 0">You currently have no roles.</h3>
               <div id="role-titles-box">
-                <md-button ng-repeat="role in roles" class="md-raised roles" ng-click="editRole($index)">
-                  {{role.name}}
-                </md-button>
-                
+                  <div class="role-div" ng-repeat="role in $parent.tempCasting.roles">
+                    <md-button ng-click="editRole($index)" class="md-raised roles">{{role.name}}</md-button>
+                    <i class="material-icons cancel-button" ng-click="deleteRole($index)">cancel</i>
+                  </div>
               </div>
               <md-button class="md-raised md-primary" id="add-role" ng-click="addRole()">
                   <span class="fa fa-plus"></span><span> Add Role </span>

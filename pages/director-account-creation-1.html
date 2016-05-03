@@ -48,16 +48,23 @@
       <md-content layout-padding>
         <form name="projectForm">
           <h3>About Me</h3>
-          <md-input-container class="md-block">
-            <label>Name</label>
-            <input required name="name" ng-model="account.name">
-            <div ng-messages="projectForm.name.$error">
+          <md-input-container class="half-input">
+            <label>First Name</label>
+            <input required name="namef" ng-model="director.firstName">
+            <div ng-messages="projectForm.namef.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="half-input" style="float: right;">
+            <label>Last Name</label>
+            <input required name="namel" ng-model="director.lastName">
+            <div ng-messages="projectForm.namel.$error">
               <div ng-message="required">This is required.</div>
             </div>
           </md-input-container>
           <md-input-container class="md-block">
             <label>Theatre/Company Name</label>
-            <input required name="company" ng-model="account.company">
+            <input required name="company" ng-model="director.company">
             <div ng-messages="projectForm.company.$error">
               <div ng-message="required">This is required.</div>
             </div>
@@ -67,7 +74,7 @@
           <label class="extra-info">Please upload any additional documents (e.g. resume, video, headshots)</label><br />
             <label for="file" class="choose-files-btn md-button md-raised md-primary"><i class="fa fa-upload"></i> Choose Files</label>
             <input class="ng-hide" type="file" name="file" id="file" multiple style=""/>
-            <md-button ng-disabled="projectForm.$valid == false" href="index.html#directorhome" class="md-primary md-raised" style="float: right;">Submit</md-button>
+            <md-button ng-click="directorFinish()" ng-disabled="projectForm.$valid == false" class="md-primary md-raised" style="float: right;">Submit</md-button>
         </form>
       </md-content>
     </div>

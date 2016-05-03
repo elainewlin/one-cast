@@ -46,23 +46,30 @@
       <md-content layout-padding>
         <form name="projectForm">
           <h3>About Me</h3>
-          <md-input-container class="md-block">
-            <label>Name</label>
-            <input required type="text" name="name" ng-model="account.name" >
-            <div ng-messages="projectForm.name.$error">
+          <md-input-container class="half-input">
+            <label>First Name</label>
+            <input required type="text" name="fname" ng-model="account.firstName" >
+            <div ng-messages="projectForm.fname.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="half-input" style="float: right;">
+            <label>Last Name</label>
+            <input required type="text" name="lname" ng-model="account.lastName" >
+            <div ng-messages="projectForm.lname.$error">
               <div ng-message="required">This is required.</div>
             </div>
           </md-input-container>
           <md-input-container class="half-input">
             <label>Height (in.)</label>
-            <input required name="clientName" ng-model="account.clientName" type="number" />
+            <input required class="number-input" name="clientName" ng-model="account.heigth" type="number" min="0"/>
             <div ng-messages="projectForm.clientName.$error">
               <div ng-message="required">This is required.</div>
             </div>
           </md-input-container>
           <md-input-container class="half-input" style="float: right">
             <label>Weight (lbs.)</label>
-            <input required name="clientEmail" ng-model="account.clientEmail" type="number" />
+            <input required class="number-input" name="clientEmail" ng-model="account.weight" type="number" min="0"/>
             <div ng-messages="projectForm.clientEmail.$error">
               <div ng-message="required">This is required.</div>
             </div>
@@ -96,7 +103,7 @@
             </md-input-container>
             <md-input-container class="half-input" style="float: right">
                 <label id="padding-correct">Age</label>
-                <input id ="padding-correct2" required name="age" ng-model="account.age" type="number" />
+                <input class="number-input" id ="padding-correct2" required name="age" ng-model="account.age" type="number" min="0"/>
                 <div ng-messages="projectForm.age.$error">
                   <div ng-message="required">This is required.</div>
                 </div>
@@ -116,7 +123,8 @@
                   <div ng-message="required">This is required.</div>
                 </div>
               </md-input-container>
-            <md-button ng-disabled="projectForm.$valid == false" href="actor-account-creation-2.html" class="md-primary md-raised" style="float: right;" >Next</md-button>
+            <br />
+            <md-button id="next-button" ng-disabled="projectForm.$valid == false" ng-click="actorFinishOne()" class="md-primary md-raised md-block" style="float: right;" >Next</md-button>
         </form>
       </md-content>
     </div>

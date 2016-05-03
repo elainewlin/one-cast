@@ -22,11 +22,15 @@
                     <div id="col-first">
                         <div class="block">
                             <h4 class="section-title">Casting Title *</h4>
-                            <input required name="title" ng-model="roleName" class="form-control" id="role-title" placeholder="Ex: Romeo & Juliet">
+                            <input required name="title" ng-model="castingTitle" class="form-control" id="role-title" placeholder="Ex: Romeo & Juliet">
                         </div>
                         <div class="block">
                             <h4 class="section-title">Casting Description</h4>
-                            <textarea id="description" class="form-control" placeholder="Ex: This is a cast for the next cool movie..."></textarea>
+                            <textarea ng-model="castingDesc" id="description" class="form-control" placeholder="Ex: This is a cast for the next cool movie..."></textarea>
+                        </div>
+                        <div class="block">
+                            <h4 class="section-title">Casting Location *</h4>
+                            <input required name="location" ng-model="castingLocation" class="form-control" id="loc-title" placeholder="Ex: 123 Example St.">
                         </div>
                         <div class="block">
                             <h4 class="section-title">Set Casting Calendar *</h4>
@@ -34,7 +38,7 @@
                         </div>
                         <div class="block">
                             <h4>Production Date *</h4>
-                            <md-datepicker name="dateField" ng-model="myDate" md-placeholder="Enter date" md-min-date="minDate" required="" ></md-datepicker>
+                            <md-datepicker name="dateField" ng-model="prodDate" md-placeholder="Enter date" md-min-date="minDate" required="" ></md-datepicker>
 
                             <div class="validation-messages" ng-messages="newCastingForm.dateField.$error">
                                 <div ng-message="valid">The entered value is not a date</div>
@@ -53,8 +57,8 @@
                       <h4 class="section-title">Roles</h4>
                       <md-button id="addRoleOne" type="submit" class="md-raised md-primary" ng-click="addRole()">Add Role</md-button>
                       <div id="roles-box">
-                        <p id="empty-roles-text" ng-show="$parent.roles.length == 0">You have no roles yet. Create one by clicking above</p>
-                        <div class="role-button-container" ng-repeat="role in $parent.roles">
+                        <p id="empty-roles-text" ng-show="$parent.tempCasting.roles.length == 0">You have no roles yet. Create one by clicking above</p>
+                        <div class="role-button-container" ng-repeat="role in $parent.tempCasting.roles">
                           <md-button ng-click="editRole($index)" class="md-raised role-button">{{role.name}}</md-button>
                           <i class="material-icons cancel-button" ng-click="deleteRole($index)">cancel</i>
                         </div>
