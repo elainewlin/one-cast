@@ -1,4 +1,5 @@
-
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 <link rel="stylesheet" href='css/new-casting.css' />
 <md-dialog aria-label="Create New Casting"  ng-cloak>
   <form name="newCastingForm" novalidate>
@@ -53,7 +54,10 @@
                       <md-button id="addRoleOne" type="submit" class="md-raised md-primary" ng-click="addRole()">Add Role</md-button>
                       <div id="roles-box">
                         <p id="empty-roles-text" ng-show="$parent.roles.length == 0">You have no roles yet. Create one by clicking above</p>
-                        <p ng-repeat="role in $parent.roles">{{role.name}}</p>
+                        <div class="role-button-container" ng-repeat="role in $parent.roles">
+                          <md-button ng-click="editRole($index)" class="md-raised role-button">{{role.name}}</md-button>
+                          <i class="material-icons cancel-button" ng-click="deleteRole($index)">cancel</i>
+                        </div>
                       </div>
                     </div>
                   </div>

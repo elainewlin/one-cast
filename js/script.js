@@ -149,6 +149,9 @@ onecastApp.controller('directorPlayController', function($scope, $rootScope, $wi
         $rootScope.noCastingCancel = true;
         
         $rootScope.roleBeingEdited = $rootScope.roles[index];
+        $rootScope.editingRole = true;
+        
+        $rootScope.roleBeingEditedIndex = index;
         
         while(angular.element(document).find('md-dialog').length > 0) {
             $mdDialog.cancel();
@@ -689,7 +692,11 @@ onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialo
             ageMax: $scope.ageRange.max
           };
           
-          $rootScope.roles.push(role);
+          if($rootScope.roleBeingEdited) {
+              $rootScope.roles[$rootScope.roleBeingEditedIndex] = role;
+          } else {
+              $rootScope.roles.push(role);
+          }
         
           console.log($rootScope.roles);
         
@@ -751,6 +758,12 @@ onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialo
     
     $scope.roles = $rootScope.roles;
     
+    if($rootScope.editingRole) {
+        $scope.mode = "Save";
+    } else {
+        $scope.mode = "Add";
+    }
+    
 });
 
 onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDialog, $location) {
@@ -765,8 +778,47 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
         currentDate.getDate()
     );
   
+    $scope.editRole = function(index) {
+        
+        $rootScope.noCastingCancel = false;
+        $rootScope.editingRole = true;
+        
+        $rootScope.roleBeingEdited = $rootScope.roles[index];
+        $rootScope.roleBeingEditedIndex = index;
+        
+        /*while(angular.element(document).find('md-dialog').length > 0) {
+            $mdDialog.cancel();
+        }*/
+        
+        $mdDialog.show({
+          controller: 'addRoleController',
+          templateUrl: 'new-role.html',
+          ariaLabel: "Add Role",
+          parent: angular.element('#pag-wrapper'),
+          clickOutsideToClose:true,
+          //fullscreen: 'useFullScreen'
+        })
+        .then(function(answer) {
+          console.log(answer);
+        }, function() {
+          $scope.status = 'You cancelled the dialog.';
+        });
+        
+        /*while(angular.element(document).find('md-dialog').length > 1) {
+            $mdDialog.cancel();
+        }*/
+        
+    };
+    
+    $scope.deleteRole = function(index) {
+        $rootScope.roles.splice(index, 1);
+    }
     
     $scope.addRole = function() {
+        
+        $rootScope.editingRole = false;
+        $rootScope.roleBeingEditedIndex = -1;
+        $rootScope.roleBeingEdited = undefined;
         
         $mdDialog.cancel();
         

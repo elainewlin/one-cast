@@ -210,3 +210,20 @@ table th , table td  {
     height: 430px;
     overflow-y: overlay;
 }
+
+.role-button {
+    width: 70%;
+}
+
+.role-button-container {
+    width: 100%;
+    text-align: center;
+}
+
+.cancel-button {
+    vertical-align: middle;
+}
+
+.cancel-button:hover {
+    color: #d81b60;
+}
