@@ -237,7 +237,9 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
     $("#create-casting").show();
     $("#create-button").show();
     
-    $rootScope.castings = [];
+    if(!$rootScope.castings){
+       $rootScope.castings = [];
+    } 
     
     if($rootScope.created) {
         $('#rom-jul-link').show();
