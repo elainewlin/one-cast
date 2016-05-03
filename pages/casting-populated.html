@@ -54,21 +54,24 @@
             <!-- Casting Applicants -->
             <div id="applicants-box" >
               <p class="header-text">Applicants By Role</p>
-              <div class="casting-status" id="accepted">Accepted</div>
-              <div class="casting-status" id="rejected">Rejected</div>
-              <div  class="casting-status" id="backup">Backup</div>
-              <div class="casting-status" id="pending">Pending</div>
+              <div ng-hide="$parent.tempCasting.roles == 0" class="casting-status" id="accepted">Accepted</div>
+              <div ng-hide="$parent.tempCasting.roles == 0" class="casting-status" id="rejected">Rejected</div>
+              <div ng-hide="$parent.tempCasting.roles == 0" class="casting-status" id="backup">Backup</div>
+              <div ng-hide="$parent.tempCasting.roles == 0" class="casting-status" id="pending">Pending</div>
+              <h3 ng-show="$parent.tempCasting.roles == 0">Actors and their roles will appear here.</h3>
               <div class="role-title" ng-repeat="roleObj in $parent.tempCasting.roles" ng-model="collapsed" > <i ng-class="isCollapsed ? 'fa fa-angle-right': 'fa fa-angle-down'" > </i> <span class="r-title" ng-click="isCollapsed = !isCollapsed">{{roleObj.name}}</span>
-                  <div collapse="isCollapsed" ng-repeat="applicant in castingObject.applicantData[0].applicants" class="role-details">
+                  <div collapse="isCollapsed" ng-repeat="applicant in $parent.castingObject.applicantData[2].applicants" class="role-details">
                     <div class="applicant-name-box">             {{applicant.name | limitTo: 13}}     {{applicant.name.length > 13 ? '...' : ''}} 
-                        <i class="material-icons accepted-icons">check_circle</i>
-                        <p class="accepted-icon-text">Accepted</p>
-                        <i class="material-icons pending-icons">update</i>
-                        <i class="material-icons backup-icons">help_outline</i>
-                        <i class="material-icons rejected-icons">highlight_off</i>
+                        <i ng-click="setAccepted($event)" class="material-icons accepted-icons">check_circle</i>
+                        <i ng-click="setAccepted($event)" class="material-icons pending-icons">update</i>
+                        <i ng-click="setAccepted($event)" class="material-icons backup-icons">help_outline</i>
+                        <i ng-click="setAccepted($event)" class="material-icons rejected-icons">highlight_off</i>
                     </div>
                   </div>
               </div>
+              <md-button ng-disabled="!dirtyChanges" class="md-raised md-primary" id="add-role" ng-click="dirtyChanges = !dirtyChanges">
+                  <span class="fa fa-save"></span><span> Save </span>
+              </md-button>
             </div>  
               
             <hr>

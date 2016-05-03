@@ -26,6 +26,10 @@ onecastApp.config(function($routeProvider) {
             templateUrl: 'director-search.html',
             controller: 'directorSearchController'
         })
+        .when('/actorprofile', {
+            templateUrl: 'actor-profile.html', 
+            controller: 'actorProfileController'
+        })
         .when('/summary', {
     		templateUrl: 'actor-summary.html',
             controller: 'mainController'
@@ -181,6 +185,14 @@ onecastApp.controller('directorPlayController', function($scope, $rootScope, $wi
         $rootScope.tempCasting.roles.splice(index, 1);
     }
     
+    $scope.setAccepted = function(element) {
+        
+        $(element.target).parent().children().css("color", "#ccc");
+        $(element.target).css('color','#d81b60');
+        $scope.dirtyChanges = true;
+        
+    }
+    
     var prodDate = moment($rootScope.tempCasting.productionDate);
     var castStart = moment($rootScope.tempCasting.castingStart);
     var castEnd = moment($rootScope.tempCasting.castingEnd);
@@ -237,7 +249,9 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
     $("#create-casting").show();
     $("#create-button").show();
     
-    $rootScope.castings = [];
+    if(!$rootScope.castings){
+       $rootScope.castings = [];
+    } 
     
     if($rootScope.created) {
         $('#rom-jul-link').show();
@@ -466,6 +480,19 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
 //        }
 //    });
     
+    
+});
+
+onecastApp.controller('actorProfileController', function($scope, $mdDialog, $rootScope) {
+    
+    console.log("yay, actor profile!");
+    
+    $rootScope.actorData = JSON.parse(localStorage.getItem("actorBasics"));
+    $scope.actorName = $rootScope.actorData.firstName;
+    
+//    $scope.actor = {name: "David Horrocks", location: "Oklahoma City, OK", age: "49", height: "6'1\"", weight: "", gender:"m", haircolor: "brown", build: "n/a", eyecolor: "brown",description: "head of Montague household", image:"../public/images/david_horrocks.jpg", selected: false};
+    
+    $scope.actor = $scope.actorData;
     
 });
 
