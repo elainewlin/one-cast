@@ -475,7 +475,12 @@ onecastApp.controller('actorProfileController', function($scope, $mdDialog, $roo
     
     console.log("yay, actor profile!");
     
-    $scope.actor = {name: "David Horrocks", location: "Oklahoma City, OK", age: "49", height: "6'1\"", weight: "", gender:"m", haircolor: "brown", build: "n/a", eyecolor: "brown",description: "head of Montague household", image:"../public/images/david_horrocks.jpg", selected: false}
+    $rootScope.actorData = JSON.parse(localStorage.getItem("actorBasics"));
+    $scope.actorName = $rootScope.actorData.firstName;
+    
+//    $scope.actor = {name: "David Horrocks", location: "Oklahoma City, OK", age: "49", height: "6'1\"", weight: "", gender:"m", haircolor: "brown", build: "n/a", eyecolor: "brown",description: "head of Montague household", image:"../public/images/david_horrocks.jpg", selected: false};
+    
+    $scope.actor = $scope.actorData;
     
 });
 

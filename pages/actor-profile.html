@@ -2,7 +2,7 @@
     <!-- actor photo -->
     <img src="{{actor.image}}" class="md-card-image" alt="user avatar">
     
-    <h2>{{actor.name}}</h2>
+    <h2>{{actor.firstName}} {{actor.lastName}}</h2>
     
     <p>Location: {{actor.location}}</p>
     <p>Age: {{actor.age}}</p>
@@ -11,30 +11,30 @@
     
     <p>Weight: {{actor.weight}}</p>
     <p>Build: {{actor.build}}</p>
-    <p>Eye Color: {{actor.eyecolor}}</p>
-    <p>Hair Color: {{actor.haircolor}}</p>
-    <p>Ethnicity: {{actor.ethnicity}}</p>
-    <p>Native Accent: {{actor.nativeaccent}}</p>
+    <p>Eye Color: {{actor.eye}}</p>
+    <p>Hair Color: {{actor.hair}}</p>
+    <p>Ethnicity: {{actor.ethn}}</p>
+    <p>Native Accent: {{actor.nat}}</p>
     
     <!-- Need to expand education -->
     <h3>Education</h3>
-    <p> College: {{actor.education.college}}</p>
-    <p>College Location: {{actor.education.collegelocation}}</p>
-    <p>Major: {{actor.education.major}}</p>
+    <p> College: {{actor.college}}</p>
+    <p>College Location: {{actor.univLoc}}</p>
+    <p>Major: {{actor.major}}</p>
 <!--    <p>Graduation Year</p>-->
-    <p>College Start Date: {{actor.education.collegestartdate}}</p>
-    <p>College End Date: {{actor.education.collegeenddate}}</p>
+    <p>College Start Date: {{actor.schoolstart}}</p>
+    <p>College End Date: {{actor.schoolend}}</p>
     
     
     
     
     <!-- Need to expand experience -->
     <h3>Experience</h3>
-    <p>Company: {{actor.experience.company}}</p>
-    <p>Company Location: {{actor.experience.companylocation}}</p>
-    <p>Role: {{actor.experience.role}}</p>
-    <p>Start Date: {{actor.experience.startdate}}</p>
-    <p>End Date: {{actor.experience.enddate}}</p>
+    <p>Company: {{actor.comp}}</p>
+    <p>Company Location: {{actor.compLoc}}</p>
+    <p>Role: {{actor.job}}</p>
+    <p>Start Date: {{actor.jobstart}}</p>
+    <p>End Date: {{actor.jobend}}</p>
         
     
 </div>
