@@ -276,3 +276,11 @@ textarea {
 .vertical-align {
     margin-bottom: 4px;
 }
+
+.number {
+    color: #d81b60;
+}
+
+#summary-title {
+    margin-bottom: 32px;
+}
