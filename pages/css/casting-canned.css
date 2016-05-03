@@ -1,0 +1,46 @@
+#production-summary-container {
+  position: relative;
+  /*border: 1px solid red;*/
+}
+
+#casting-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+#casting-description {
+  max-width: 770px;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+#casting-location-div, #productionDate-div, #castingDate-div {
+  position: relative;
+  margin-bottom: 15px;
+/*    border: 1px solid red;*/
+}
+
+.location-icon, .productionDate-icon, .castingDate-icon {
+  width: 15px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  
+}
+
+.location-text, .production-text, .castingDate-text {
+    font-size: 18px;
+    position: relative;
+    left: 29px;
+
+}
+
+#apply-button {
+    float: right;
+    position: fixed;
+    right: 32px;
+    bottom: 12px;
+}
