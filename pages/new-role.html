@@ -14,7 +14,7 @@
     <link rel="stylesheet" href='css/new-casting.css' />
 
 <md-dialog aria-label="Add New Role"  ng-cloak>
-  <form>
+  <form name="addRoleForm" novalidate>
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2>Add New Role</h2>
@@ -32,8 +32,8 @@
             <div class="col-md-10 col-sm-10">
               <div class="row">
                 <div class="block">
-                    <h4 class="section-title">Role Title</h4>
-                    <input ng-model="roleName" class="form-control" id="role-title" placeholder="Ex: Romeo">
+                    <h4 class="section-title">Role Title *</h4>
+                    <input required ng-model="roleName" class="form-control" id="role-title" placeholder="Ex: Romeo">
                 </div>
                 <div class="block">
                     <div id="age-range-box">
@@ -50,9 +50,9 @@
                     </div>
                 </div>
                 <div class="block">
-                    <h4 class="section-title">Gender</h4>
+                    <h4 class="section-title">Gender *</h4>
                     <div class="input-group search-container" id="gender-dropdown">
-                        <select class="form-control" ng-options="gender.id as gender.option for gender in genders" ng-model="roleGender" >
+                        <select class="form-control" ng-options="gender.id as gender.option for gender in genders" ng-model="roleGender" required>
                             <option value="" id="dropdown-placeholder" disabled selected>Choose a gender</option>
                         </select>
                     </div>
@@ -77,7 +77,7 @@
       <md-button class="md-accent" type="submit" id="" ng-click="cancel()">
        Cancel
       </md-button>
-      <md-button class="md-primary" type="submit" id="" style="margin-right:20px;" ng-click="add()">
+      <md-button ng-disabled="addRoleForm.$valid == false" class="md-primary" type="submit" id="" style="margin-right:20px;" ng-click="add()">
         Add
       </md-button>
     </md-dialog-actions>

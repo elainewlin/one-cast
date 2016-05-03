@@ -1,7 +1,7 @@
 
 <link rel="stylesheet" href='css/new-casting.css' />
 <md-dialog aria-label="Create New Casting"  ng-cloak>
-  <form name="myForm">
+  <form name="newCastingForm" novalidate>
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2>Create New Casting</h2>
@@ -13,51 +13,54 @@
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
-        <div class="container" id="castingBox">
-      <div class="row">
-        <!-- Description, Calendar -->
-        <div class="col-md-5 col-sm-5">
-          <div class="row">
-            <div id="col-first">
-                <div class="block">
-                    <h4 class="section-title">Casting Description</h4>
-                    <textarea id="description" class="form-control" placeholder="Ex: This is a cast for the next cool movie..."></textarea>
-                </div>
-                <div class="block">
-                    <h4>Production Date</h4>
-                    <md-datepicker name="dateField" ng-model="myDate" md-placeholder="Enter date" md-min-date="minDate" required="" ></md-datepicker>
+            <div class="container" id="castingBox">
+              <div class="row">
+                <!-- Description, Calendar -->
+                <div class="col-md-5 col-sm-5">
+                  <div class="row">
+                    <div id="col-first">
+                        <div class="block">
+                            <h4 class="section-title">Casting Title *</h4>
+                            <input required name="title" ng-model="roleName" class="form-control" id="role-title" placeholder="Ex: Romeo & Juliet">
+                        </div>
+                        <div class="block">
+                            <h4 class="section-title">Casting Description</h4>
+                            <textarea id="description" class="form-control" placeholder="Ex: This is a cast for the next cool movie..."></textarea>
+                        </div>
+                        <div class="block">
+                            <h4 class="section-title">Set Casting Calendar *</h4>
+                            <md-button id="setTimeButton" type="submit" class="md-primary md-raised" ng-click="addTimes()">Manage Calendar</md-button>
+                        </div>
+                        <div class="block">
+                            <h4>Production Date *</h4>
+                            <md-datepicker name="dateField" ng-model="myDate" md-placeholder="Enter date" md-min-date="minDate" required="" ></md-datepicker>
 
-                    <div class="validation-messages" ng-messages="myForm.dateField.$error">
-                        <div ng-message="valid">The entered value is not a date!</div>
-                        <div ng-message="required">This date is required!</div>
-                        <div ng-message="mindate">Date is too early!</div>
+                            <div class="validation-messages" ng-messages="newCastingForm.dateField.$error">
+                                <div ng-message="valid">The entered value is not a date</div>
+                                <div ng-message="mindate">Date is too early</div>
+                            </div>
+                        </div>
                     </div>
+                  </div>
                 </div>
-                <div class="block">
-                    <h4 class="section-title">Set Casting Calendar</h4>
-                    <md-button id="setTimeButton" type="submit" class="md-primary md-raised" ng-click="addTimes()">Manage Calendar</md-button>
+                <!-- end Description, Calendar -->
+
+                <!-- Add Roles -->
+                <div class="col-md-offset-2 col-md-5 col-sm-5">
+                  <div class="row">
+                    <div id="col-second">
+                      <h4 class="section-title">Roles</h4>
+                      <md-button id="addRoleOne" type="submit" class="md-raised md-primary" ng-click="addRole()">Add Role</md-button>
+                      <div id="roles-box">
+                        <p id="empty-roles-text" ng-show="$parent.roles.length == 0">You have no roles yet. Create one by clicking above</p>
+                        <p ng-repeat="role in $parent.roles">{{role.name}}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
-          </div>
-        </div>
-        <!-- end Description, Calendar -->
-        
-        <!-- Add Roles -->
-        <div class="col-md-offset-2 col-md-5 col-sm-5">
-          <div class="row">
-            <div id="col-second">
-              <h4 class="section-title">Roles</h4>
-              <md-button id="addRoleOne" type="submit" class="md-raised md-primary" ng-click="addRole()">Add Role</md-button>
-              <div id="roles-box">
-                <p id="empty-roles-text" ng-show="$parent.roles.length == 0">You have no roles yet. Create one by clicking above</p>
-                <p ng-repeat="role in $parent.roles">{{role.name}}</p>
+            <!-- end Add Roles -->
               </div>
             </div>
-          </div>
-        </div>
-        <!-- end Add Roles -->
-      </div>
-    </div>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
@@ -65,7 +68,7 @@
       <md-button class="md-accent" type="submit" id="cancel-button" ng-click="cancel()">
        Cancel
       </md-button>
-      <md-button class="md-primary" type="submit" id="accept-button" style="margin-right:20px;" ng-click="save()">
+      <md-button ng-disabled="newCastingForm.$valid == false" class="md-primary" type="submit" id="accept-button" style="margin-right:20px;" ng-click="save()">
         Save
       </md-button>
     </md-dialog-actions>

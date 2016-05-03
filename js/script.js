@@ -353,13 +353,13 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
         );
     }
     
-    $scope.genders = [ {option:"None", id:""},{option:"Male", id:"m"}, {option:"Female", id:"f"}];
+    $scope.genders = [ {option:"Any", id:""},{option:"Male", id:"m"}, {option:"Female", id:"f"}];
     
-    $scope.eyeColors = [{option:"None", id:""}, {option: "Black", id:"black"}, {option:"Blue", id:"blue"},  {option: "Brown", id:"brown"}, {option: "Hazel", id:"hazel"}, {option: "Grey", id:"grey"}, {option: "Green", id:"green"}];
+    $scope.eyeColors = [{option:"Any", id:""}, {option: "Black", id:"black"}, {option:"Blue", id:"blue"},  {option: "Brown", id:"brown"}, {option: "Hazel", id:"hazel"}, {option: "Grey", id:"grey"}, {option: "Green", id:"green"}];
     
-    $scope.hairColors = [{option: "None", id: ""},{option:"Black", id:"black"}, {option:"Blonde",id:"blonde"}, {option:"Brown", id:"brown"}, {option:"Red",id:"red"}, {option:"Grey",id:"grey"},  {option:"White", id:"white"}, {option:"Auburn", id:"auburn"},{option:"Salt and Pepper", id:"saltandpepper"}];
+    $scope.hairColors = [{option: "Any", id: ""},{option:"Black", id:"black"}, {option:"Blonde",id:"blonde"}, {option:"Brown", id:"brown"}, {option:"Red",id:"red"}, {option:"Grey",id:"grey"},  {option:"White", id:"white"}, {option:"Auburn", id:"auburn"},{option:"Salt and Pepper", id:"saltandpepper"}];
     
-    $scope.buildTypes = [{option: "None", id: ""},{option:"Slim", id:"slim"}, {option:"Medium",id:"medium"}, {option:"Muscular",id:"muscular"}, {option:"Large", id:"large"}, {option:"Very Large", id:"verylarge"}]
+    $scope.buildTypes = [{option: "Any", id: ""},{option:"Slim", id:"slim"}, {option:"Medium",id:"medium"}, {option:"Muscular",id:"muscular"}, {option:"Large", id:"large"}, {option:"Very Large", id:"verylarge"}]
     
     $scope.actors = [
                 {name: "Twila Harman", location: "Chesapeake, VA", age: "43", height: "6'3\"", weight: "", gender:"f", haircolor: "black", build: "medium", eyecolor: "black",  description: "son to Montague", image:"../public/images/twila_harman.jpg", selected: false},
@@ -657,7 +657,7 @@ onecastApp.controller('applyTimeControllerDirector', function($scope, $rootScope
 onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialog) {
     $scope.primary = 'pink';
     
-    $scope.genders = [ {option:"None", id:""},{option:"Male", id:"m"}, {option:"Female", id:"f"}];
+    $scope.genders = [ {option:"Any", id:"n"},{option:"Male", id:"m"}, {option:"Female", id:"f"}];
     
     $scope.ageRange = {min: 0, max: 100};
     
@@ -757,12 +757,12 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
     $scope.primary = 'pink';
     console.log("Binded");
     
-    $scope.myDate = new Date();
-
+//    $scope.myDate = new Date();
+    var currentDate = new Date();
     $scope.minDate = new Date(
-        $scope.myDate.getFullYear(),
-        $scope.myDate.getMonth(),
-        $scope.myDate.getDate()
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        currentDate.getDate()
     );
   
     
