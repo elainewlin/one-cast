@@ -214,7 +214,7 @@
                         <li class="sidebar-header">
                             Castings
                         </li>
-                        <li id="rom-jul-link" ng-show="$parent.actor">
+                        <li id="rom-jul-link" ng-show="$parent.actor && $parent.applied">
                             <a class="sidebarlink" href="{{romeoUrl}}"> Romeo &amp; Juliet</a>
                         </li>
                         <li ng-repeat="casting in $parent.castings" id="rom-jul-link">
