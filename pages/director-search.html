@@ -95,7 +95,7 @@
 
     <h2>Talent</h2>
     <div class='' layout="row" layout-wrap>
-        <md-card class="talent-card-container"  ng-repeat="actor in actors | filter:search |filter:byAgeRange('age', ageRange.min, ageRange.max)">
+        <md-card class="talent-card-container"  ng-repeat="actor in actors | filter:search |filter:byAgeRange('age', ageRange.min, ageRange.max) as filtered">
             
             <img src="{{actor.image}}" class="md-card-image" alt="user avatar">
             <md-card-content>
@@ -115,6 +115,8 @@
         </md-card>
     </div>
 </div>
+
+<h1 style="text-align:center;" ng-show="filtered.length == 0">No search results! Try changing your filters.</h1>
     
 <!--  Apply  -->
 <div class="submission-button">
