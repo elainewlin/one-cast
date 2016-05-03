@@ -234,7 +234,9 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
     $rootScope.romeoUrl = "#romeojulietdirect";
     $rootScope.actor = false;
     
-    $scope.directorName = localStorage.getItem("directorName").split(" ")[0];
+    if(localStorage.getItem("directorName")) {
+        $scope.directorName = localStorage.getItem("directorName").split(" ")[0];
+    }
     
     $("#create-casting").show();
     $("#create-button").show();
