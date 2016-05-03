@@ -26,6 +26,10 @@ onecastApp.config(function($routeProvider) {
             templateUrl: 'director-search.html',
             controller: 'directorSearchController'
         })
+        .when('/actorprofile', {
+            templateUrl: 'actor-profile.html', 
+            controller: 'actorProfileController'
+        })
         .when('/summary', {
     		templateUrl: 'actor-summary.html',
             controller: 'mainController'
@@ -468,6 +472,19 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
 //        }
 //    });
     
+    
+});
+
+onecastApp.controller('actorProfileController', function($scope, $mdDialog, $rootScope) {
+    
+    console.log("yay, actor profile!");
+    
+    $rootScope.actorData = JSON.parse(localStorage.getItem("actorBasics"));
+    $scope.actorName = $rootScope.actorData.firstName;
+    
+//    $scope.actor = {name: "David Horrocks", location: "Oklahoma City, OK", age: "49", height: "6'1\"", weight: "", gender:"m", haircolor: "brown", build: "n/a", eyecolor: "brown",description: "head of Montague household", image:"../public/images/david_horrocks.jpg", selected: false};
+    
+    $scope.actor = $scope.actorData;
     
 });
 
