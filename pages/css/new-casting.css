@@ -15,7 +15,8 @@
 
 #roles-box {
   border: 1px solid #cccccc;
-  height: 300px;
+  height: 350px;
+  overflow: auto;
 }
 
 .casting-header {
@@ -203,4 +204,9 @@ table th , table td  {
 
 .section-title {
     margin-bottom: 18px;
+}
+
+.role-container {
+    height: 430px;
+    overflow-y: overlay;
 }

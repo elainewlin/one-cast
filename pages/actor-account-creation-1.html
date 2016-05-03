@@ -69,16 +69,16 @@
           </md-input-container>
             <div style="margin-bottom: 32px;">
             <md-input-container class="half-input">
-                <label>Eye Color</label>
-                <md-select ng-model="account.eye">
+                <label>Eye Color *</label>
+                <md-select required ng-model="account.eye">
                   <md-option ng-repeat="color in eyeColors" value="{{color}}">
                     {{color}}
                   </md-option>
                 </md-select>
             </md-input-container>
             <md-input-container class="half-input" style="float: right;">
-                <label>Hair Color</label>
-                <md-select ng-model="account.hair">
+                <label>Hair Color *</label>
+                <md-select required ng-model="account.hair">
                   <md-option ng-repeat="color in hairColors" value="{{color}}">
                     {{color}}
                   </md-option>
@@ -87,8 +87,8 @@
             </div>
             <div style="margin-bottom: 32px;">
             <md-input-container class="half-input">
-                <label>Build</label>
-                <md-select ng-model="account.build">
+                <label>Build *</label>
+                <md-select required ng-model="account.build">
                   <md-option ng-repeat="build in builds" value="{{build}}">
                     {{build}}
                   </md-option>
