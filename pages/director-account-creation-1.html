@@ -4,9 +4,7 @@
     <title>Account Creation</title>
     
     <!-- Bootstrap Core CSS -->
-    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/account-creation.css" rel="stylesheet">   
-    <link href="css/accountform.css" />
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">  
     
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -34,6 +32,9 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    
+    <!-- Our CSS   -->
+    <link href="css/account-creation.css" rel="stylesheet"> 
     <script src="../js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -63,8 +64,8 @@
           </md-input-container>
           <h3>Additional Media</h3>
           
-          <label>Please upload any additional media</label><br />
-            <label for="file" class="md-button md-raised md-primary" style="margin-left: 0;">Choose Files <i class="fa fa-upload"></i></label>
+          <label class="extra-info">Please upload any additional documents (e.g. resume, video, headshots)</label><br />
+            <label for="file" class="choose-files-btn md-button md-raised md-primary"><i class="fa fa-upload"></i> Choose Files</label>
             <input class="ng-hide" type="file" name="file" id="file" multiple style=""/>
             <md-button ng-disabled="projectForm.$valid == false" href="index.html#directorhome" class="md-primary md-raised" style="float: right;">Submit</md-button>
         </form>

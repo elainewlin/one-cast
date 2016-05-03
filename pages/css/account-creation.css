@@ -126,7 +126,7 @@ body {
 }
 
 .form {
-    padding-top: 92px;
+    padding-top: 42px;
     width: 60%;
     margin: auto auto;
     font-size: 18px;
@@ -137,5 +137,62 @@ body {
 }
 
 .half-input {
-    width: 48%;
+    width: 45%;
+}
+
+.dates {
+    font-size: 18px;
+    position: relative;
+    margin-bottom: 72px;
+}
+
+.school-dates {
+    width: 70%;
+    margin-left: -17px;
+}
+
+.work-dates {
+    display: inline-block;
+    width: 70%;
+    margin-left: 60px;
+}
+
+
+.md-datepicker-input {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.file-upload {
+    margin-top: -25px;
+}
+
+.choose-files-btn {
+    padding: 0 13px;
+    margin-left: -1px;
+}
+
+.extra-info {
+    color: gray;
+}
+
+._md-select-value, ._md-select-placeholder {
+    padding-bottom: 8px;
+    
+}
+
+.ng-untouched {
+    font-weight: bold;
+}
+
+#padding-correct {
+    margin-bottom: -5px;
+}
+
+#padding-correct2 {
+    margin-top: 9px;
+}
+
+md-select:not([disabled]):focus ._md-select-value{
+    padding-bottom: 8px;
 }
