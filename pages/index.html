@@ -211,8 +211,11 @@
                         <li class="sidebar-header">
                             Castings
                         </li>
-                        <li id="rom-jul-link">
+                        <!--li id="rom-jul-link">
                             <a class="sidebarlink" href="{{romeoUrl}}"> Romeo &amp; Juliet</a>
+                        </li-->
+                        <li ng-repeat="casting in $parent.castings" id="rom-jul-link">
+                            <a class="sidebarlink" href="{{romeoUrl}}" ng-click="setCasting($index)">{{casting.title}}</a>
                         </li>
                         <!--span class="side-footer"></span-->
                         <!--img class="clipart" src="../img/acting.gif" /-->

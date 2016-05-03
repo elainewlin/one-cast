@@ -148,7 +148,7 @@ onecastApp.controller('directorPlayController', function($scope, $rootScope, $wi
         
         $rootScope.noCastingCancel = true;
         
-        $rootScope.roleBeingEdited = $rootScope.roles[index];
+        $rootScope.roleBeingEdited = $rootScope.tempCasting.roles[index];
         $rootScope.editingRole = true;
         
         $rootScope.roleBeingEditedIndex = index;
@@ -177,6 +177,18 @@ onecastApp.controller('directorPlayController', function($scope, $rootScope, $wi
         
     };
     
+    $scope.deleteRole = function(index) {
+        $rootScope.tempCasting.roles.splice(index, 1);
+    }
+    
+    var prodDate = moment($rootScope.tempCasting.productionDate);
+    var castStart = moment($rootScope.tempCasting.castingStart);
+    var castEnd = moment($rootScope.tempCasting.castingEnd);
+    
+    $scope.prodDate = prodDate.format('LL');
+    $scope.castingStart = castStart.format('LL').split(',')[0];
+    $scope.castingEnd = castEnd.format('LL');
+    
 });
 
 onecastApp.controller('mainActorController', function($scope, $rootScope, $window, $mdDialog, $location) {
@@ -192,6 +204,9 @@ onecastApp.controller('mainActorController', function($scope, $rootScope, $windo
     $rootScope.searchUrl = "#productionsearch";
     $rootScope.romeoUrl = "#romeojuliet";
     $rootScope.actor = true;
+    
+    $rootScope.actorData = JSON.parse(localStorage.getItem("actorBasics"));
+    $scope.actorName = $rootScope.actorData.firstName;
     
     console.log($rootScope.applied);
     
@@ -215,12 +230,12 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
     $rootScope.romeoUrl = "#romeojulietdirect";
     $rootScope.actor = false;
     
+    $scope.directorName = localStorage.getItem("directorName").split(" ")[0];
+    
     $("#create-casting").show();
     $("#create-button").show();
     
-    $rootScope.roles = [];
-    
-    console.log($rootScope.created);
+    $rootScope.castings = [];
     
     if($rootScope.created) {
         $('#rom-jul-link').show();
@@ -229,12 +244,19 @@ onecastApp.controller('mainDirectorController', function($scope, $rootScope, $wi
         $('#rom-jul-link').hide();
     }
     
+    $scope.setCasting = function(index) {
+        $rootScope.tempCasting = $rootScope.castings[index];
+    }
+    
     $(function(){
 
         $(".create-button").on("click",function(){
             
             $rootScope.noCastingCancel = false;
             $rootScope.roleBeingEdited = undefined;
+            $rootScope.newCasting = true;
+            
+            $rootScope.tempCasting = undefined;
             
             while(angular.element(document).find('md-dialog').length > 0) {
                 $mdDialog.cancel();
@@ -693,12 +715,12 @@ onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialo
           };
           
           if($rootScope.roleBeingEdited) {
-              $rootScope.roles[$rootScope.roleBeingEditedIndex] = role;
+              $rootScope.tempCasting.roles[$rootScope.roleBeingEditedIndex] = role;
           } else {
-              $rootScope.roles.push(role);
+              $rootScope.tempCasting.roles.push(role);
           }
         
-          console.log($rootScope.roles);
+          console.log($rootScope.tempCasting.roles);
         
           $mdDialog.cancel();
         
@@ -756,7 +778,7 @@ onecastApp.controller('addRoleController', function($scope, $rootScope, $mdDialo
         
     }
     
-    $scope.roles = $rootScope.roles;
+    $scope.roles = $rootScope.tempCasting.roles;
     
     if($rootScope.editingRole) {
         $scope.mode = "Save";
@@ -777,18 +799,43 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
         currentDate.getMonth(),
         currentDate.getDate()
     );
+    
+    var casting = {
+        title: "",
+        description: "",
+        location: "",
+        productionDate: new Date(),
+        castingStart: "",
+        castingEnd: "",
+        roles: [],
+        castingTime: {}
+    }
+    
+    if(!$rootScope.tempCasting) {
+        $rootScope.tempCasting = casting;
+    }
+    
+    $scope.castingTitle = $rootScope.tempCasting.title;
+    $scope.castingLocation = $rootScope.tempCasting.location;
+    $scope.castingDesc = $rootScope.tempCasting.description;
+    $scope.prodDate = $rootScope.tempCasting.productionDate;
   
     $scope.editRole = function(index) {
         
         $rootScope.noCastingCancel = false;
         $rootScope.editingRole = true;
         
-        $rootScope.roleBeingEdited = $rootScope.roles[index];
+        $rootScope.roleBeingEdited = $rootScope.tempCasting.roles[index];
         $rootScope.roleBeingEditedIndex = index;
         
         /*while(angular.element(document).find('md-dialog').length > 0) {
             $mdDialog.cancel();
         }*/
+        
+        $rootScope.tempCasting.title = $scope.castingTitle;
+        $rootScope.tempCasting.description = $scope.castingDesc;
+        $rootScope.tempCasting.productionDate = $scope.prodDate;
+        $rootScope.tempCasting.location = $scope.castingLocation;
         
         $mdDialog.show({
           controller: 'addRoleController',
@@ -811,7 +858,7 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
     };
     
     $scope.deleteRole = function(index) {
-        $rootScope.roles.splice(index, 1);
+        $rootScope.tempCasting.roles.splice(index, 1);
     }
     
     $scope.addRole = function() {
@@ -819,6 +866,11 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
         $rootScope.editingRole = false;
         $rootScope.roleBeingEditedIndex = -1;
         $rootScope.roleBeingEdited = undefined;
+        
+        $rootScope.tempCasting.title = $scope.castingTitle;
+        $rootScope.tempCasting.description = $scope.castingDesc;
+        $rootScope.tempCasting.productionDate = $scope.prodDate;
+        $rootScope.tempCasting.location = $scope.castingLocation;
         
         $mdDialog.cancel();
         
@@ -840,7 +892,10 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
     
     $scope.addTimes = function() {
         
-        $mdDialog.cancel();
+        $rootScope.tempCasting.title = $scope.castingTitle;
+        $rootScope.tempCasting.description = $scope.castingDesc;
+        $rootScope.tempCasting.productionDate = $scope.prodDate;
+        $rootScope.tempCasting.location = $scope.castingLocation;
         
         $mdDialog.show({
           controller: 'applyTimeControllerDirector',
@@ -859,6 +914,14 @@ onecastApp.controller('addCastingController', function($scope, $rootScope, $mdDi
     };
     
     $scope.save = function() {
+        
+        $rootScope.tempCasting.title = $scope.castingTitle;
+        $rootScope.tempCasting.description = $scope.castingDesc;
+        $rootScope.tempCasting.productionDate = $scope.prodDate;
+        $rootScope.tempCasting.location = $scope.castingLocation;
+        
+        $rootScope.castings.push($rootScope.tempCasting);
+        
         $mdDialog.cancel();
         $rootScope.created = true;
         $('#rom-jul-link').show();
