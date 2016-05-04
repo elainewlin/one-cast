@@ -171,6 +171,8 @@
     width: 600px;
     margin: 32px;
     margin-top: 0px;
+    height: 430px;
+    overflow-y: none;
 }
 
 #addRoleOne {
@@ -204,11 +206,6 @@ table th , table td  {
 
 .section-title {
     margin-bottom: 18px;
-}
-
-.role-container {
-    height: 430px;
-    overflow-y: overlay;
 }
 
 .role-button {
