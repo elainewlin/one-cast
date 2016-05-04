@@ -1,40 +1,110 @@
+<link rel="stylesheet" href='css/style.css' />
+<link rel="stylesheet" href='css/actor-profile.css' />
 <div class="top-bar" >
-    <!-- actor photo -->
-    <img src="{{targetActor.image}}" class="md-card-image" alt="user avatar">
-    
-    <h2>{{targetActor.name}}</h2>
-    
-    <p>Location: {{targetActor.location}}</p>
-    <p>Age: {{targetActor.age}}</p>
-    
-    <p>Height: {{targetActor.height}}</p>
-    
-    <p>Weight: {{targetActor.weight}}</p>
-    <p>Build: {{targetActor.build}}</p>
-    <p>Eye Color: {{targetActor.eyecolor}}</p>
-    <p>Hair Color: {{targetActor.haircolor}}</p>
-    <p>Ethnicity: {{actor.ethn}}</p>
-    <p>Native Accent: {{actor.nat}}</p>
-    
-    <!-- Need to expand education -->
-    <h3>Education</h3>
-    <p> College: {{actor.college}}</p>
-    <p>College Location: {{actor.univLoc}}</p>
-    <p>Major: {{actor.major}}</p>
-<!--    <p>Graduation Year</p>-->
-    <p>College Start Date: {{actor.schoolstart}}</p>
-    <p>College End Date: {{actor.schoolend}}</p>
-    
-    
-    
-    
-    <!-- Need to expand experience -->
-    <h3>Experience</h3>
-    <p>Company: {{actor.comp}}</p>
-    <p>Company Location: {{actor.compLoc}}</p>
-    <p>Role: {{actor.job}}</p>
-    <p>Start Date: {{actor.jobstart}}</p>
-    <p>End Date: {{actor.jobend}}</p>
+    <div class="container">
+        <div class="col-md-9 col-sm-9">
+            <div class="row">
+                <div class="top-block">
+                    <!-- actor photo -->
+                    <img src="../public/images/ming_correll.jpg" class="md-card-image" alt="user avatar">
+<!--                    {{targetActor.image}} -->
+                    <div class="main-attributes">
+                        <div id="actor-name">Stupid Actor</div>
+                        <!--                    {{targetActor.name}} -->
+                        <div id="action-buttons">
+                            <div id="contact-button">
+                                <md-button class="button-style md-raised md-primary">
+                                    <i class="icon-align material-icons">mail_outline</i>
+                                    <span class="text-icon-align"> Contact </span>
+                                </md-button>
+                            </div>
+                            <div id="invite-button">
+                                 <md-button class="button-style md-raised md-primary" ng-click="invite()">
+                                    <i class="icon-align material-icons">person_add</i>
+                                    <span class="text-icon-align"> Invite </span>
+                                </md-button>
+                            </div>
+                           
+                        </div>
+                        <div id="attributes">
+                            <div id="left-attributes">
+                                <div class="attribute-details">
+                                    <span class="attribute-name">Location:</span> {{targetActor.location}
+                                </div>
+                                <div class="attribute-details">
+                                    <span class="attribute-name">Age:</span> {{targetActor.age}}
+                                </div>
+                                <div class="attribute-details">
+                                    <span class="attribute-name">Height:</span> {{targetActor.height}}
+                                </div>
+                                <div class="attribute-details">
+                                    <span class="attribute-name">Weight:</span> {{targetActor.weight}}
+                                </div>
+                            </div>
+                            <div id="right-attributes">
+                                <div class="attribute-details">
+                                    <span class="attribute-name">Build:</span> {{targetActor.build}}
+                                </div>
+                                <div class="attribute-details">
+                                    <span class="attribute-name">Eye Color:</span> {{targetActor.eyecolor}}
+                                </div>
+                                <div class="attribute-details">
+                                    <span class="attribute-name">Hair Color:</span> {{targetActor.haircolor}}
+                                </div>
+                                <div  class="attribute-details">
+                                    <span class="attribute-name">Ethnicity:</span> {{actor.ethn}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="styled-hr">
+                <!-- Need to expand education -->
+                <div class="section-block">
+                    <p class="section-header">Education</p>
+                    <div class="section-info">
+                        <p>School</p>
+                        <p>{{actor.college}}</p>
+                    </div>
+                    <div class="section-info">
+                        <p>Degree</p>
+                        <p>{{actor.major}}</p>
+                    </div>
+                    <div class="section-info">
+                        <p>Location</p>
+                        <p>{{actor.univLoc}}</p>
+                    </div>
+                    <div class="section-info">
+                        <p>Year</p>
+                        <p>{{actor.schoolend}}</p>
+                    </div>
+                </div>
+                <hr class="styled-hr">
+                <!-- Need to expand experience -->
+                <div class="section-block">
+                    <p class="section-header">Experience</p>
+                    <div class="section-info">
+                        <p>Company</p>
+                        <p>{{actor.comp}}</p>
+                    </div>
+                    <div class="section-info">
+                        <p>Role</p>
+                        <p>{{actor.job}}</p>
+                    </div>
+                     <div class="section-info">
+                        <p>Location</p>
+                        <p> {{actor.compLoc}}</p>
+                    </div>
+                    <div class="section-info">
+                        <p>Year</p>
+                        <p> {{actor.jobend}}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
         
     
 </div>
