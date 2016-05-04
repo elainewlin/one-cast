@@ -22,6 +22,7 @@
 
 #right-attributes {
     float: right;
+    margin-left: 40px;
 }
 
 #left-attributes {
@@ -39,7 +40,7 @@
 #action-buttons {
     margin-top: 20px;
     position: relative;
-    width:277px;
+    width:327px;
 }
 
 #contact-button {
@@ -48,6 +49,7 @@
 
 #invite-button {
     float: right;
+    margin-left: 10px;
 }
 
 .icon-align {
@@ -71,8 +73,34 @@
   border: none;
   height: 1px;
   background-color: #d81b60;
+    clear: both;
+}
+
+.section-info{
+    float:left;
+/*    border: 1px solid red;*/
+    width: 210px;
+    height: 100px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.section-long-text {
+    text-align:left;
+}
+
+.section-text {
+    margin-top: 10px;
 }
 
 .section-header {
     font-size: 25px;
+    font-weight: bold;
+}
+
+.section-title {
+/*    font-size: 18px;*/
+    color:#d81b60;
 }

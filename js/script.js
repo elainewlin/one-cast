@@ -480,6 +480,20 @@ onecastApp.controller('actorProfileController', function($scope, $mdDialog, $roo
     
     $scope.actor = $rootScope.tempViewActor;
     
+    $scope.primary = 'pink';
+    $scope.invite = function() {
+        $mdDialog.show(
+          $mdDialog.alert()
+            .parent(angular.element(document.querySelector('#pag-wrapper')))
+            .clickOutsideToClose(true)
+            .title('Actor is Invited')
+            .textContent('You have invited ' + $scope.actor.name +  ' for casting')
+            .ok('Ok!')
+        );
+    }
+    
+    
+    
 });
 
 onecastApp.controller('productionController', function($scope, $mdDialog, $rootScope) {
