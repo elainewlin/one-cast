@@ -529,22 +529,24 @@ onecastApp.controller('productionController', function($scope, $mdDialog, $rootS
 
     });
     
-    $scope.roles = [{name: "Romeo", description: "son to Montague", selected: false},
-                {name: "Juliet", description: "daughter to Capulet", selected: false},
-                {name: "Mercutio",description: "kinsman to the prince, and friend to Romeo"},
-                {name: "Tybalt", description: "nephew to Lady Capulet", selected: false},
-                {name: "The Nurse", description: "Nurse to Juliet", selected: false},
-                {name: "Friar Laurence", description: "Franciscan", selected: false},
-                {name: "Capulet", description: "head of Capulet household", selected: false},
-                {name: "Paris", description: "a young nobleman", selected: false},
-                {name: "Benvolio",  description: "nephew to Montague, and friend to Romeo"},
-                {name: "Lady Capulet", description: "wife to Capulet", selected: false},
-                {name: "Montague", description: "head of Montague household", selected: false},
-                {name: "Balthasar", description: "servant to Romeo", selected: false},
-                {name: "Peter", description: "servant to Juliet's nurse", selected: false},
-                {name: "Abraham", description: "servant to Montague", selected: false},
-                {name: "Sampson", description: "servant to Capulet", selected: false},
-                {name: "Gregory", description: "servant to Capulet", selected: false}];
+    
+                
+    $scope.roles = [{name: "Romeo", description: "son to Montague", status: "accepted", selected: false, ageMin: 16, ageMax: 22, gender: "male", interviewDate: "May 4, 2016", interviewTime: "12:00pm"},
+                {name: "Juliet", description: "daughter to Capulet", status: "applied", selected: false, ageMin: 18, ageMax: 20, gender:"female",  interviewDate: "May 5, 2016", interviewTime: "12:00pm"},
+                {name: "Mercutio",description: "kinsman to the prince, and friend to Romeo", status: "applied", selected: false, ageMin: 20, ageMax: 30, gender:"male", interviewDate: "May 6, 2016", interviewTime: "12:00pm"},
+                {name: "Tybalt", description: "nephew to Lady Capulet", status: "applied", selected: false, ageMin:20, ageMax:30, gender:"male", interviewDate: "May 7, 2016", interviewTime: "12:00pm"},
+                {name: "The Nurse", description: "Nurse to Juliet", status: "applied", selected: false, ageMin:20, ageMax:30, gender:"female", interviewDate: "May 8, 2016", interviewTime: "12:00pm"},
+                {name: "Friar Laurence", description: "Franciscan", status: "rejected", selected: false, ageMin:20, ageMax:30, gender:"male", interviewDate: "May 9, 2016", interviewTime: "12:00pm"},
+                {name: "Capulet", description: "head of Capulet household", status: "rejected", selected: false, ageMin:20, ageMax:30, gender:"male", interviewDate: "May 10, 2016", interviewTime: "12:00pm"},
+                {name: "Paris", description: "a young nobleman", status: "rejected", selected: false, ageMin:20, ageMax:30, gender:"male", interviewDate: "May 11, 2016", interviewTime: "12:00pm"},
+                {name: "Benvolio",  description: "nephew to Montague, and friend to Romeo", status: "rejected", selected: false, ageMin:20, ageMax:30, gender:"male", interviewDate: "May 12, 2016", interviewTime: "12:00pm"},
+                {name: "Lady Capulet", description: "wife to Capulet", status: "rejected", selected: false, ageMin:20, ageMax:30, gender:"female", interviewDate: "May 13, 2016", interviewTime: "12:00pm"},
+                {name: "Montague", description: "head of Montague household", status: "rejected", selected: false, ageMin:20, ageMax:30, gender:"male", interviewDate: "May 14, 2016", interviewTime: "12:00pm"},
+                {name: "Balthasar", description: "servant to Romeo", status: "applied", selected: false, ageMin:20, ageMax:30, gender:"male", interviewDate: "May 15, 2016", interviewTime: "12:00pm"},
+                {name: "Peter", description: "servant to Juliet's nurse", status: "applied", selected: false, ageMin:20, ageMax:30, gender:"male", interviewDate: "May 16, 2016", interviewTime: "12:00pm"},
+                {name: "Abraham", description: "servant to Montague", status: "rejected", selected: false, ageMin:20, ageMax:30, gender:"male", interviewDate: "May 17, 2016", interviewTime: "12:00pm"},
+                {name: "Sampson", description: "servant to Capulet", status: "backup", selected: false, ageMin:20, ageMax:30, gender:"male", interviewDate: "May 18, 2016", interviewTime: "12:00pm"},
+                {name: "Gregory", description: "servant to Capulet", status: "backup", selected: false, ageMin:20, ageMax:30, gender:"male", interviewDate: "May 19, 2016", interviewTime: "12:00pm"}];
     
      // function to determine if any roles have been selected
     
@@ -568,7 +570,40 @@ onecastApp.controller('productionController', function($scope, $mdDialog, $rootS
             }
         }
         
-    }
+    };
+    
+    $scope.viewRole = function(index) {
+        
+        $rootScope.noCastingCancel = true;
+        $rootScope.tempViewRoles = $scope.roles;
+        $rootScope.roleBeingEdited = $scope.roles[index];
+        $rootScope.editingRole = true;
+        
+        $rootScope.roleBeingEditedIndex = index;
+        
+        while(angular.element(document).find('md-dialog').length > 0) {
+            $mdDialog.cancel();
+        }
+        
+        $mdDialog.show({
+          controller: 'viewRoleController',
+          templateUrl: 'view-role.html',
+          ariaLabel: "View Role",
+          parent: angular.element('#pag-wrapper'),
+          clickOutsideToClose:true,
+          //fullscreen: 'useFullScreen'
+        })
+        .then(function(answer) {
+          console.log(answer);
+        }, function() {
+          $scope.status = 'You cancelled the dialog.';
+        });
+        
+        while(angular.element(document).find('md-dialog').length > 1) {
+            $mdDialog.cancel();
+        }
+        
+    };
     
     
 });
