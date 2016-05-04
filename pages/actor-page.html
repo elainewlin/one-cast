@@ -1,15 +1,33 @@
- <!-- Production Summary -->
+<link rel="stylesheet" href='css/casting-canned.css' />
+<!-- Production Summary -->
     <div id="production-summary-container" >
-        <h1> Romeo and Juliet </h1>
-        <div class="description"><p>TY</p></div>
-        <div class="location-info"><i class="material-icons">location_on</i><p class="vertical-align">77 Massachusetts Ave. Cambridge, MA 02139</p></div>
-        <div class="casting-dates"><i class="material-icons">date_range</i>
-            Casting Dates: 
-            April 8 - May 5, 2016
+        <div id="casting-title">Romeo and Juliet</div> 
+        <div id="casting-description">
+            Romeo and Juliet is a tragedy about two young star-crossed lovers whose deaths ultimately reconcile their feuding families. This classic play by William Shakespeare has deeply impacted hearts throughout the centuries.
         </div>
-        <div class="production-date"><i class="material-icons">beenhere</i>
-            Production Date:
-            July 26, 2016
+        <div id="casting-location-div">
+            <div class="location-icon">
+                <i class="material-icons">location_on</i>
+            </div>
+            <div class="location-text-box">
+                <div class="location-text">77 Massachusetts Ave. Cambridge, MA, 02139</div>
+            </div>
+        </div>
+        <div id="productionDate-div">
+            <div class="productionDate-icon">
+              <i class="material-icons">date_range</i> 
+            </div>
+            <div class="production-text-box">
+              <div class="production-text">Casting Dates: April 8 - May 5, 2016</div>
+            </div>
+        </div>
+        <div id="castingDate-div">
+            <div class="castingDate-icon">
+              <i class="material-icons">beenhere</i>
+            </div>
+            <div class="castingDate-text-box">
+              <div class="castingDate-text">Production Date: July 26, 2016</div>
+            </div>
         </div>
     </div>
     
@@ -24,7 +42,7 @@
             <md-card class="card-container"  ng-repeat="role in roles" ng-if="'applied' == role.status">
                 <div class="strip strip-applied"></div>
                 <md-card-content>
-                    <h2>{{role.name}}</h2>
+                    <h3>{{role.name}}</h3>
                     <p>{{role.description}}</p>
 <!--                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>-->
                 </md-card-content>
@@ -39,7 +57,7 @@
             <md-card class="card-container"  ng-repeat="role in roles" ng-if="'accepted' == role.status">
                 <div class="strip strip-accepted"></div>
                 <md-card-content>
-                    <h2>{{role.name}}</h2>
+                    <h3>{{role.name}}</h3>
                     <p>{{role.description}}</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
                 </md-card-content>
@@ -54,7 +72,7 @@
             <md-card class="card-container"  ng-repeat="role in roles" ng-if="'rejected' == role.status">
                 <div class="strip strip-rejected"></div>
                 <md-card-content>
-                    <h2>{{role.name}}</h2>
+                    <h3>{{role.name}}</h3>
                     <p>{{role.description}}</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
                 </md-card-content>

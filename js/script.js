@@ -185,6 +185,14 @@ onecastApp.controller('directorPlayController', function($scope, $rootScope, $wi
         $rootScope.tempCasting.roles.splice(index, 1);
     }
     
+    $scope.setAccepted = function(element) {
+        
+        $(element.target).parent().children().css("color", "#ccc");
+        $(element.target).css('color','#d81b60');
+        $scope.dirtyChanges = true;
+        
+    }
+    
     var prodDate = moment($rootScope.tempCasting.productionDate);
     var castStart = moment($rootScope.tempCasting.castingStart);
     var castEnd = moment($rootScope.tempCasting.castingEnd);
