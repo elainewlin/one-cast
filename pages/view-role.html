@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+    <link rel="stylesheet" href='css/nouislider.min.css'/>
+    <!--link rel="stylesheet" href='css/style.css' /-->
+    <link rel="stylesheet" href='css/new-casting.css' />
+
+<md-dialog aria-label="Role"  ng-cloak>
+  <form name="addRoleForm" novalidate>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Add New Role</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="container role-container">
+          <div class="row">
+              
+            <!-- New Role -->
+            <div class="col-md-10 col-sm-10">
+              <div class="row">
+                <div class="block">
+                    <h4 class="section-title">Role Title *</h4>
+<!--                    <input required ng-model="roleName" class="form-control" id="role-title" placeholder="Ex: Romeo">-->
+                </div>
+                <div class="block">
+                    <div id="age-range-box">
+                      <h4 id="age-range-text">Age Range</h4>
+                        <div id="slider-container" > 
+<!--TODO-->
+<!--                            <div range-slider min="0" max="100" model-min="ageRange.min" model-max="ageRange.max" attach-handle-values="true"  id="slider-bar"></div>-->
+                            <div id="age-range-values">
+                                Age: 
+                                <span id="slider-label-left-filter">{{ageRange.min}}</span>
+                                to 
+                                <span id="slider-label-right-filter">{{ageRange.max}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block">
+                    <h4 class="section-title">Gender *</h4>
+                    
+<!-- TODO -->
+<!--
+                    <div class="input-group search-container" id="gender-dropdown">
+                        <select class="form-control" ng-options="gender.id as gender.option for gender in genders" ng-model="roleGender" required>
+                            <option value="" id="dropdown-placeholder" disabled selected>Choose a gender</option>
+                        </select>
+                    </div>
+-->
+                </div>
+                <div class="block">
+                    <h4 class="section-title">Role Description</h4>
+<!-- TODO -->
+<!--                    <textarea id="description" class="form-control" placeholder="Ex: Romeo is in love with..." ng-model="roleDescription"></textarea>  -->
+                </div>
+<!--                <h4 class="section-title">Upload Casting Scripts </h4>-->
+<!--                <label id="file-uploader" for="file" class="md-button md-raised md-primary" style="">Choose Files <i class="fa fa-upload"></i></label>-->
+<!--                <input class="ng-hide" type="file" name="file" id="file" multiple/>-->
+
+              </div>
+            </div>
+            <!-- end New Role -->
+          </div>
+        </div>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button class="md-accent" type="submit" id="" ng-click="cancel()">
+       Cancel
+      </md-button>
+      <md-button ng-disabled="addRoleForm.$valid == false" class="md-primary" type="submit" id="" style="margin-right:20px;" ng-click="add()">
+        {{mode}}
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+
+    <script src='../js/nouislider.min.js'/></script>
+    <script src="../js/new-role.js"></script>
