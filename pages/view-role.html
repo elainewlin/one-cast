@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 
-    <link rel="stylesheet" href='css/nouislider.min.css'/>
-    <!--link rel="stylesheet" href='css/style.css' /-->
+    
+    <link rel="stylesheet" href='css/style.css' />
     <link rel="stylesheet" href='css/view-role.css' />
 
-<md-dialog aria-label="Role Description"  ng-cloak>
-  <form name="addRoleForm" novalidate>
+<md-dialog class="custom-width" aria-label="View Role"  ng-cloak>
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2>View Role</h2>
-        <span flex></span>
+<!--        <span flex></span>-->
         <md-button class="md-icon-button" ng-click="cancel()">
           <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
         </md-button>
@@ -17,52 +16,45 @@
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
-        <div class="container role-container">
+        <div class="container">
           <div class="row">
               
             <!-- New Role -->
             <div class="col-md-10 col-sm-10">
               <div class="row">
                 <div class="block">
-                    <h4 class="section-title">Role Title: </h4>
+                    <h4 class="section">
+                        <span class="section-title">Role Title: </span>
+                        {{roleName}} 
+                    </h4>
                     
-                    {{roleName}}
                     
                 </div>
                 <div class="block">
                     <div id="age-range-box">
-                      <h4 id="age-range-text" class="section-title">Age Range: </h4>
-                        <div > 
-                            <div >
-                                Age: 
-                                <span id="slider-label-left-filter">{{ageRange.min}}</span>
+                      <h4 id="age-range-text" class="section">
+                          <span class="section-title">Age Range:</span>
+                          <span>{{ageRange.min}}</span>
                                 to 
-                                <span id="slider-label-right-filter">{{ageRange.max}}</span>
-                            </div>
-                        </div>
+                                <span>{{ageRange.max}}</span>
+                    </h4>
                     </div>
                 </div>
                 <div class="block">
-                    <h4 class="section-title">Gender: </h4>
-                    {{roleGender}}
-                    
+                    <h4 class="section">
+                        <span class="section-title">Gender:</span>
+                        {{roleGender}}
+                    </h4>
                 </div>
                 <div class="block">
-                    <h4 class="section-title">Role Description: </h4>
-                    <p>{{roleDescription}}</p>
+                    <h4 class="section">
+                        <span class="section-title">Role Description:</span>
+                        {{roleDescription}}
+                    </h4>
                 </div>
-                  
-<!--
-                <div class="block">
-                    <h4 class="section-title">Status: </h4>
-                    {{status}}
-                      
-                </div>
--->
 
               </div>
             </div>
-            <!-- end New Role -->
           </div>
         </div>
       </div>
@@ -74,8 +66,4 @@
       </md-button>
 
     </md-dialog-actions>
-  </form>
 </md-dialog>
-
-    <script src='../js/nouislider.min.js'/></script>
-    <script src="../js/new-role.js"></script>
