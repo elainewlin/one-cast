@@ -403,21 +403,21 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
     $scope.buildTypes = [{option: "Any", id: ""},{option:"Slim", id:"slim"}, {option:"Medium",id:"medium"}, {option:"Muscular",id:"muscular"}, {option:"Large", id:"large"}, {option:"Very Large", id:"verylarge"}]
     
     $scope.actors = [
-                {name: "Twila Harman", location: "Chesapeake, VA", age: "43", height: "6'3\"", weight: "", gender:"f", haircolor: "black", build: "medium", eyecolor: "black",  description: "son to Montague", image:"../public/images/twila_harman.jpg", selected: false},
-                {name: "Ming Correll", location: "Newark, NJ", age: "38", height: "5'7\"", weight: "", gender:"f", haircolor: "brown", build: "slim", eyecolor: "hazel",description: "daughter to Capulet", image:"../public/images/ming_correll.jpg", selected: false},
-                {name: "Jerrold Mercier", location: "Detroit, MI", age: "46", height: "6'2\"", weight: "", gender:"m", haircolor: "brown", build: "muscular", eyecolor: "green",description: "kinsman to the prince, and friend to Romeo", image: "../public/images/jerrold_mercier.jpg", selected: false},
-                {name: "Naoma Wayland", location: "Dallas, TX", age: "26", height: "5'5\"", weight: "", gender:"f", haircolor: "brown", build: "slim", eyecolor: "green",description: "nephew to Lady Capulet", image:"../public/images/naoma_wayland.jpg", selected: false},
-                {name: "Emiko Swanberg", location: "Honolulu, HI", age: "32", height: "5'7\"", weight: "", gender:"f", haircolor: "brown", build: "slim", eyecolor: "brown",description: "Nurse to Juliet", image:"../public/images/emiko_swanberg.jpg", selected: false},
-                {name: "Gena Whitehill", location: "Albuquerque, NM", age: "30", height: "5'3\"", weight: "", gender:"f", haircolor: "blonde", build: "slim", eyecolor: "green",description: "Franciscan", image:"../public/images/gena_whitehill.jpg", selected: false},
-                {name: "Lourie Faires", location: "Sacramento, CA", age: "56", height: "5'1\"", weight: "", gender:"f", haircolor: "black", build: "large", eyecolor: "black",description: "head of Capulet household", image:"../public/images/lourie_faires.jpg", selected: false},
-                {name: "Deirdre Vick", location: "Pittsburgh, PA", age: "32", height: "6'2\"", weight: "", gender:"m", haircolor: "brown", build: "large", eyecolor: "brown",description: "a young nobleman", image:"../public/images/deirdre_vick.jpg", selected: false},
-                {name: "Claretta Conley", location: "Fort Worth, TX", age: "32", height: "5'6\"", weight: "", gender:"f", haircolor: "brown", build: "slim", eyecolor: "green",description: "nephew to Montague, and friend to Romeo", image:"../public/images/claretta_conley.jpg", selected: false},
+                {name: "Twila Harman", location: "Chesapeake, VA", age: "43", height: "6'3\"", weight: "120 lbs", gender:"f", haircolor: "black", build: "medium", eyecolor: "black",  description: "son to Montague", image:"../public/images/twila_harman.jpg", selected: false},
+                {name: "Ming Correll", location: "Newark, NJ", age: "38", height: "5'7\"", weight: "120 lbs", gender:"f", haircolor: "brown", build: "slim", eyecolor: "hazel",description: "daughter to Capulet", image:"../public/images/ming_correll.jpg", selected: false},
+                {name: "Jerrold Mercier", location: "Detroit, MI", age: "46", height: "6'2\"", weight: "120 lbs", gender:"m", haircolor: "brown", build: "muscular", eyecolor: "green",description: "kinsman to the prince, and friend to Romeo", image: "../public/images/jerrold_mercier.jpg", selected: false},
+                {name: "Naoma Wayland", location: "Dallas, TX", age: "26", height: "5'5\"", weight: "120 lbs", gender:"f", haircolor: "brown", build: "slim", eyecolor: "green",description: "nephew to Lady Capulet", image:"../public/images/naoma_wayland.jpg", selected: false},
+                {name: "Emiko Swanberg", location: "Honolulu, HI", age: "32", height: "5'7\"", weight: "120 lbs", gender:"f", haircolor: "brown", build: "slim", eyecolor: "brown",description: "Nurse to Juliet", image:"../public/images/emiko_swanberg.jpg", selected: false},
+                {name: "Gena Whitehill", location: "Albuquerque, NM", age: "30", height: "5'3\"", weight: "120 lbs", gender:"f", haircolor: "blonde", build: "slim", eyecolor: "green",description: "Franciscan", image:"../public/images/gena_whitehill.jpg", selected: false},
+                {name: "Lourie Faires", location: "Sacramento, CA", age: "56", height: "5'1\"", weight: "120 lbs", gender:"f", haircolor: "black", build: "large", eyecolor: "black",description: "head of Capulet household", image:"../public/images/lourie_faires.jpg", selected: false},
+                {name: "Deirdre Vick", location: "Pittsburgh, PA", age: "32", height: "6'2\"", weight: "120 lbs", gender:"m", haircolor: "brown", build: "large", eyecolor: "brown",description: "a young nobleman", image:"../public/images/deirdre_vick.jpg", selected: false},
+                {name: "Claretta Conley", location: "Fort Worth, TX", age: "32", height: "5'6\"", weight: "120 lbs", gender:"f", haircolor: "brown", build: "slim", eyecolor: "green",description: "nephew to Montague, and friend to Romeo", image:"../public/images/claretta_conley.jpg", selected: false},
                 {name: "Vada Blaine", location: "Aurora, CO", age: "48", height: "", weight: "5'6\"", gender:"m", haircolor: "brown", build: "medium", eyecolor: "green",description: "wife to Capulet", image:"../public/images/vada_blaine.jpg", selected: false},
-                {name: "David Horrocks", location: "Oklahoma City, OK", age: "49", height: "6'1\"", weight: "", gender:"m", haircolor: "brown", build: "n/a", eyecolor: "brown",description: "head of Montague household", image:"../public/images/david_horrocks.jpg", selected: false},
-                {name: "Loise Delk", location: "Virginia Beach, VA", age: "48", height: "5'7\"", weight: "", gender:"f", haircolor: "blonde", build: "slim", eyecolor: "blue",description: "servant to Romeo", image:"../public/images/loise_delk.jpg", selected: false},
-                {name: "Olin Cotnoir", location: "Toledo, OH", age: "39", height: "6'6\"", weight: "", gender:"m", haircolor: "brown", build: "muscular", eyecolor: "blue",description: "servant to Juliet's nurse", image:"../public/images/olin_cotnoir.jpg", selected: false},
-                {name: "Jon Griner", location: "Memphis, TN", age: "26", height: "6'9\"", weight: "", gender:"m", haircolor: "brown", build: "muscular", eyecolor: "brown",description: "servant to Montague", image:"../public/images/jon_griner.jpg", selected: false},
-                {name: "Christinia Guse", location: "Tampa, FL", age: "21", height: "5'5\"", weight: "", gender:"f", haircolor: "brown", build: "slim", eyecolor: "black",description: "servant to Capulet", image:"../public/images/christinia_guse.jpg", selected: false}];
+                {name: "David Horrocks", location: "Oklahoma City, OK", age: "49", height: "6'1\"", weight: "120 lbs", gender:"m", haircolor: "brown", build: "n/a", eyecolor: "brown",description: "head of Montague household", image:"../public/images/david_horrocks.jpg", selected: false},
+                {name: "Loise Delk", location: "Virginia Beach, VA", age: "48", height: "5'7\"", weight: "120 lbs", gender:"f", haircolor: "blonde", build: "slim", eyecolor: "blue",description: "servant to Romeo", image:"../public/images/loise_delk.jpg", selected: false},
+                {name: "Olin Cotnoir", location: "Toledo, OH", age: "39", height: "6'6\"", weight: "120 lbs", gender:"m", haircolor: "brown", build: "muscular", eyecolor: "blue",description: "servant to Juliet's nurse", image:"../public/images/olin_cotnoir.jpg", selected: false},
+                {name: "Jon Griner", location: "Memphis, TN", age: "26", height: "6'9\"", weight: "120 lbs", gender:"m", haircolor: "brown", build: "muscular", eyecolor: "brown",description: "servant to Montague", image:"../public/images/jon_griner.jpg", selected: false},
+                {name: "Christinia Guse", location: "Tampa, FL", age: "21", height: "5'5\"", weight: "120 lbs", gender:"f", haircolor: "brown", build: "slim", eyecolor: "black",description: "servant to Capulet", image:"../public/images/christinia_guse.jpg", selected: false}];
     
     
     $scope.sortType = 'title';
@@ -468,24 +468,20 @@ onecastApp.controller('directorSearchController', function($scope, ngTableParams
         };
     };
     
-
-
-//    $scope.tableParams = new ngTableParams({
-//        page: 1,            // show first page
-//        count: 10000           // count per page
-//    }, {
-//        counts: [],
-//        getData: function($defer, params) {
-//            $defer.resolve(data);
-//        }
-//    });
-    
+    $scope.openProfile = function(actorIndex) {
+        console.log("about to open profile");
+        $rootScope.tempViewActor = $scope.actors[actorIndex];
+        window.location = "index.html#actorprofile";
+    };
     
 });
 
 onecastApp.controller('actorProfileController', function($scope, $mdDialog, $rootScope) {
     
-    console.log("yay, actor profile!");
+//    console.log("yay, actor profile!");
+    
+    $scope.targetActor = $rootScope.tempViewActor;
+//    console.log($scope.targetActor);
     
     $rootScope.actorData = JSON.parse(localStorage.getItem("actorBasics"));
     $scope.actorName = $rootScope.actorData.firstName;
