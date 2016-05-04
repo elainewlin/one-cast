@@ -8,10 +8,6 @@
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2>View Role</h2>
-<!--        <span flex></span>-->
-        <md-button class="md-icon-button" ng-click="cancel()">
-          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
-        </md-button>
       </div>
     </md-toolbar>
     <md-dialog-content>
@@ -19,7 +15,6 @@
         <div class="container">
           <div class="row">
               
-            <!-- New Role -->
             <div class="col-md-10 col-sm-10">
               <div class="row">
                 <div class="block">
@@ -27,8 +22,6 @@
                         <span class="section-title">Role Title: </span>
                         {{roleName}} 
                     </h4>
-                    
-                    
                 </div>
                 <div class="block">
                     <div id="age-range-box">
@@ -37,7 +30,7 @@
                           <span>{{ageRange.min}}</span>
                                 to 
                                 <span>{{ageRange.max}}</span>
-                    </h4>
+                      </h4>
                     </div>
                 </div>
                 <div class="block">
@@ -52,7 +45,6 @@
                         {{roleDescription}}
                     </h4>
                 </div>
-
               </div>
             </div>
           </div>
@@ -64,6 +56,5 @@
       <md-button class="md-accent" type="submit" id="" ng-click="cancel()">
        Close
       </md-button>
-
     </md-dialog-actions>
 </md-dialog>
