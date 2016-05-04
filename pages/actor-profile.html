@@ -7,10 +7,8 @@
                 <div class="top-block">
                     <!-- actor photo -->
                     <img src="{{actor.image}}" class="md-card-image" alt="user avatar">
-<!--                     -->
                     <div class="main-attributes">
                         <div id="actor-name">{{actor.name}}</div>
-                        <!--                     -->
                         <div id="action-buttons">
                             <div id="contact-button">
                                 <md-button class="button-style md-raised md-primary">
@@ -64,20 +62,24 @@
                 <div class="section-block">
                     <p class="section-header">Education</p>
                     <div class="section-info">
-                        <p>School</p>
-                        <p>{{actor.schoolName}}</p>
+                        <p  class="section-title">School</p>
+<!--                        <p class="section-text">Pace University</p>-->
+                        <p class="section-text">{{actor.schoolName}}</p>
                     </div>
                     <div class="section-info">
-                        <p>Degree</p>
-                        <p>{{actor.schoolDegree}}</p>
+                        <p  class="section-title">Degree</p>
+<!--                        <p class="section-text section-long-text">B.A. in Acting: Acting, Movement, Emsemble, World Theater, Theater for Social Change</p>-->
+                        <p class="section-text section-long-text">{{actor.schoolDegree}}</p>
                     </div>
                     <div class="section-info">
-                        <p>Location</p>
-                        <p>{{actor.schoolLocation}}</p>
+                        <p  class="section-title">Location</p>
+<!--                        <p class="section-text">New York, NY</p>-->
+                        <p class="section-text">{{actor.schoolLocation}}</p>
                     </div>
                     <div class="section-info">
-                        <p>Year</p>
-                        <p>{{actor.schoolYear}}</p>
+                        <p  class="section-title">Year</p>
+<!--                        <p class="section-text">2017</p>-->
+                        <p class="section-text" >{{actor.schoolYear}}</p>
                     </div>
                 </div>
                 <hr class="styled-hr">
@@ -85,20 +87,25 @@
                 <div class="section-block">
                     <p class="section-header">Experience</p>
                     <div class="section-info">
-                        <p>Company</p>
-                        <p>{{actor.companyName}}</p>
+                        <p class="section-title">Company</p>
+<!--                        <p class="section-text">The Alpha NYC Theater Company</p>-->
+                        <p class="section-text">{{actor.companyName}}</p>
                     </div>
                     <div class="section-info">
-                        <p>Role</p>
-                        <p>{{actor.companyRole}}</p>
+                        <p  class="section-title">Role</p>
+<!--                        <p class="section-text">Ensemble Member</p>-->
+                        <p class="section-text">{{actor.companyRole}}</p>
                     </div>
                      <div class="section-info">
-                        <p>Location</p>
-                        <p> {{actor.companyLocation}}</p>
+                        <p  class="section-title">Location</p>
+<!--                        <p class="section-text">New York, NY</p>-->
+                          <p class="section-text"> {{actor.companyLocation}} </p>
                     </div>
                     <div class="section-info">
-                        <p>Year</p>
-                        <p> {{actor.companyYear}}</p>
+                        <p  class="section-title">Year</p>
+<!--                        <p class="section-text"> 2016</p>-->
+                        <p class="section-text"> {{actor.companyYear}}</p>
+
                     </div>
                 </div>
 
