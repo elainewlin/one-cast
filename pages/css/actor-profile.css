@@ -22,6 +22,7 @@
 
 #right-attributes {
     float: right;
+    margin-left: 40px;
 }
 
 #left-attributes {
@@ -39,7 +40,7 @@
 #action-buttons {
     margin-top: 20px;
     position: relative;
-    width:277px;
+    width:327px;
 }
 
 #contact-button {
@@ -48,6 +49,7 @@
 
 #invite-button {
     float: right;
+    margin-left: 10px;
 }
 
 .icon-align {

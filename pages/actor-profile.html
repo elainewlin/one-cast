@@ -6,11 +6,9 @@
             <div class="row">
                 <div class="top-block">
                     <!-- actor photo -->
-                    <img src="../public/images/ming_correll.jpg" class="md-card-image" alt="user avatar">
-<!--                    {{targetActor.image}} -->
+                    <img src="{{actor.image}}" class="md-card-image" alt="user avatar">
                     <div class="main-attributes">
-                        <div id="actor-name">Stupid Actor</div>
-                        <!--                    {{targetActor.name}} -->
+                        <div id="actor-name">{{actor.name}}</div>
                         <div id="action-buttons">
                             <div id="contact-button">
                                 <md-button class="button-style md-raised md-primary">
@@ -29,27 +27,27 @@
                         <div id="attributes">
                             <div id="left-attributes">
                                 <div class="attribute-details">
-                                    <span class="attribute-name">Location:</span> {{targetActor.location}
+                                    <span class="attribute-name">Location:</span> {{actor.location}}
                                 </div>
                                 <div class="attribute-details">
-                                    <span class="attribute-name">Age:</span> {{targetActor.age}}
+                                    <span class="attribute-name">Age:</span> {{actor.age}}
                                 </div>
                                 <div class="attribute-details">
-                                    <span class="attribute-name">Height:</span> {{targetActor.height}}
+                                    <span class="attribute-name">Height:</span> {{actor.height}}
                                 </div>
                                 <div class="attribute-details">
-                                    <span class="attribute-name">Weight:</span> {{targetActor.weight}}
+                                    <span class="attribute-name">Weight:</span> {{actor.weight}}
                                 </div>
                             </div>
                             <div id="right-attributes">
                                 <div class="attribute-details">
-                                    <span class="attribute-name">Build:</span> {{targetActor.build}}
+                                    <span class="attribute-name">Build:</span> {{actor.build}}
                                 </div>
                                 <div class="attribute-details">
-                                    <span class="attribute-name">Eye Color:</span> {{targetActor.eyecolor}}
+                                    <span class="attribute-name">Eye Color:</span> {{actor.eyecolor}}
                                 </div>
                                 <div class="attribute-details">
-                                    <span class="attribute-name">Hair Color:</span> {{targetActor.haircolor}}
+                                    <span class="attribute-name">Hair Color:</span> {{actor.haircolor}}
                                 </div>
                                 <div  class="attribute-details">
                                     <span class="attribute-name">Ethnicity:</span> {{actor.ethn}}
@@ -65,23 +63,23 @@
                     <p class="section-header">Education</p>
                     <div class="section-info">
                         <p  class="section-title">School</p>
-                        <p class="section-text">Pace University</p>
-<!--                        <p>{{actor.college}}</p>-->
+<!--                        <p class="section-text">Pace University</p>-->
+                        <p class="section-text">{{actor.schoolName}}</p>
                     </div>
                     <div class="section-info">
                         <p  class="section-title">Degree</p>
-                        <p class="section-text section-long-text">B.A. in Acting: Acting, Movement, Emsemble, World Theater, Theater for Social Change</p>
-<!--                        <p>{{actor.major}}</p>-->
+<!--                        <p class="section-text section-long-text">B.A. in Acting: Acting, Movement, Emsemble, World Theater, Theater for Social Change</p>-->
+                        <p class="section-text section-long-text">{{actor.schoolDegree}}</p>
                     </div>
                     <div class="section-info">
                         <p  class="section-title">Location</p>
-                        <p class="section-text">New York, NY</p>
-<!--                        <p>{{actor.univLoc}}</p>-->
+<!--                        <p class="section-text">New York, NY</p>-->
+                        <p class="section-text">{{actor.schoolLocation}}</p>
                     </div>
                     <div class="section-info">
                         <p  class="section-title">Year</p>
-                        <p class="section-text">2017</p>
-<!--                        <p>{{actor.schoolend}}</p>-->
+<!--                        <p class="section-text">2017</p>-->
+                        <p class="section-text" >{{actor.schoolYear}}</p>
                     </div>
                 </div>
                 <hr class="styled-hr">
@@ -90,23 +88,24 @@
                     <p class="section-header">Experience</p>
                     <div class="section-info">
                         <p class="section-title">Company</p>
-                        <p class="section-text">The Alpha NYC Theater Company</p>
-<!--                        <p>{{actor.comp}}</p>-->
+<!--                        <p class="section-text">The Alpha NYC Theater Company</p>-->
+                        <p class="section-text">{{actor.companyName}}</p>
                     </div>
                     <div class="section-info">
                         <p  class="section-title">Role</p>
-                        <p class="section-text">Ensemble Member</p>
-<!--                        <p>{{actor.job}}</p>-->
+<!--                        <p class="section-text">Ensemble Member</p>-->
+                        <p class="section-text">{{actor.companyRole}}</p>
                     </div>
                      <div class="section-info">
                         <p  class="section-title">Location</p>
-                        <p class="section-text">New York, NY</p>
-<!--                          <p> {{actor.compLoc}}</p>-->
+<!--                        <p class="section-text">New York, NY</p>-->
+                          <p class="section-text"> {{actor.companyLocation}} </p>
                     </div>
                     <div class="section-info">
                         <p  class="section-title">Year</p>
-                        <p class="section-text"> 2016</p>
-<!--                        <p> {{actor.jobend}}</p>-->
+<!--                        <p class="section-text"> 2016</p>-->
+                        <p class="section-text"> {{actor.companyYear}}</p>
+
                     </div>
                 </div>
 
