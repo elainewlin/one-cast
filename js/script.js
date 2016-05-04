@@ -576,29 +576,31 @@ onecastApp.controller('productionController', function($scope, $mdDialog, $rootS
 onecastApp.controller('actorPageController', function($scope, $rootScope, $mdDialog) {
     $rootScope.pageTitle = "Production Overview";
     $scope.primary = 'pink';
-    $scope.roles = [{name: "Romeo", description: "son to Montague", status: "accepted", ageMin: 16, ageMax: 22, gender: "m"},
-                {name: "Juliet", description: "daughter to Capulet", status: "applied", ageMin: 18, ageMax: 20, gender:"f"},
-                {name: "Mercutio",description: "kinsman to the prince, and friend to Romeo", status: "applied", ageMin: 20, ageMax: 30, gender:"m"},
-                {name: "Tybalt", description: "nephew to Lady Capulet", status: "applied", ageMin:20, ageMax:30, gender:"m"},
-                {name: "The Nurse", description: "Nurse to Juliet", status: "applied", ageMin:20, ageMax:30, gender:"f"},
-                {name: "Friar Laurence", description: "Franciscan", status: "rejected", ageMin:20, ageMax:30, gender:"m"},
-                {name: "Capulet", description: "head of Capulet household", status: "rejected", ageMin:20, ageMax:30, gender:"m"},
-                {name: "Paris", description: "a young nobleman", status: "rejected", ageMin:20, ageMax:30, gender:"m"},
-                {name: "Benvolio",  description: "nephew to Montague, and friend to Romeo", status: "rejected", ageMin:20, ageMax:30, gender:"m"},
-                {name: "Lady Capulet", description: "wife to Capulet", status: "rejected", ageMin:20, ageMax:30, gender:"f"},
-                {name: "Montague", description: "head of Montague household", status: "rejected", ageMin:20, ageMax:30, gender:"m"},
-                {name: "Balthasar", description: "servant to Romeo", status: "applied", ageMin:20, ageMax:30, gender:"m"},
-                {name: "Peter", description: "servant to Juliet's nurse", status: "applied", ageMin:20, ageMax:30, gender:"m"},
-                {name: "Abraham", description: "servant to Montague", status: "rejected", ageMin:20, ageMax:30, gender:"m"},
-                {name: "Sampson", description: "servant to Capulet", status: "backup", ageMin:20, ageMax:30, gender:"m"},
-                {name: "Gregory", description: "servant to Capulet", status: "backup", ageMin:20, ageMax:30, gender:"m"}];
+    $scope.roles = [{name: "Romeo", description: "son to Montague", status: "accepted", ageMin: 16, ageMax: 22, gender: "male"},
+                {name: "Juliet", description: "daughter to Capulet", status: "applied", ageMin: 18, ageMax: 20, gender:"female"},
+                {name: "Mercutio",description: "kinsman to the prince, and friend to Romeo", status: "applied", ageMin: 20, ageMax: 30, gender:"male"},
+                {name: "Tybalt", description: "nephew to Lady Capulet", status: "applied", ageMin:20, ageMax:30, gender:"male"},
+                {name: "The Nurse", description: "Nurse to Juliet", status: "applied", ageMin:20, ageMax:30, gender:"female"},
+                {name: "Friar Laurence", description: "Franciscan", status: "rejected", ageMin:20, ageMax:30, gender:"male"},
+                {name: "Capulet", description: "head of Capulet household", status: "rejected", ageMin:20, ageMax:30, gender:"male"},
+                {name: "Paris", description: "a young nobleman", status: "rejected", ageMin:20, ageMax:30, gender:"male"},
+                {name: "Benvolio",  description: "nephew to Montague, and friend to Romeo", status: "rejected", ageMin:20, ageMax:30, gender:"male"},
+                {name: "Lady Capulet", description: "wife to Capulet", status: "rejected", ageMin:20, ageMax:30, gender:"female"},
+                {name: "Montague", description: "head of Montague household", status: "rejected", ageMin:20, ageMax:30, gender:"male"},
+                {name: "Balthasar", description: "servant to Romeo", status: "applied", ageMin:20, ageMax:30, gender:"male"},
+                {name: "Peter", description: "servant to Juliet's nurse", status: "applied", ageMin:20, ageMax:30, gender:"male"},
+                {name: "Abraham", description: "servant to Montague", status: "rejected", ageMin:20, ageMax:30, gender:"male"},
+                {name: "Sampson", description: "servant to Capulet", status: "backup", ageMin:20, ageMax:30, gender:"male"},
+                {name: "Gregory", description: "servant to Capulet", status: "backup", ageMin:20, ageMax:30, gender:"male"}];
 
     $scope.viewRole = function(index) {
         console.log("viewing the role");
         
         $rootScope.noCastingCancel = true;
-        $rootScope.tempCasting.roles = $scope.roles;
+//        $rootScope.tempCasting.roles = $scope.roles;
+        $rootScope.tempViewRoles = $scope.roles;
         $rootScope.roleBeingEdited = $scope.roles[index];
+        console.log($rootScope.roleBeingEdited);
         $rootScope.editingRole = true;
         
         $rootScope.roleBeingEditedIndex = index;
@@ -741,95 +743,15 @@ onecastApp.controller('applyTimeControllerDirector', function($scope, $rootScope
     
 });
 
-//$scope, ngTableParams, $mdDialog, $rootScope
 
 onecastApp.controller('viewRoleController', function($scope, $rootScope, $mdDialog) {
     $scope.primary = 'pink';
     
-    $scope.genders = [ {option:"Any", id:"n"},{option:"Male", id:"m"}, {option:"Female", id:"f"}];
-    
     $scope.ageRange = {min: 0, max: 100};
-    
-    $scope.slider = {
-        minValue: 10,
-        maxValue: 90,
-        options: {
-            floor: 15,
-            ceil: 90,
-            step: 1
-        }
-    };
-    $scope.byAgeRange = function (fieldName, minValue, maxValue) {
-        if (minValue === undefined) minValue = Number.MIN_VALUE;
-        if (maxValue === undefined) maxValue = Number.MAX_VALUE;
-
-        return function predicateFunc(item) {
-            return minValue <= item[fieldName] && item[fieldName] <= maxValue;
-        };
-    };
-    
-    $scope.add = function() {
-        
-          var role = {
-            name: $scope.roleName,
-            description: $scope.roleDescription,
-            gender: $scope.roleGender,
-            ageMin: $scope.ageRange.min,
-            ageMax: $scope.ageRange.max
-          };
-          
-          if($rootScope.roleBeingEdited) {
-              $rootScope.tempCasting.roles[$rootScope.roleBeingEditedIndex] = role;
-          } else {
-              $rootScope.tempCasting.roles.push(role);
-          }
-        
-          console.log($rootScope.tempCasting.roles);
-        
-          $mdDialog.cancel();
-        
-          if(!$rootScope.noCastingCancel) {
-              $mdDialog.show({
-              controller: 'addCastingController',
-              templateUrl: 'new-casting.html',
-              parent: angular.element('#wrapper'),
-              clickOutsideToClose:true,
-              //fullscreen: 'useFullScreen'
-            })
-            .then(function(answer) {
-              $scope.status = 'You said the information was "' + answer + '".';
-            }, function() {
-              $scope.status = 'You cancelled the dialog.';
-            });
-
-            while(angular.element(document).find('md-dialog').length > 1) {
-                $mdDialog.cancel();
-            }
-          }
-    };
     
     $scope.cancel = function() {
         
           $mdDialog.cancel();
-        
-          if(!$rootScope.noCastingCancel) {
-              $mdDialog.show({
-              controller: 'addCastingController',
-              templateUrl: 'new-casting.html',
-              parent: angular.element('#wrapper'),
-              clickOutsideToClose:true,
-              //fullscreen: 'useFullScreen'
-            })
-            .then(function(answer) {
-              $scope.status = 'You said the information was "' + answer + '".';
-            }, function() {
-              $scope.status = 'You cancelled the dialog.';
-            });
-
-            while(angular.element(document).find('md-dialog').length > 1) {
-                $mdDialog.cancel();
-            }
-          }
     };
     
     if($rootScope.roleBeingEdited) {
@@ -842,7 +764,7 @@ onecastApp.controller('viewRoleController', function($scope, $rootScope, $mdDial
         
     }
     
-    $scope.roles = $rootScope.tempCasting.roles;
+    $scope.roles = $rootScope.tempViewRolesroles;
     
     if($rootScope.editingRole) {
         $scope.mode = "Save";
