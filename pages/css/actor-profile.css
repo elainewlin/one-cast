@@ -1,0 +1,78 @@
+.top-block {
+    position: relative;
+    margin-top: 20px;
+}
+
+.main-attributes {
+    display: inline-block;
+    position: absolute;
+    margin-left: 60px;
+}
+
+#actor-name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#attributes {
+    position: relative;
+    margin-top: 100px;
+    font-size: 18px;
+}
+
+#right-attributes {
+    float: right;
+}
+
+#left-attributes {
+    float: left;
+}
+
+.attribute-name {
+    font-weight: bold;
+}
+
+.attribute-details {
+   margin:7px; 
+}
+
+#action-buttons {
+    margin-top: 20px;
+    position: relative;
+    width:277px;
+}
+
+#contact-button {
+    float: left;
+}
+
+#invite-button {
+    float: right;
+}
+
+.icon-align {
+    width: 15px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* font-size: 20px; */
+}
+
+.text-icon-align {
+    margin-left: 28px;
+}
+
+.button-style {
+    padding: 0 12px;
+}
+
+.styled-hr {
+  border: none;
+  height: 1px;
+  background-color: #d81b60;
+}
+
+.section-header {
+    font-size: 25px;
+}
