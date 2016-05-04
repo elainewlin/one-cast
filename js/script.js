@@ -576,31 +576,28 @@ onecastApp.controller('productionController', function($scope, $mdDialog, $rootS
 onecastApp.controller('actorPageController', function($scope, $rootScope, $mdDialog) {
     $rootScope.pageTitle = "Production Overview";
     $scope.primary = 'pink';
-    $scope.roles = [{name: "Romeo", description: "son to Montague", status: "accepted", ageMin: 16, ageMax: 22, gender: "male"},
-                {name: "Juliet", description: "daughter to Capulet", status: "applied", ageMin: 18, ageMax: 20, gender:"female"},
-                {name: "Mercutio",description: "kinsman to the prince, and friend to Romeo", status: "applied", ageMin: 20, ageMax: 30, gender:"male"},
-                {name: "Tybalt", description: "nephew to Lady Capulet", status: "applied", ageMin:20, ageMax:30, gender:"male"},
-                {name: "The Nurse", description: "Nurse to Juliet", status: "applied", ageMin:20, ageMax:30, gender:"female"},
-                {name: "Friar Laurence", description: "Franciscan", status: "rejected", ageMin:20, ageMax:30, gender:"male"},
-                {name: "Capulet", description: "head of Capulet household", status: "rejected", ageMin:20, ageMax:30, gender:"male"},
-                {name: "Paris", description: "a young nobleman", status: "rejected", ageMin:20, ageMax:30, gender:"male"},
-                {name: "Benvolio",  description: "nephew to Montague, and friend to Romeo", status: "rejected", ageMin:20, ageMax:30, gender:"male"},
-                {name: "Lady Capulet", description: "wife to Capulet", status: "rejected", ageMin:20, ageMax:30, gender:"female"},
-                {name: "Montague", description: "head of Montague household", status: "rejected", ageMin:20, ageMax:30, gender:"male"},
-                {name: "Balthasar", description: "servant to Romeo", status: "applied", ageMin:20, ageMax:30, gender:"male"},
-                {name: "Peter", description: "servant to Juliet's nurse", status: "applied", ageMin:20, ageMax:30, gender:"male"},
-                {name: "Abraham", description: "servant to Montague", status: "rejected", ageMin:20, ageMax:30, gender:"male"},
-                {name: "Sampson", description: "servant to Capulet", status: "backup", ageMin:20, ageMax:30, gender:"male"},
-                {name: "Gregory", description: "servant to Capulet", status: "backup", ageMin:20, ageMax:30, gender:"male"}];
+    $scope.roles = [{name: "Romeo", description: "son to Montague", status: "accepted", ageMin: 16, ageMax: 22, gender: "male", interviewDate: "May 4, 2016", interviewTime: "12:00pm"},
+                {name: "Juliet", description: "daughter to Capulet", status: "applied", ageMin: 18, ageMax: 20, gender:"female",  interviewDate: "May 5, 2016", interviewTime: "12:00pm"},
+                {name: "Mercutio",description: "kinsman to the prince, and friend to Romeo", status: "applied", ageMin: 20, ageMax: 30, gender:"male", interviewDate: "May 6, 2016", interviewTime: "12:00pm"},
+                {name: "Tybalt", description: "nephew to Lady Capulet", status: "applied", ageMin:20, ageMax:30, gender:"male", interviewDate: "May 7, 2016", interviewTime: "12:00pm"},
+                {name: "The Nurse", description: "Nurse to Juliet", status: "applied", ageMin:20, ageMax:30, gender:"female", interviewDate: "May 8, 2016", interviewTime: "12:00pm"},
+                {name: "Friar Laurence", description: "Franciscan", status: "rejected", ageMin:20, ageMax:30, gender:"male", interviewDate: "May 9, 2016", interviewTime: "12:00pm"},
+                {name: "Capulet", description: "head of Capulet household", status: "rejected", ageMin:20, ageMax:30, gender:"male", interviewDate: "May 10, 2016", interviewTime: "12:00pm"},
+                {name: "Paris", description: "a young nobleman", status: "rejected", ageMin:20, ageMax:30, gender:"male", interviewDate: "May 11, 2016", interviewTime: "12:00pm"},
+                {name: "Benvolio",  description: "nephew to Montague, and friend to Romeo", status: "rejected", ageMin:20, ageMax:30, gender:"male", interviewDate: "May 12, 2016", interviewTime: "12:00pm"},
+                {name: "Lady Capulet", description: "wife to Capulet", status: "rejected", ageMin:20, ageMax:30, gender:"female", interviewDate: "May 13, 2016", interviewTime: "12:00pm"},
+                {name: "Montague", description: "head of Montague household", status: "rejected", ageMin:20, ageMax:30, gender:"male", interviewDate: "May 14, 2016", interviewTime: "12:00pm"},
+                {name: "Balthasar", description: "servant to Romeo", status: "applied", ageMin:20, ageMax:30, gender:"male", interviewDate: "May 15, 2016", interviewTime: "12:00pm"},
+                {name: "Peter", description: "servant to Juliet's nurse", status: "applied", ageMin:20, ageMax:30, gender:"male", interviewDate: "May 16, 2016", interviewTime: "12:00pm"},
+                {name: "Abraham", description: "servant to Montague", status: "rejected", ageMin:20, ageMax:30, gender:"male", interviewDate: "May 17, 2016", interviewTime: "12:00pm"},
+                {name: "Sampson", description: "servant to Capulet", status: "backup", ageMin:20, ageMax:30, gender:"male", interviewDate: "May 18, 2016", interviewTime: "12:00pm"},
+                {name: "Gregory", description: "servant to Capulet", status: "backup", ageMin:20, ageMax:30, gender:"male", interviewDate: "May 19, 2016", interviewTime: "12:00pm"}];
 
     $scope.viewRole = function(index) {
-        console.log("viewing the role");
         
         $rootScope.noCastingCancel = true;
-//        $rootScope.tempCasting.roles = $scope.roles;
         $rootScope.tempViewRoles = $scope.roles;
         $rootScope.roleBeingEdited = $scope.roles[index];
-        console.log($rootScope.roleBeingEdited);
         $rootScope.editingRole = true;
         
         $rootScope.roleBeingEditedIndex = index;
@@ -761,6 +758,7 @@ onecastApp.controller('viewRoleController', function($scope, $rootScope, $mdDial
         $scope.roleDescription = $rootScope.roleBeingEdited.description;
         $scope.ageRange.min = $rootScope.roleBeingEdited.ageMin;
         $scope.ageRange.max = $rootScope.roleBeingEdited.ageMax;
+        $scope.status = $rootScope.roleBeingEdited.status;
         
     }
     
